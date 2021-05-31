@@ -15,7 +15,8 @@ class BillsController < ApplicationController
   end
 
   def update
-    if @bill.update(bills_params)
+    @bill = Bill.find(params[:id])
+    if @bill.update
       flash[:success] = "Bill was successfully updated"
       redirect_to @bill
     else
