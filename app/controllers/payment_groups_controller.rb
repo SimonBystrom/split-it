@@ -1,20 +1,20 @@
 class PaymentGroupsController < ApplicationController
   def index
-    @payment_groups = Payment_group.all
+    @payment_groups = PaymentGroup.all
   end
 
   def show
-    @payment_group = Payment_group.find(params[:id])
+    @payment_group = PaymentGroup.find(params[:id])
     @splits = @payment_group.splits
     @users = @payment_group.users
   end
 
   def new
-    @payment_group = Payment_group.new
+    @payment_group = PaymentGroup.new
   end
 
   def create
-    @payment_group = Payment_group.new(payment_group_params)
+    @payment_group = PaymentGroup.new(payment_group_params)
     if @payment_group.save
       flash[:success] = "Payment Group successfully created"
       redirect_to @show
@@ -25,6 +25,6 @@ class PaymentGroupsController < ApplicationController
   end
 
   def update
-    @payment_group = Payment_groups.find(params[:id])
+    @payment_group = PaymentGroups.find(params[:id])
   end
 end
