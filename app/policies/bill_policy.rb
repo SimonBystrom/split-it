@@ -9,14 +9,11 @@ class BillPolicy < ApplicationPolicy
     user
   end
 
-  def new?
-    user
-  end
   def update?
-    user
+    user == record.user
   end
 
   def destroy?
-    user
+    user == record.user
   end
 end

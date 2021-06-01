@@ -51,15 +51,15 @@ user_count = 1
 6.times do 
   puts "Initializing a user..."
   user = User.new(
-    #name: "user#{user_count}", 
+    name: "user#{user_count}", 
     email: "user#{user_count}@user.com", 
     password: "password#{user_count}"
   )
   if user.save
     user_count += 1
-    puts "#{user.email} created successfully."
+    puts "#{user.name} created successfully."
   else
-    puts "Could not save #{user.email}."
+    puts "Could not save #{user.name}."
   end
   puts "Generating memberships..."
   membership = Membership.new(user: user, payment_group: user_count < 4 ? group1 : group2 )
@@ -79,7 +79,7 @@ couple_users.each do |user|
                    user: user,
                    split: split1
                    )
-    bill.save ? (puts "#{user.email}'s bill ##{bill_counter} was created successfully.") : (puts "#{user.email}'s bill ##{bill_counter} could not save.")
+    bill.save ? (puts "#{user.name}'s bill ##{bill_counter} was created successfully.") : (puts "#{user.name}'s bill ##{bill_counter} could not save.")
     bill_counter += 1
   end
 end
@@ -99,7 +99,7 @@ friends_users.each do |user|
                    user: user,
                    split: split2
                    )
-    bill.save ? (puts "#{user.email}'s bill ##{bill_counter} was created successfully.") : (puts "#{user.email}'s bill ##{bill_counter} could not save.")
+    bill.save ? (puts "#{user.name}'s bill ##{bill_counter} was created successfully.") : (puts "#{user.name}'s bill ##{bill_counter} could not save.")
     bill_counter += 1
   end
 end
@@ -118,7 +118,7 @@ friends_users.each do |user|
                    user: user,
                    split: split2
                    )
-    bill.save ? (puts "#{user.email}'s bill ##{bill_counter} was created successfully.") : (puts "#{user.email}'s bill ##{bill_counter} could not save.")
+    bill.save ? (puts "#{user.name}'s bill ##{bill_counter} was created successfully.") : (puts "#{user.name}'s bill ##{bill_counter} could not save.")
     bill_counter += 1
   end
 end
