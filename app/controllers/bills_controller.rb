@@ -1,12 +1,10 @@
 class BillsController < ApplicationController
   def new
     @bill = Bill.new
-    authorize @bill
   end
 
   def create
     @bill = Bill.new(bills_params)
-    authorize @bill
     if @bill.save
       flash[:success] = "Bill successfully created"
       redirect_to @bill
@@ -17,7 +15,6 @@ class BillsController < ApplicationController
   end
 
   def update
-    authorize @bill
     @bill = Bill.find(params[:id])
     if @bill.update
       flash[:success] = "Bill was successfully updated"
@@ -29,7 +26,6 @@ class BillsController < ApplicationController
   end
 
   def destroy
-    authorize @bill
     if @bill.destroy
       flash[:success] = 'Bill was successfully deleted.'
       redirect_to bills_url
