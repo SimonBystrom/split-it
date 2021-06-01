@@ -35,6 +35,9 @@ gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 # Form builder gem
 gem 'simple_form'
+# User-side image upload gem/service
+gem 'cloudinary', '~> 1.16.0'
+
 
 group :development, :test do  
   gem 'pry-byebug'
@@ -53,8 +56,6 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  # Security gem for secret keys
-  gem 'dotenv-rails'
 end
 
 group :test do
