@@ -1,0 +1,12 @@
+<div class="split-card-home">
+  <div>
+    <h3> <%= split.name %> </h3>
+    <p> <%= split.payment_group.name %> </p>
+  </div>
+ <!--  CALCULATE THE TOTAL -->
+    <h4>$ <%= current_user %> </h4>
+<!--     LINKS TO THE IMG SCAN -->
+    <%= link_to new_split_bill(split) do %>
+      <p> LINK IMG TO SCAN </p>
+    <% end %>
+</div>

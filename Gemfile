@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
+#added
+gem 'pundit'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 # Use postgresql as the database for Active Record
@@ -37,9 +40,11 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 # User-side image upload gem/service
 gem 'cloudinary', '~> 1.16.0'
+# Allow for random generation of attributes for instances
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
 
-group :development, :test do  
+group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'
@@ -64,8 +69,6 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
-  # Security gem for secret keys
-  gem 'dotenv-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
