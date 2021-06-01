@@ -1,0 +1,41 @@
+.group-card {
+  display: flex;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  margin: 0 auto;
+  width: 344px;
+  height: 112px;
+  margin-top: 16px;
+}
+
+.group-card-image {
+  flex-basis: 30%;
+  background-image: url('https://images.unsplash.com/photo-1576612026118-888273d58653?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80');
+  border-radius: 5px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 96px;
+  width: 96px;
+}
+
+.group-card-info-wrapper {
+  flex-basis: 70%;
+  padding: 8px;
+}
+
+.group-card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.group-card-title {
+  text-align: right;
+  margin-bottom: 16px;
+}
+
+.group-card-info {
+  text-align: right;
+}
