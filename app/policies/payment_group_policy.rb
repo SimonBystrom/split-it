@@ -12,11 +12,8 @@ class PaymentGroupPolicy < ApplicationPolicy
   def create?
     user
   end
-  def new?
-    user
-  end
 
   def update?
-    user
+    record.users.include?(user)
   end
 end
