@@ -12,8 +12,8 @@ class PaymentGroupsController < ApplicationController
   end
 
   def new
-    authorize @payment_group
     @payment_group = PaymentGroup.new
+    authorize @payment_group
   end
 
   def create
