@@ -1,0 +1,32 @@
+.group-name-banner{
+  width: 100%;
+  height: 25vh;
+  // margin-bottom: 24px;
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  color: $light-gray;
+}
+
+.group-show {
+  // Sets the padding for the group-image properly without padding
+  padding: 0 !important;
+}
+
+.group-show-accordian {
+  width: 100%;
+  border-top: 1px solid $blue;
+  // Centers the text in the
+  text-align: center;
+  padding-top: 14px;
+}
+
+.accordion{
+  width: 100%;
+}
