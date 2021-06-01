@@ -7,7 +7,8 @@ class PaymentGroupsController < ApplicationController
   def show
     @payment_group = PaymentGroup.find(params[:id])
     authorize @payment_group
-    @splits = @payment_group.splits
+    @splits_active = policy_scope(Split).where(active: true).order(created_at: :desc)
+    @splits_archived = policy_scope(Split).where(active: false).order(created_at: :desc)
     @users = @payment_group.users
   end
 
@@ -17,8 +18,8 @@ class PaymentGroupsController < ApplicationController
   end
 
   def create
-    authorize @payment_group
     @payment_group = PaymentGroup.new(payment_group_params)
+    authorize @payment_group
     if @payment_group.save
       flash[:success] = "Payment Group successfully created"
       redirect_to @show
@@ -26,10 +27,11 @@ class PaymentGroupsController < ApplicationController
       flash[:error] = "Something went wrong"
       render 'new'
     end
+
   end
 
   def update
-    authorize @payment_group
     @payment_group = PaymentGroups.find(params[:id])
+    authorize @payment_group
   end
 end
