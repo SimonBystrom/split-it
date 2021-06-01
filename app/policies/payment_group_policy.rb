@@ -5,7 +5,7 @@ class PaymentGroupPolicy < ApplicationPolicy
     end
   end
 
-  def show
+  def show?
     user
   end
 
