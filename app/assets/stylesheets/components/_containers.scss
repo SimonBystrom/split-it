@@ -1,4 +1,8 @@
 .group-index-container {
   background-color: $light-gray;
   padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }

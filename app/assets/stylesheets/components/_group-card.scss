@@ -39,3 +39,10 @@
 .group-card-info {
   text-align: right;
 }
+
+.new-group-button {
+  position: fixed;
+  bottom: 8px;
+  left: 8px;
+  z-index: 2;
+}
