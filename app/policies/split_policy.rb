@@ -12,7 +12,6 @@ class SplitPolicy < ApplicationPolicy
   def new?
     user
   end
-
   def update?
     user
   end

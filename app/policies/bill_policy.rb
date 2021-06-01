@@ -12,7 +12,6 @@ class BillPolicy < ApplicationPolicy
   def new?
     user
   end
-
   def update?
     user
   end
