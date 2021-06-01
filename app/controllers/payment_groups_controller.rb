@@ -1,6 +1,6 @@
 class PaymentGroupsController < ApplicationController
   def index
-    @payment_groups = policy_scope(Payment_group)
+    @payment_groups = policy_scope(PaymentGroup)
     @payment_groups = PaymentGroup.all
   end
 
