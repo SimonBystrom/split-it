@@ -1,9 +1,10 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: [:home, :splash]
 
   def home
-    @payment_groups = PaymentGroups.all
-    @splits = current_user.splits.where(active: true)
+    @payment_groups = PaymentGroup.all
+    # For testing -> Will be current_user and change the :home to be required to authenticate
+    @splits = User.first.splits.where(active: true)
   end
 
   def splash

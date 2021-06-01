@@ -2,6 +2,9 @@
   <div class="sidebar"></div>
   <div class="main-container">
     <h1>Split|it</h1>
-    RENDER SPLIT CARDS
+    <p>Active Splits</p>
+    <% @splits.each do |split| %>
+      <%= render 'pages/split-card-home', split: split %>
+    <% end %>
   </div>
 </div>
