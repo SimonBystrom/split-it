@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  // To allow the nested links to work
   position: relative;
   padding-top: 16px;
 }
@@ -14,6 +15,7 @@
   // positions the sidebar-group "picture/links" on top of the sidebar-group-index-link
   position: relative;
   z-index: 2;
+  // Sets the images to be round with a small border
   img{
     width: 50px;
     height: 50px;
