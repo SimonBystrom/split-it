@@ -35,6 +35,7 @@ class SplitsController < ApplicationController
   end
   
   def destroy
+    authorize @split
     if @split.destroy
       flash[:success] = 'Split was successfully deleted.'
       redirect_to splits_url
