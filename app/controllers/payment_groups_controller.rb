@@ -27,7 +27,6 @@ class PaymentGroupsController < ApplicationController
       flash[:error] = "Something went wrong"
       render 'new'
     end
-
   end
 
   def update
