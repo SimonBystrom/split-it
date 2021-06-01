@@ -1,6 +1,5 @@
 class PaymentGroupsController < ApplicationController
   def index
-    @payment_groups = policy_scope(PaymentGroup)
     @payment_groups = PaymentGroup.all
   end
 
@@ -14,7 +13,6 @@ class PaymentGroupsController < ApplicationController
 
   def new
     @payment_group = PaymentGroup.new
-    authorize @payment_group
   end
 
   def create

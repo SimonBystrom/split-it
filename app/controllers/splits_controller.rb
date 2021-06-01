@@ -6,12 +6,10 @@ class SplitsController < ApplicationController
 
   def new
     @split = Split.new
-    authorize @split
   end
 
   def create
     @split = Split.new(splits_params)
-    authorize @split
     if @split.save
       flash[:success] = "Split successfully created"
       redirect_to @split
