@@ -2,7 +2,6 @@ class SplitsController < ApplicationController
   before_action :set_split, only: [:edit, :update, :destroy]
 
   def index
-    @splits = Split.all
   end
 
   def new
@@ -21,13 +20,14 @@ class SplitsController < ApplicationController
   end
   
   def update
-      if @split.update(splits_params)
-        flash[:success] = "Split was successfully updated"
-        redirect_to @split
-      else
-        flash[:error] = "Something went wrong"
-        render 'edit'
-      end
+    if @split.update(splits_params)
+      authorize @split
+      flash[:success] = "Split was successfully updated"
+      redirect_to @split
+    else
+      flash[:error] = "Something went wrong"
+      render 'edit'
+    end
   end
   
   def destroy
@@ -44,5 +44,11 @@ class SplitsController < ApplicationController
 
   def splits_params
     params.require(:split).permit(:total, :active, :split_ratio)
+  end
+
+  def set_split
+    @split.find(params[:id])
+    authorize @split
+
   end
 end
