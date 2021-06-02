@@ -5,6 +5,7 @@
          <%= simple_form_for @payment_group do |f| %>
          <%= f.input :name %>
          <%= f.input :description %>
+         <%= f.input :photo, as: :file, class: "button" %>
          <%= f.button :submit, 'Create', class: "button"  %>
          <% end %>
     </div>
