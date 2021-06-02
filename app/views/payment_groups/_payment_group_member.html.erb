@@ -1,7 +1,10 @@
+<!-- The card body -->
 <div class="group-member-card">
+  <!-- A frame to hold the user image (later update to cloudinary tag) -->
   <div class="group-member-card-avatar">
     <%= image_tag "https://kitt.lewagon.com/placeholder/users/SimonBystrom", class: "avatar-large" %>
   </div>
+  <!-- A frame to contain the name and email of the user -->
   <div class="group-member-card-details">
     <h5><%= user.name %></h5>
     <p><i><%= user.email %></i></p>
