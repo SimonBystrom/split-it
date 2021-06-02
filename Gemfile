@@ -42,7 +42,8 @@ gem 'simple_form'
 gem 'cloudinary', '~> 1.16.0'
 # Allow for random generation of attributes for instances
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
-
+# Image scanning API
+gem 'google-cloud-vision', '~> 1.1'
 
 group :development, :test do
   gem 'pry-byebug'

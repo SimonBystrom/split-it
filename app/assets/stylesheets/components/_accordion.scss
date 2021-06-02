@@ -1,1 +1,41 @@
-// _accordion.scss
+// accordion header card
+// changing the padding to make it a bit tighter to the text
+// changing the background to make the button invisible
+.card-header {
+  padding: 0; // default was 0.75rem 1.25rem
+  background-color: $light-gray; // default was rgba(0,0,0,0.3)
+}
+// accordion header card (all but last)
+// adding a darker border to mark the individual sections
+.accordion > .card:not(:last-of-type) {
+  border-bottom: 1px solid $gray; // originally not there
+}
+// accordion header card
+// removing the box border
+.card {
+  border: none; // default was border: 1px solid rgba(0,0,0,0.125);
+}
+// accordion header links (focused)
+// removing the blue font and underline on hover, bold when active
+.btn-link:hover {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-style: normal;
+}
+// accordion header links (not focused)
+// removing the blue font, italicizing
+.btn-link {
+  color: black;
+  font-style: italic;
+}
+// expanded card body (where the cards will show)
+.card-body {
+  background-color: $light-gray;
+}
+// change the style of the accordion header when the menu is open
+// doesn't seem to work when I nest it in .btn-link
+.btn-link[aria-expanded="true"] {
+  font-style: normal;
+  font-weight: bold;
+}
