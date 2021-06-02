@@ -1,0 +1,21 @@
+.group-member-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  background: white;
+  padding: 8px 16px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 500px;
+}
+
+.group-member-card-details {
+  flex-grow: 1;
+  padding: 0 24px;
+
+  p, h5 {
+    margin: 0;
+    line-height: 1.4;
+    color: black;
+  }
+}
+

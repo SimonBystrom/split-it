@@ -53,7 +53,7 @@
     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
       <div class="card-body">
         <% users.each do |user| %>
-          <p> <%= user.name %> </p>
+          <%= render 'payment_group_member', user: user %>
         <% end %>
       </div>
     </div>
