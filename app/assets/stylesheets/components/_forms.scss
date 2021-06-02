@@ -8,6 +8,14 @@
 
 .form-control {
   padding: 8px 16px;
-  border-radius: 16px;
+  border-radius: 20px;
   margin-bottom: 24px;
+}
+
+
+
+.form-control:focus {
+     outline: none;
+     border: 1px solid #a0d18c;
+     color: black;
 }
