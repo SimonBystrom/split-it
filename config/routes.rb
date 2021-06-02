@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :splits, only: [:new]
   end
   resources :splits, only: [:show, :edit] do
-    resources :bills, only: [:new]
+    resources :bills, only: [:new, :create]
   end
 
   resources :bills, only: :edit
