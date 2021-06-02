@@ -15,7 +15,7 @@
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body">
         <% active_splits.each do |split| %>
-          <%= render 'payment_group_split', split: split %>
+          <%= render 'payment_group_split_active', split: split %>
         <% end %>
       </div>
     </div>
