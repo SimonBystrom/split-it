@@ -9,6 +9,7 @@ class PaymentGroupsController < ApplicationController
     @splits_active = policy_scope(Split).where(active: true).order(created_at: :desc)
     @splits_archived = policy_scope(Split).where(active: false).order(created_at: :desc)
     @users = @payment_group.users
+    @payment_groups = policy_scope(PaymentGroup)
   end
 
   def new

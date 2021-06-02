@@ -1,6 +1,5 @@
 
 <!-- Creates the Sidebar. -> Sidebar needs the payment_groups as an argument when used -->
-
   <div class="sidebar">
     <% payment_groups.each do |payment_group| %>
   <!--   Links to the current paymentgroup when pressing the picture -->
@@ -11,10 +10,12 @@
       <% end %>
 
     <% end %>
+<!--     Links to creating a new group -->
     <%= link_to new_payment_group_path do %>
       <div class='button button-round add-group'>
         <i class="fas fa-plus"></i>
       </div>
     <% end %>
+<!--     Link wrapper for the sidebar -> payment-groups-Index -->
     <%= link_to '', payment_groups_path, class: 'sidebar-group-index-link' %>
   </div>
