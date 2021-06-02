@@ -5,6 +5,7 @@
       <%= simple_form_for [ @split, @bill ] do |f|%>
           <%= f.input :title, placeholder: 'FamilyMart', autofocus: true; %>
           <%= f.input :price, placeholder: '2000' %>
+          <%= f.input :paid_date %>
         <%= f.submit 'Add Bill', class: 'button button-big' %>
       <% end %>
     </div>
