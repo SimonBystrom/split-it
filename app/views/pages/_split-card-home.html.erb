@@ -1,12 +1,12 @@
 <div class="split-card-home">
-  <div>
+  <div class="split-card-title">
     <h3> <%= split.name %> </h3>
     <p> <%= split.payment_group.name %> </p>
   </div>
  <!--  CALCULATE THE TOTAL -->
-    <h4>$ TOTAL</h4>
+    <h5>$ 150</h5>
 <!--     LINKS TO THE IMG SCAN -->
-    <%= link_to new_split_bill_path(split) do %>
-      <p> LINK IMG TO SCAN </p>
+    <%= link_to new_split_bill_path(split), class: 'button button-round' do %>
+      <i class="fas fa-camera"></i>
     <% end %>
 </div>
