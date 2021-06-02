@@ -13,8 +13,9 @@
 
 // Aligns items on the y-axis for main content
 .main-container{
-  padding: 8px 16px;
+  padding: 16px 16px;
   height: 100vh;
+  width: 100%;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
