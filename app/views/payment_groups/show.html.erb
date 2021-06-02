@@ -1,7 +1,7 @@
 <div class="main-wrapper">
-<!--   Renders the sidebar (needs the payment_groups as an parameter) -->
+  <!--   Renders the sidebar (needs the payment_groups as an parameter) -->
   <%= render 'shared/sidebar', payment_groups: @payment_groups %>
-<!--   Group-show class sets the padding to 0 for the image -->
+  <!--   Group-show class sets the padding to 0 for the image -->
   <div class="main-container group-show">
     <div class="group-name-banner" style= "background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.25)), url(<%= cl_image_path(@payment_group.photo.key) %>)">
       <h1> <%= @payment_group.name %> </h1>
@@ -9,8 +9,8 @@
     <div class="main-container">
       <%= render 'payment_groups/accordion', active_splits: @splits_active, archived_splits: @splits_archived, users: @users %>
     </div>
-    </div>
+  </div>
 </div>
-      <!-- <p class='group-show-accordian'>Active Splits</p>
-      <p class='group-show-accordian'>Archieved Splits</p>
-      <p class='group-show-accordian'>Group Members</p> -->
+<!-- <p class='group-show-accordion'>Active Splits</p>
+      <p class='group-show-accordion'>Archived Splits</p>
+      <p class='group-show-accordion'>Group Members</p> -->
