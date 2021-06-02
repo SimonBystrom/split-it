@@ -1,20 +1,24 @@
+<!-- Body of the card (flex column) -->
 <div class="group-split-card">
-  <div class="group-split-card-top-half">
+  <!-- Top half of the card (flex) -->
+  <div class="group-split-card-left-half">
+    <!-- Two divs to hold attributes, for alignment -->
     <div class="group-split-card-name">
-      <h3><%= split.name %></h3>
+      <h5><%= split.name %></h5>
     </div>
-    <div class="group-split-card-balance">
-      <p>
-        <i class="fas fa-dollar-sign"></i> user_balance
-      </p>
-    </div>
+    <!-- Ratio display is commented out until after Friday -->
+    <!-- <div class="group-split-card-ratio">
+      <p><i class="fas fa-percentage"></i> <%= split.split_ratio %></p>
+    </div> -->
   </div>
-  <div class="group-split-card-bottom-half">
-    <div class="group-split-card-ratio">
-      <p>Ratio: <%= split.split_ratio %></p>
+  <!-- Bottom half of the card (flex) -->
+  <div class="group-split-card-right-half">
+    <!-- Two divs to hold attributes, for alignment -->
+    <div class="group-split-card-balance">
+      <p><i class="fas fa-comment-dollar"></i> user_balance</p>
     </div>
     <div class="group-split-card-total">
-      <p>Total: <i class="fas fa-dollar-sign"></i><%= split.total %></p>
+      <p><i class="fas fa-comments-dollar"></i> <%= split.total %></p>
     </div>
   </div>
 </div>
