@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "splitit-315602",
+  "private_key_id": "f64e0449bcd28880d040ebfbf17803562f312284",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC4NQ2oadU56nuQ\neGvvCpc9IAOiZIM1tLKk7es64bsFJO7Ybn2ieKdxi9PaCxJhHYBd4sQp+TJefDLf\nAwxAUJnKPLIcBBdAfrg9ORwhbwP9dF1VS69cX4isaCaMEn4ek4Bgd5K9uGhjfea7\nA0i/w2jFnlMUx1eeqI+ty/VNAeaP/k8WRNISfgUnAuLdldWNd9xyD8/kJg6Q67SZ\n+SarRpz9YI4DJk5LU+OPyD8jOA+ACFv74k0HohUjVg/lgfYlsNLPdF4ATIwSRRK2\n8BZUSWuSifqXg4rOC2OkCZrUT+ViIAaYsN9bF0GOVJkOyIFD2e67uRpTOyJksNy2\nAnKqT+0jAgMBAAECggEAASEjesy0p9IWEjOIJziPkdU1ldQmRnjbqY2N5i1bz13D\nxc7zn+s7zO3tuBteRaXVKNOK9AjuSUxbUX5mylQphTxsXntF8I7LrrsVaZJmhLIn\nH66YSNQ1yyd+U63fWRelb1ym/oPNcWK5vJwktjb1WFTZWeTDrETd+1OnUY1j7lkU\nUnUELVO3bFSEOA6C3sG2zOZg7sAgfGq3jjd/4n1pG6pNME0WwU53ydsZz6tmLPtv\n69gdVQSAnX1Polw8J1ajhCLHHS8+j9XPEBVGTRUsNPPjuQtUdhxtCMhl8Z5Jgc76\n9BunXFQSLE+1zGozmPlggr0UxF5lR/GKXLc0mO6jpQKBgQDvSG4evrmXkOfltDha\nQS8NME9wsLVatuOk/RTu1zEO8FmkT8oh7TdImetnxftZEoF0CsMJZ87rFvWAIwx8\ndAK/F732prCZJOMQy05mnpsV9EQ4thH7ltbkVixCcUMl0xqEq1kUBL0bQiJu0cGL\nLuT4VmjIygkb/UeEXIKFX/HinwKBgQDFE5h/7gIr7/jfs/7r/yTiZx5yp+G9YUga\n6PzJg5+9JYGJpgRTnVvvKs+RibLiJLjEFgzIXw3nRCsuLVv7t8IhqiWFbEfo5UoT\nZx3HRDD2uDmlrc52npcLwOaLcu+TOH4sZV06u0RGi426dRcXvDTke98gg0B57JGa\n3hNRVJ9K/QKBgCQIZzTQCciuNI2dtwK4YCp/ROc2ZQj1E5DL37QbybJzNTyOG2VC\ngJm5O/7TjIccR0w/NqGa9Ujnmy6hmIbBPYyjOaMD9QIK0Pq9ct/3MGl88C0OFeUq\nENAvvdh/j9oJUSv7VZ2zHPsW2XKQubGI7UgMUxkxe2+wk212NN161kUHAoGBAJGe\ndhtpGU+v5HwfOujUQUPNIDFmHSXbAPVpXIfl6x1O3lWAR0glSO4C+xa14Wi565Bw\nHofbvKE6vJFFUOdBE3/eghUBOm07Jy4JDnbTyz4yR95E+/6oFkHIClHV3nIw1wIk\n7+tavgtGSLYSmLqgBZEiem9CrFyq0bfWCf4Zgg5dAoGAO8QT5lspjhpXmpWAJKrs\n8kb0BpPE586ZvWl5RW71rpH5T7WftooGG/7+rGgWz+PSpxYn3yhEqvtnGysnn8Fv\nYJXkNFcLH4MzsvrFWXhoTxDbCUUyU5bMlDItr9vRvXTft7Ki/u9UzGnDXVRc24GL\nzsu3CWR5gAyaY8D3PyN9PQc=\n-----END PRIVATE KEY-----\n",
+  "client_email": "split-service-account@splitit-315602.iam.gserviceaccount.com",
+  "client_id": "111396077487005702261",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/split-service-account%40splitit-315602.iam.gserviceaccount.com"
+}

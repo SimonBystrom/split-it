@@ -1,8 +1,7 @@
-
-<!-- ACCORDIAN EXAMPLE CLASS FROM BOOTSTRAP  -->
+<!-- ACCORDION EXAMPLE CLASS FROM BOOTSTRAP  -->
 <!-- https://getbootstrap.com/docs/4.6/components/collapse/#accordion-example -->
 <div class="accordion" id="accordionExample">
-<!--   CARD DISPLAYING THE BOX AROUND THE BUTTON TO EXPAND THE ACCORDION -->
+  <!--   CARD DISPLAYING THE BOX AROUND THE BUTTON TO EXPAND THE ACCORDION -->
   <div class="card">
     <div class="card-header" id="headingOne">
       <h2 class="mb-0">
@@ -15,13 +14,13 @@
     <!-- THE BODY ONCE EXPANDED -->
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body">
-       <% active_splits.each do |split| %>
-        <p> <%= split.name %> </p>
-       <% end %>
+        <% active_splits.each do |split| %>
+          <p> <%= split.name %> </p>
+        <% end %>
       </div>
     </div>
   </div>
-<!--   CARD DISPLAYING THE BOX AROUND THE BUTTON TO EXPAND THE ACCORDION -->
+  <!--   CARD DISPLAYING THE BOX AROUND THE BUTTON TO EXPAND THE ACCORDION -->
   <div class="card">
     <div class="card-header" id="headingTwo">
       <h2 class="mb-0">
@@ -34,13 +33,13 @@
     <!-- THE BODY ONCE EXPANDED -->
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
       <div class="card-body">
-      <% archived_splits.each do |split| %>
-        <p> <%= split.name %> </p>
-       <% end %>
+        <% archived_splits.each do |split| %>
+          <p> <%= split.name %> </p>
+        <% end %>
       </div>
     </div>
   </div>
-<!--   CARD DISPLAYING THE BOX AROUND THE BUTTON TO EXPAND THE ACCORDION -->
+  <!--   CARD DISPLAYING THE BOX AROUND THE BUTTON TO EXPAND THE ACCORDION -->
   <div class="card">
     <div class="card-header" id="headingThree">
       <h2 class="mb-0">
@@ -54,8 +53,8 @@
     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
       <div class="card-body">
         <% users.each do |user| %>
-         <p> <%= user.name %> </p>
+          <p> <%= user.name %> </p>
         <% end %>
       </div>
+    </div>
   </div>
-</div>
