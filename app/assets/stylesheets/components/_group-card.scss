@@ -1,0 +1,45 @@
+.group-card {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.group-card-image {
+  img {
+    height: 80px;
+    width: 80px;
+    border-radius: 5px;
+  }
+}
+
+.group-card-title {
+  text-align: right;
+}
+
+.group-card-details {
+  text-align: right;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+// remove this once the button is in the sidebar
+
+.new-group-button {
+  position: fixed;
+  bottom: 8px;
+  left: 8px;
+  z-index: 2;
+}
+
