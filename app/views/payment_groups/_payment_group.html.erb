@@ -1,0 +1,25 @@
+<% @payment_groups.each do |payment_group| %>
+  <!-- card wrapper - flexbox -->
+  <div class="group-card">
+    <!-- make each card a link to the show page -->
+    <%= link_to '', payment_group_path(payment_group), class: 'card-link' %>
+    <!-- card image -->
+    <div class="group-card-image">
+      <%= cl_image_tag(payment_group.photo.key) %>
+    </div>
+    <!-- card info wrapper - flex column -->
+    <div class="group-card-info-wrapper">
+      <!-- card info - flex column -->
+      <div class="group-card-info">
+        <div class="group-card-title">
+          <h3><%= payment_group.name %></h3>
+        </div>
+        <div class="group-card-details">
+          <p>
+            <i class="fas fa-dollar-sign"></i> user_balance
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

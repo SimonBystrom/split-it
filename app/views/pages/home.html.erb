@@ -1,10 +1,14 @@
 <div class="main-wrapper">
-  <div class="sidebar"></div>
+<!--   Renders the sidebar (needs the payment_groups as an parameter) -->
+  <%= render 'shared/sidebar', payment_groups: @payment_groups %>
   <div class="main-container">
     <h1>Split|it</h1>
     <p>Active Splits</p>
+<!--      Renders the split-cards-home -->
     <% @splits.each do |split| %>
       <%= render 'pages/split-card-home', split: split %>
     <% end %>
   </div>
 </div>
+
+

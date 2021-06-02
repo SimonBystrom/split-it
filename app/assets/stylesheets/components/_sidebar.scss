@@ -1,5 +1,37 @@
 .sidebar{
-  width: 10vw;
-  background-color: blue;
+  width: 15vw;
+  background-color: $blue;
   height: 100vh;
+  box-shadow: 4px 0px 16px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // To allow the nested links to work
+  position: relative;
+  padding-top: 16px;
+}
+
+.sidebar-group{
+  // positions the sidebar-group "picture/links" on top of the sidebar-group-index-link
+  position: relative;
+  z-index: 2;
+  // Sets the images to be round with a small border
+  img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.4);
+    border: 2px solid $light-gray;
+  }
+  margin-bottom: 8px;
+
+}
+
+.sidebar-group-index-link{
+  // positions the sidebar-link "under" the links to the specific payment_groups
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%
 }

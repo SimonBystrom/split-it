@@ -1,18 +1,20 @@
 class PaymentGroupsController < ApplicationController
+  before_action :set_payment_group, only: [:show, :edit, :update]
   def index
-    @payment_groups = PaymentGroup.all
+    # POTENTIALLY UPDATE THE 'FILTER' LOGIC FOR WHO SEES WHICH GROUPS
+    @payment_groups = policy_scope(PaymentGroup)
   end
 
   def show
-    @payment_group = PaymentGroup.find(params[:id])
-    authorize @payment_group
     @splits_active = policy_scope(Split).where(active: true).order(created_at: :desc)
     @splits_archived = policy_scope(Split).where(active: false).order(created_at: :desc)
     @users = @payment_group.users
+    @payment_groups = policy_scope(PaymentGroup)
   end
 
   def new
     @payment_group = PaymentGroup.new
+    authorize @payment_group
   end
 
   def create
@@ -27,8 +29,21 @@ class PaymentGroupsController < ApplicationController
     end
   end
 
+  def edit
+    # FIX EDIT LOGIC
+  end
+
   def update
-    @payment_group = PaymentGroups.find(params[:id])
+  end
+
+  private
+
+  def set_payment_group
+    @payment_group = PaymentGroup.find(params[:id])
     authorize @payment_group
+  end
+
+  def payment_group_params
+    params.require(:payment_group).permit(:name, :description)
   end
 end
