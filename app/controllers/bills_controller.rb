@@ -1,5 +1,6 @@
 class BillsController < ApplicationController
   def new
+    @split = Split.find(params[:split_id])
     @bill = Bill.new
     authorize @bill
   end
