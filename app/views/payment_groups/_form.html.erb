@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-4">
+      <h1>Create a new payment group</h1>
+         <%= simple_form_for @payment_group do |f| %>
+         <%= f.input :name %>
+         <%= f.input :description %>
+         <%= f.button :submit, 'Create', class: "button"  %>
+         <% end %>
+    </div>
+  </div>
+</div>
