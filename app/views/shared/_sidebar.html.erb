@@ -1,13 +1,17 @@
 <!-- Creates the Sidebar. -> Sidebar needs the payment_groups as an argument when used -->
-<% if current_user %>
+
 
   <div class="sidebar">
-    <% current_user.payment_groups.each do |payment_group| %>
-      <!--   Links to the current paymentgroup when pressing the picture -->
-      <%= link_to payment_group_path(payment_group) do %>
-        <div class="sidebar-group">
-          <%= cl_image_tag(payment_group.photo.key) %>
-        </div>
+   <!--  LOGO -->
+   <i class="fas fa-surprise" style="font-size: 50px; margin-bottom: 8px; color: white;"></i>
+    <% if current_user %>
+      <% current_user.payment_groups.each do |payment_group| %>
+        <!--   Links to the current paymentgroup when pressing the picture -->
+        <%= link_to payment_group_path(payment_group) do %>
+          <div class="sidebar-group">
+            <%= cl_image_tag(payment_group.photo.key) %>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
     <!--     Links to creating a new group -->
@@ -19,4 +23,4 @@
     <!--     Link wrapper for the sidebar -> payment-groups-Index -->
     <%= link_to '', payment_groups_path, class: 'sidebar-group-index-link' %>
   </div>
-<% end %>
+
