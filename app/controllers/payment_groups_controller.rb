@@ -1,15 +1,10 @@
 class PaymentGroupsController < ApplicationController
   before_action :set_payment_group, only: [:show, :edit, :update]
-  def index
-    # POTENTIALLY UPDATE THE 'FILTER' LOGIC FOR WHO SEES WHICH GROUPS
-    @payment_groups = policy_scope(PaymentGroup)
-  end
-
+  
   def show
-    @splits_active = policy_scope(Split).where(active: true).order(created_at: :desc)
-    @splits_archived = policy_scope(Split).where(active: false).order(created_at: :desc)
+    @splits_active = @payment_group.splits.where(active: true).order(created_at: :desc)
+    @splits_archived = @payment_group.splits.where(active: false).order(created_at: :desc)
     @users = @payment_group.users
-    @payment_groups = policy_scope(PaymentGroup)
   end
 
   def new
@@ -27,13 +22,6 @@ class PaymentGroupsController < ApplicationController
       flash[:error] = "Something went wrong"
       render 'new'
     end
-  end
-
-  def edit
-    # FIX EDIT LOGIC
-  end
-
-  def update
   end
 
   private

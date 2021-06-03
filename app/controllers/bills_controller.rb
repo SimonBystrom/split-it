@@ -1,4 +1,6 @@
 class BillsController < ApplicationController
+  before_action :set_bill, only: [:update, :destroy]
+  
   def new
     @split = Split.find(params[:split_id])
     @bill = Bill.new
@@ -12,7 +14,6 @@ class BillsController < ApplicationController
     @bill.user = current_user
     @bill.split = @split
     authorize @bill
-    # FIX LOGIC -> SHOULDN'T BE ABLE TO CREATE WITHOUT A SPLIT
     if @bill.save
       flash[:success] = "Bill successfully created"
       redirect_to split_path(@split)
@@ -22,31 +23,12 @@ class BillsController < ApplicationController
     end
   end
 
-  def update
-    @bill = Bill.find(params[:id])
-    authorize @bill
-    if @bill.update
-      flash[:success] = "Bill was successfully updated"
-      redirect_to @bill
-    else
-      flash[:error] = "Something went wrong"
-      render 'edit'
-    end
-  end
-
-  def destroy
-    @bill = Bill.find(params[:id])
-    authorize @bill
-    if @bill.destroy
-      flash[:success] = 'Bill was successfully deleted.'
-      redirect_to bills_url
-    else
-      flash[:error] = 'Something went wrong'
-      redirect_to bills_url
-    end
-  end
-
   private
+
+  def set_bill
+    @bill = Bill.find(params[:id])
+    authorize @bill
+  end
 
   def bills_params
     params.require(:bill).permit(:tag, :title, :price, :paid_date, :comment)
