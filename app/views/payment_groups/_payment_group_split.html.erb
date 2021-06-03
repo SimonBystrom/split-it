@@ -15,10 +15,10 @@
   <div class="group-split-card-right-half">
     <!-- Two divs to hold attributes, for alignment -->
     <div class="group-split-card-balance">
-      <p><i class="fas fa-comment-dollar"></i> user_balance</p>
+      <p><i class="fas fa-comment-dollar"></i> <%= get_user_split_balance(split) %></p>
     </div>
     <div class="group-split-card-total">
-      <p><i class="fas fa-comments-dollar"></i> <%= split.total %></p>
+      <p><i class="fas fa-comments-dollar"></i> <%= get_split_total(split) %></p>
     </div>
   </div>
 </div>
