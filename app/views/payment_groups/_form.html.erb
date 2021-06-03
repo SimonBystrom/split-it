@@ -1,21 +1,22 @@
-<div class="container">
+
   <div class="row justify-content-center">
     <div class="col-12 col-sm-4">
+      <div class="form-container">
       <h1>New payment group</h1>
          <%= simple_form_for @payment_group do |f| %>
-         <%= f.input :name %>
-         <%= f.input :description %>
-         <%= f.input :photo, as: :file, class: "button" %>
-         <%= f.button :submit, 'Create', class: "button"  %>
+           <%= f.input :name %>
+           <%= f.input :description %>
+           <%= f.input :photo, as: :file, class: "button" %>
+           <%= f.button :submit, 'Create', class: "button button-big mb-4"  %>
          <% end %>
 
-         <%= link_to payment_groups_path do%>
-         <div class="button">
-           <h5>Back</h5>
-         </div>
-         <% end %>
+         <%= link_to 'Back', payment_groups_path, class: 'ml-2'%>
+        <!--    <div class="button">
+             <h5>Back</h5>
+           </div> -->
+      </div>
     </div>
   </div>
-</div>
+
 
 
