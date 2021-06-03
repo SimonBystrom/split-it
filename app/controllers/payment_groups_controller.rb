@@ -1,4 +1,5 @@
 class PaymentGroupsController < ApplicationController
+  include CloudinaryHelper
   before_action :set_payment_group, only: [:show, :edit, :update]
   
   def show
