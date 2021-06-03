@@ -3,10 +3,10 @@
     <h3> <%= split.name %> </h3>
     <p> <%= split.payment_group.name %> </p>
   </div>
- <!--  CALCULATE THE TOTAL -->
-    <h5>$ 150</h5>
-<!--     LINKS TO THE IMG SCAN -->
-    <%= link_to new_split_bill_path(split), class: 'button button-round' do %>
-      <i class="fas fa-camera"></i>
-    <% end %>
+  <!--  CALCULATE THE TOTAL -->
+  <h5><%= get_split_total(split) %></h5>
+  <!--     LINKS TO THE IMG SCAN -->
+  <%= link_to new_split_bill_path(split), class: 'button button-round' do %>
+    <i class="fas fa-camera"></i>
+  <% end %>
 </div>
