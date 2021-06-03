@@ -8,8 +8,7 @@
 // accordion header card (all but last)
 // adding a darker border to mark the individual sections
 .accordion > .card:not(:last-of-type) {
-  border-bottom: 1px solid $gray; // originally not there
-
+  border: none;
 }
 // accordion header card
 // removing the box border
@@ -29,14 +28,32 @@
 .btn-link {
   color: black;
   font-style: italic;
+  background-color: $light-gray;
 }
 // expanded card body (where the cards will show)
 .card-body {
   background-color: $light-gray;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 16px;
 }
+
 // change the style of the accordion header when the menu is open
 // doesn't seem to work when I nest it in .btn-link
 .btn-link[aria-expanded="true"] {
   font-style: normal;
   font-weight: bold;
 }
+
+// give each heading a bottom border for style
+#buttonOne {
+  border-bottom: 1px solid black;
+}
+#buttonTwo {
+  border-bottom: 1px solid black;
+}
+#buttonThree {
+  border-bottom: 1px solid black;
+}
+
