@@ -1,6 +1,6 @@
 module ApplicationHelper
   def get_split_total(split)
-    "Total - #{split.bills.sum(&:price)}"
+    split.bills.sum(&:price)
   end
   
   def get_user_split_balance(split)
