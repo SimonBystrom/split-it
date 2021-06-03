@@ -1,3 +1,14 @@
 <div class="bill-card">
-  <p> <%= bill.title %> </p>
+  <div class="bill-card-title main">
+    <h5> <%= bill.title %> </h5>
+    <p> <i class="fas fa-user"></i> <%= bill.user.name %> </p>
+
+  </div>
+  <div class="bill-card-title">
+    <h5> $ <%= bill.price %> </h5>
+    <p> <i class="far fa-calendar-check"></i> <%= bill.paid_date %> </p>
+  </div>
+ <!--  <%#= bill.photo.key? ? cl_image_tag(bill.photo.key) %> : <i class="far fa-times-circle"></i> %> -->
+   <i class="far fa-times-circle"></i>
+
 </div>
