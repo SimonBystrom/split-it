@@ -1,11 +1,12 @@
 class PaymentGroupsController < ApplicationController
   include CloudinaryHelper
   before_action :set_payment_group, only: [:show, :edit, :update]
-  
+
   def show
     @splits = @payment_group.splits.order(created_at: :desc)
     @users = @payment_group.users
     @image = set_banner_image
+    @split = Split.new
   end
 
   def new

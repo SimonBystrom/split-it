@@ -18,7 +18,7 @@ class SplitsController < ApplicationController
       redirect_to @split
     else
       flash[:error] = "Something went wrong"
-      render 'new'
+      render 'payment_groups/show'
     end
   end
 
@@ -32,7 +32,7 @@ class SplitsController < ApplicationController
       render 'edit'
     end
   end
-  
+
   private
 
   def splits_params
