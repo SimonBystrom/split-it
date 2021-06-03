@@ -3,14 +3,14 @@
   <%= render 'shared/sidebar', payment_groups: @payment_groups %>
   <!--   Group-show class sets the padding to 0 for the image -->
   <div class="main-container group-show">
-    <div class="group-name-banner" style= "background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.25)), url(<%@image%>)">
+    <div class="group-name-banner" style= "background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.25)), url(<%= @image %>)">
       <h1> <%= @payment_group.name %> </h1>
-        <div>
-          <p><em> <%= @payment_group.description %></em> </p>
-        </div>
+      <div>
+        <p><em> <%= @payment_group.description %></em> </p>
+      </div>
     </div>
     <div class="main-container">
-      <%= render 'payment_groups/accordion', active_splits: @splits_active, archived_splits: @splits_archived, users: @users %>
+      <%= render 'payment_groups/accordion', splits: @splits, users: @users %>
     </div>
   </div>
 </div>

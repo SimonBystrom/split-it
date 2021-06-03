@@ -14,8 +14,8 @@
     <!-- THE BODY ONCE EXPANDED -->
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body">
-        <% active_splits.each do |split| %>
-          <%= render 'payment_group_split_active', split: split %>
+        <% splits.each do |split| %>
+          <%= render 'payment_group_split', split: split %>
         <% end %>
       </div>
     </div>
@@ -33,8 +33,8 @@
     <!-- THE BODY ONCE EXPANDED -->
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
       <div class="card-body">
-        <% archived_splits.each do |split| %>
-          <%= render 'payment_group_split_archived', split: split %>
+        <% splits.each do |split| %>
+          <%= render 'payment_group_split', split: split %>
         <% end %>
       </div>
     </div>
