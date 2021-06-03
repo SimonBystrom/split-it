@@ -7,6 +7,7 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin-bottom: 16px;
   color: black;
+  position: relative;
 }
 
 .group-split-card-archived {
@@ -18,6 +19,7 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin-bottom: 16px;
   color: black;
+  position: relative;
 }
 
 .group-split-card-left-half {
@@ -32,4 +34,17 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
+}
+
+.group-split-card-scan {
+  z-index: 2;
+  margin-bottom: 8px;
+}
+// putting this here since I think we'll delete the group cards
+.group-split-card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }

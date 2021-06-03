@@ -1,11 +1,14 @@
 <!-- Body of the card (flex column) -->
 <div class="group-split-card-active">
-  <%= link_to '', split_path(split), class: 'card-link' %>
+  <%= link_to '', split_path(split), class: 'group-split-card-link' %>
   <!-- Top half of the card (flex) -->
   <div class="group-split-card-left-half">
     <!-- Two divs to hold attributes, for alignment -->
     <div class="group-split-card-name">
-      <h5><%= split.name %></h5>
+      <h4><%= split.name %></h4>
+    </div>
+    <div class="group-split-card-balance">
+      <p><i class="fas fa-comment-dollar"></i> user_balance</p>
     </div>
     <!-- Ratio display is commented out until after Friday -->
     <!-- <div class="group-split-card-ratio">
@@ -15,8 +18,10 @@
   <!-- Bottom half of the card (flex) -->
   <div class="group-split-card-right-half">
     <!-- Two divs to hold attributes, for alignment -->
-    <div class="group-split-card-balance">
-      <p><i class="fas fa-comment-dollar"></i> user_balance</p>
+    <div class="group-split-card-scan">
+      <%= link_to new_split_bill_path(split), class: 'button button-round' do %>
+        <i class="fas fa-camera"></i>
+      <% end %>
     </div>
     <div class="group-split-card-total">
       <p><i class="fas fa-comments-dollar"></i> <%= split.total %></p>
