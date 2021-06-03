@@ -23,9 +23,12 @@ group1.photo.attach(io: photo1, filename: 'photo.png', content_type: 'image/png'
 group1.photo.attached? ? (puts "Group1 photo attached successfully") : (puts "Group1 failed to attach photo")
 group1.save ? (puts "Group1 saved successfully") : (puts "Group1 could not save")
 
-puts "Generating 1 split for group 1..."
+puts "Generating 2 split for group 1..."
 split1 = Split.new(name: "June", payment_group: group1)
 split1.save ? (puts "Split created successfully") : (puts "Failed to create split")
+
+split5 = Split.new(name: "Previous month", payment_group: group1, active: false)
+split5.save ? (puts "Split created successfully") : (puts "Failed to create split")
 
 puts "Generating group 2(Friends)..."
 
@@ -35,13 +38,16 @@ group2.photo.attach(io: photo2, filename: 'photo.png', content_type: 'image/png'
 group2.photo.attached? ? (puts "Group2 photo attached successfully") : (puts "Group2 failed to attach photo")
 group2.save ? (puts "Group2 saved successfully") : (puts "Group2 could not save")
 
-puts "Generating 2 splits for group 2..."
+puts "Generating 3 splits for group 2..."
 
 split2 = Split.new(name: "Bowling", payment_group: group2)
 split2.save ? (puts "Split created successfully") : (puts "Failed to create split")
 
 split3 = Split.new(name: "Camping", payment_group: group2)
 split3.save ? (puts "Split created successfully") : (puts "Failed to create split")
+
+split4 = Split.new(name: "Old trip", payment_group: group2, active: false)
+split4.save ? (puts "Split created successfully") : (puts "Failed to create split")
 
 puts "Generating 6 users..."
 puts "Login Info Pattern -> Name: User1 | Email: User1@user.com | Password: User1 | -> Increment"
@@ -84,6 +90,24 @@ couple_users.each do |user|
   end
 end
 
+puts "Generating bills for Couple/Previous Month Split..."
+
+couple_users = User.where('id < 3')
+bill_counter = 1
+couple_users.each do |user|
+  5.times do
+    bill = Bill.new(tag: "Previous Month",
+                   title: "Bill ##{bill_counter}",
+                   price: rand(100),
+                   paid_date: Time.at(rand * Time.now.to_i),
+                   comment: "...",
+                   user: user,
+                   split: split4
+                   )
+    bill.save ? (puts "#{user.name}'s bill ##{bill_counter} was created successfully.") : (puts "#{user.name}'s bill ##{bill_counter} could not save.")
+    bill_counter += 1
+  end
+end
 puts "Generating bills for Friends/Bowling Split..."
 
 friends_users = User.where('id >= 3')
@@ -117,6 +141,24 @@ friends_users.each do |user|
                    comment: "...",
                    user: user,
                    split: split2
+                   )
+    bill.save ? (puts "#{user.name}'s bill ##{bill_counter} was created successfully.") : (puts "#{user.name}'s bill ##{bill_counter} could not save.")
+    bill_counter += 1
+  end
+end
+  puts "Generating bills for Friends/Camping Split..."
+
+bill_counter = 1
+
+friends_users.each do |user|
+  4.times do
+    bill = Bill.new(tag: "Old Trip",
+                   title: "Bill ##{bill_counter}",
+                   price: rand(100),
+                   paid_date: Time.at(rand * Time.now.to_i),
+                   comment: "...",
+                   user: user,
+                   split: split5
                    )
     bill.save ? (puts "#{user.name}'s bill ##{bill_counter} was created successfully.") : (puts "#{user.name}'s bill ##{bill_counter} could not save.")
     bill_counter += 1
