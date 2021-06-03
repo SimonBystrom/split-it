@@ -1,6 +1,6 @@
 class PaymentGroupsController < ApplicationController
   before_action :set_payment_group, only: [:show, :edit, :update]
-  
+
   def show
     @splits_active = @payment_group.splits.where(active: true).order(created_at: :desc)
     @splits_archived = @payment_group.splits.where(active: false).order(created_at: :desc)
@@ -14,6 +14,7 @@ class PaymentGroupsController < ApplicationController
 
   def create
     @payment_group = PaymentGroup.new(payment_group_params)
+    # @payment_group.users << current_user
     authorize @payment_group
     if @payment_group.save
       flash[:success] = "Payment Group successfully created"
