@@ -7,6 +7,7 @@ class SplitsController < ApplicationController
 
   def show
     @split = Split.find(params[:id])
+    @bills = @split.bills
     authorize @split
   end
 
@@ -32,7 +33,7 @@ class SplitsController < ApplicationController
       render 'edit'
     end
   end
-  
+
   private
 
   def splits_params
