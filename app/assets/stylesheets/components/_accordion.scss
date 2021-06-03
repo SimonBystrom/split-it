@@ -33,7 +33,12 @@
 // expanded card body (where the cards will show)
 .card-body {
   background-color: $light-gray;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 16px;
 }
+
 // change the style of the accordion header when the menu is open
 // doesn't seem to work when I nest it in .btn-link
 .btn-link[aria-expanded="true"] {
