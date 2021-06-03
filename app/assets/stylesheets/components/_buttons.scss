@@ -25,6 +25,10 @@
   padding: 16px 24px;
   box-shadow: 0 0 16px rgba(0,0,0,0.2);
   color: white;
+  transition: all .3s ease-in-out;
+  h5{
+    transition: all .2s ease-in-out;
+  }
 }
 
 .form-button {
