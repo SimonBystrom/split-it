@@ -1,3 +1,6 @@
+.bill-card-container{
+ min-width:100%;
+}
 .bill-card{
   min-width: 100%;
   border-radius: 8px;
@@ -30,4 +33,8 @@
 }
 .main {
   min-width: 65%;
+}
+
+.expanded{
+  height: 320px;
 }

@@ -1,11 +1,18 @@
 
 const billEditShow = () => {
   let bills = document.querySelectorAll('.bill-card')
-  console.log(bills)
   bills.forEach( (bill) => {
     bill.addEventListener('click', (e) => {
-      console.log(e.currentTarget.id)
+
       let expanded = document.querySelectorAll('.expanded')
+
+      expanded.forEach((item) => {
+        if (item.id !== e.currentTarget.nextElementSibling.id) {
+          item.classList.remove('expanded')
+        }
+      })
+      e.currentTarget.nextElementSibling.classList.toggle('expanded')
+
     })
   })
 }
