@@ -7,7 +7,7 @@
       <h4><%= split.name %></h4>
     </div>
     <div class="group-split-card-balance">
-      <p><i class="fas fa-comment-dollar"></i> user_balance</p>
+      <p><i class="fas fa-comment-dollar"></i><%= get_user_split_balance(split) %></p>
     </div>
     <!-- Ratio display is commented out until after Friday -->
     <!-- <div class="group-split-card-ratio">
@@ -23,7 +23,7 @@
       <% end %>
     </div>
     <div class="group-split-card-total">
-      <p><i class="fas fa-comments-dollar"></i> <%= split.total %></p>
+      <p><i class="fas fa-comments-dollar"></i> <%= get_split_total(split) %></p>
     </div>
   </div>
 </div>
