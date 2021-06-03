@@ -2,8 +2,7 @@ class PaymentGroupsController < ApplicationController
   before_action :set_payment_group, only: [:show, :edit, :update]
   
   def show
-    @splits_active = @payment_group.splits.where(active: true).order(created_at: :desc)
-    @splits_archived = @payment_group.splits.where(active: false).order(created_at: :desc)
+    @splits = @payment_group.splits.order(created_at: :desc)
     @users = @payment_group.users
   end
 
