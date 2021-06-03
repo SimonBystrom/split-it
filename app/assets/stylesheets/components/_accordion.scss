@@ -14,6 +14,7 @@
 // removing the box border
 .card {
   border: none; // default was border: 1px solid rgba(0,0,0,0.125);
+  background-color: $light-gray;
 }
 // accordion header links (focused)
 // removing the blue font and underline on hover, bold when active
