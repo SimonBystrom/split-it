@@ -3,7 +3,7 @@
   border-radius: 8px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  // justify-content: space-between;
   padding: 8px 16px;
   margin-bottom: 16px;
   box-shadow: 0 0 8px rgba(0,0,0,0.1);
@@ -15,10 +15,11 @@
 
 
 .bill-card-title{
-  flex-grow: 2;
   display:flex;
   flex-direction: column;
-  justify-content: space-between;
+  // justify-content: space-between;
+  align-items: start;
+
   h3{
     margin: 0;
   }
@@ -28,5 +29,5 @@
   }
 }
 .main {
-  min-width: 50%;
+  min-width: 65%;
 }

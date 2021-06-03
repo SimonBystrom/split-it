@@ -4,10 +4,10 @@
       <div class="form-container">
         <h1>New Split</h1>
            <%= simple_form_for ([@payment_group @split]) do |f| %>
-           <%= f.input :total %>
-           <%= f.input :active, as: boolean %>
-           <%= f.input :split_ratio %>
-           <%= f.button :submit, 'Create', class: "button form-button"  %>
+             <%= f.input :total %>
+             <%= f.input :active, as: boolean %>
+             <%= f.input :split_ratio %>
+             <%= f.button :submit, 'Create', class: "button form-button"  %>
            <% end %>
       </div>
     </div>
