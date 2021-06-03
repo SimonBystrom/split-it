@@ -1,0 +1,41 @@
+.bill-card-container{
+ min-width:100%;
+}
+.bill-card{
+  min-width: 100%;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  // justify-content: space-between;
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  i{
+    font-size: 24px;
+    opacity: 0.7;
+  }
+}
+
+
+.bill-card-title{
+  display:flex;
+  flex-direction: column;
+  // justify-content: space-between;
+  align-items: start;
+
+  h3{
+    margin: 0;
+  }
+  p{
+    margin: 0;
+    opacity: 0.7;
+  }
+}
+.main {
+  min-width: 65%;
+}
+
+.expanded{
+  height: 320px;
+  transition: all .3s ease-in-out;
+}

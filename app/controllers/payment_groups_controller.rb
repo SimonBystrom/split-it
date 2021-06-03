@@ -16,6 +16,7 @@ class PaymentGroupsController < ApplicationController
 
   def create
     @payment_group = PaymentGroup.new(payment_group_params)
+    # @payment_group.users << current_user
     authorize @payment_group
     membership = Membership.new(user: current_user, payment_group: @payment_group)
     authorize membership

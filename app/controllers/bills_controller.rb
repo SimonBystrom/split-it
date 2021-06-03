@@ -1,6 +1,6 @@
 class BillsController < ApplicationController
   before_action :set_bill, only: [:update, :destroy]
-  
+
   def new
     @split = Split.find(params[:split_id])
     @bill = Bill.new
@@ -20,6 +20,13 @@ class BillsController < ApplicationController
     else
       flash[:error] = "Something went wrong"
       render 'new'
+    end
+  end
+
+  def update
+    authorize @bill
+    if @bill.update(bills_params)
+      redirect_to split_path(@bill.split)
     end
   end
 

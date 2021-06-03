@@ -1,0 +1,9 @@
+
+    <div class="edit-bill-form-container">
+      <%= simple_form_for bill do |f|%>
+          <%= f.input :title, autofocus: true; %>
+          <%= f.input :price %>
+        <%= f.submit 'Edit Bill', class: 'button button-big form-button' %>
+      <% end %>
+    </div>
+
