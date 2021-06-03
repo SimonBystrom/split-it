@@ -35,7 +35,7 @@
   justify-content: space-between;
   align-items: flex-end;
 }
-
+// gave the div that holds the scan button a z-index so it'll be clickable over top of the link overlay
 .group-split-card-scan {
   z-index: 2;
   margin-bottom: 8px;
