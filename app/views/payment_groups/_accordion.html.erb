@@ -1,4 +1,4 @@
-<!-- ACCORDIAN EXAMPLE CLASS FROM BOOTSTRAP  -->
+<!-- ACCORDION EXAMPLE CLASS FROM BOOTSTRAP  -->
 <!-- https://getbootstrap.com/docs/4.6/components/collapse/#accordion-example -->
 <div class="accordion" id="accordionExample">
   <!--   CARD DISPLAYING THE BOX AROUND THE BUTTON TO EXPAND THE ACCORDION -->
@@ -58,3 +58,21 @@
       </div>
     </div>
   </div>
+  <!--   CARD DISPLAYING THE BOX AROUND THE BUTTON TO EXPAND THE ACCORDION -->
+  <div class="card">
+    <div class="card-header" id="headingFour">
+      <h2 class="mb-0">
+        <!-- TEXT OF BUTTON FOR THE ACCORDION MENU OPTION -->
+        <button class="btn btn-link btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          New Split
+        </button>
+      </h2>
+    </div>
+    <!-- THE BODY ONCE EXPANDED -->
+    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+      <div class="card-body">
+        <%= render 'splits/form', payment_group: payment_group %>
+      </div>
+    </div>
+  </div>
+</div>

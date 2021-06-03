@@ -6,6 +6,7 @@ class PaymentGroupsController < ApplicationController
     @splits = @payment_group.splits.order(created_at: :desc)
     @users = @payment_group.users
     @image = set_banner_image
+    @split = Split.new
   end
 
   def new
