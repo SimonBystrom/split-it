@@ -8,6 +8,11 @@ class SplitsController < ApplicationController
     @split = Split.new
   end
 
+  def show
+    @split = Split.find(params[:id])
+    authorize @split
+  end
+
   def create
     @split = Split.new(splits_params)
     if @split.save
@@ -18,7 +23,7 @@ class SplitsController < ApplicationController
       render 'new'
     end
   end
-  
+
   def update
     if @split.update(splits_params)
       authorize @split
@@ -29,7 +34,7 @@ class SplitsController < ApplicationController
       render 'edit'
     end
   end
-  
+
   def destroy
     if @split.destroy
       flash[:success] = 'Split was successfully deleted.'
@@ -39,7 +44,7 @@ class SplitsController < ApplicationController
       redirect_to splits_url
     end
   end
-  
+
   private
 
   def splits_params
