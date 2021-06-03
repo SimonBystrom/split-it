@@ -24,7 +24,7 @@ group1.photo.attached? ? (puts "Group1 photo attached successfully") : (puts "Gr
 group1.save ? (puts "Group1 saved successfully") : (puts "Group1 could not save")
 
 puts "Generating 1 split for group 1..."
-split1 = Split.new(name: "June", payment_group: group1, total: 0, active: true, split_ratio: 5)
+split1 = Split.new(name: "June", payment_group: group1)
 split1.save ? (puts "Split created successfully") : (puts "Failed to create split")
 
 puts "Generating group 2(Friends)..."
@@ -37,10 +37,10 @@ group2.save ? (puts "Group2 saved successfully") : (puts "Group2 could not save"
 
 puts "Generating 2 splits for group 2..."
 
-split2 = Split.new(name: "Bowling", payment_group: group2, total: 0, active: true, split_ratio: 5)
+split2 = Split.new(name: "Bowling", payment_group: group2)
 split2.save ? (puts "Split created successfully") : (puts "Failed to create split")
 
-split3 = Split.new(name: "Camping", payment_group: group2, total: 0, active: true, split_ratio: 5)
+split3 = Split.new(name: "Camping", payment_group: group2)
 split3.save ? (puts "Split created successfully") : (puts "Failed to create split")
 
 puts "Generating 6 users..."
