@@ -8,7 +8,7 @@
 // accordion header card (all but last)
 // adding a darker border to mark the individual sections
 .accordion > .card:not(:last-of-type) {
-  border-bottom: 1px solid $gray; // originally not there
+  border: none;
 }
 // accordion header card
 // removing the box border
