@@ -13,12 +13,13 @@ class SplitsController < ApplicationController
   def create
     @split = Split.new(splits_params)
     authorize @split
+    @payment_group = PaymentGroup.find(params[:payment_group_id])
+    @split.payment_group = @payment_group
     if @split.save
       flash[:success] = "Split successfully created"
       redirect_to @split
     else
       flash[:error] = "Something went wrong"
-      render 'new'
     end
   end
 
@@ -32,11 +33,11 @@ class SplitsController < ApplicationController
       render 'edit'
     end
   end
-  
+
   private
 
   def splits_params
-    params.require(:split).permit(:total, :active, :split_ratio)
+    params.require(:split).permit(:name)
   end
 
   def set_split
