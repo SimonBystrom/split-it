@@ -1,4 +1,4 @@
-<!-- ACCORDION EXAMPLE CLASS FROM BOOTSTRAP  -->
+<!-- ACCORDIAN EXAMPLE CLASS FROM BOOTSTRAP  -->
 <!-- https://getbootstrap.com/docs/4.6/components/collapse/#accordion-example -->
 <div class="accordion" id="accordionExample">
   <!--   CARD DISPLAYING THE BOX AROUND THE BUTTON TO EXPAND THE ACCORDION -->
@@ -15,7 +15,7 @@
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body">
         <% active_splits.each do |split| %>
-          <p> <%= split.name %> </p>
+          <%= render 'payment_group_split_active', split: split %>
         <% end %>
       </div>
     </div>
@@ -34,7 +34,7 @@
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
       <div class="card-body">
         <% archived_splits.each do |split| %>
-          <p> <%= split.name %> </p>
+          <%= render 'payment_group_split_archived', split: split %>
         <% end %>
       </div>
     </div>
@@ -53,7 +53,7 @@
     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
       <div class="card-body">
         <% users.each do |user| %>
-          <p> <%= user.name %> </p>
+          <%= render 'payment_group_member', user: user %>
         <% end %>
       </div>
     </div>
