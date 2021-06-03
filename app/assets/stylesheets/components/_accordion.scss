@@ -28,6 +28,7 @@
 .btn-link {
   color: black;
   font-style: italic;
+  background-color: $light-gray;
 }
 // expanded card body (where the cards will show)
 .card-body {
@@ -39,3 +40,15 @@
   font-style: normal;
   font-weight: bold;
 }
+
+// give each heading a bottom border for style
+#buttonOne {
+  border-bottom: 1px solid black;
+}
+#buttonTwo {
+  border-bottom: 1px solid black;
+}
+#buttonThree {
+  border-bottom: 1px solid black;
+}
+
