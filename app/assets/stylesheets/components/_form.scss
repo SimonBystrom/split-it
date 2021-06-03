@@ -1,0 +1,16 @@
+.form-control {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+     border-radius: 20px;
+     border: 1px solid #2d9fd9;
+     color: grey;
+     width: 250px;
+     height: 30px;
+     padding-left: 10px;
+}
+
+.form-control:focus {
+     outline: none;
+     border: 1px solid #a0d18c;
+     color: black;
+}

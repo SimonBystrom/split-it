@@ -17,7 +17,7 @@ class PaymentGroupsController < ApplicationController
     authorize @payment_group
     if @payment_group.save
       flash[:success] = "Payment Group successfully created"
-      redirect_to @show
+      redirect_to payment_group_path(@payment_group)
     else
       flash[:error] = "Something went wrong"
       render 'new'
@@ -32,6 +32,6 @@ class PaymentGroupsController < ApplicationController
   end
 
   def payment_group_params
-    params.require(:payment_group).permit(:name, :description)
+    params.require(:payment_group).permit(:name, :description, :photo)
   end
 end

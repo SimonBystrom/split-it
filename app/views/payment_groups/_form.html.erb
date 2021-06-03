@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-4">
+      <h1>New payment group</h1>
+         <%= simple_form_for @payment_group do |f| %>
+         <%= f.input :name %>
+         <%= f.input :description %>
+         <%= f.input :photo, as: :file, class: "button" %>
+         <%= f.button :submit, 'Create', class: "button"  %>
+         <% end %>
+
+         <%= link_to payment_groups_path do%>
+         <div class="button">
+           <h5>Back</h5>
+         </div>
+         <% end %>
+    </div>
+  </div>
+</div>
+
+
