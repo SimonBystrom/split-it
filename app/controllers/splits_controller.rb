@@ -18,7 +18,7 @@ class SplitsController < ApplicationController
     @split.payment_group = @payment_group
     if @split.save
       flash[:success] = "Split successfully created"
-      redirect_to @split
+      redirect_to @payment_group
     else
       flash[:error] = "Something went wrong"
     end
