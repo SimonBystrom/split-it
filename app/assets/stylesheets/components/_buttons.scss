@@ -14,7 +14,6 @@
   h5{
     margin: 0;
   }
-  border: none !important;
 }
 
 .button-round {
@@ -26,6 +25,10 @@
   padding: 16px 24px;
   box-shadow: 0 0 16px rgba(0,0,0,0.2);
   color: white;
+}
+
+.form-button {
+  border: none !important;
 }
 
 .add-group {
