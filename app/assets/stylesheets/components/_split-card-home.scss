@@ -5,7 +5,6 @@
   background-color: $light-gray;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  padding: 8px 16px;
   margin-bottom: 16px;
   // Makes the flex-grow on the title take up the space it needs and makes the split-card take up the right amount of space
   min-width: 100%;
@@ -15,14 +14,28 @@
 }
 
 .split-card-title{
+  margin: 8px 16px;
   flex-grow: 2;
   display:flex;
-  flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+
   h3{
     margin: 0;
   }
   p{
-    margin: 0;
+    margin: 16px;
   }
+}
+
+
+.positive-balance{
+  color: green;
+}
+
+.negative-balance{
+  color: red;
+}
+
+.neutral-balance{
+  color: gray;
 }
