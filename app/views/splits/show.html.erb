@@ -13,5 +13,7 @@
     </div>
     <%= render 'splits/tabs', bills: @bills %>
   </div>
-     <%= link_to '', payment_group_path(@split.payment_group), class: 'ml-2 fas fa-arrow-circle-left'%>
+     <%= link_to payment_group_path(@split.payment_group), class: 'back-button' do %>
+      <i class='fas fa-arrow-circle-left'></i>
+     <% end %>
 </div>
