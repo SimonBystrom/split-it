@@ -1,30 +1,21 @@
 <!-- Body of the card (flex column) -->
-<div class="<%= split.active? ? 'group-split-card-active' : 'group-split-card-archived' %>">
-  <!-- Top half of the card (flex) -->
-  <div class="group-split-card-left-half">
-    <!-- Two divs to hold attributes, for alignment -->
-    <div class="group-split-card-name">
-      <h4><%= split.name %></h4>
+  <div class="<%= split.active? ? 'split-card-home' : 'split-card-home archived' %>">
+    <div class="split-card-title">
+      <h3> <%= split.name %> </h3>
+      <p> <i class="fas fa-equals"></i> <%= get_split_total(split)%> </p>
     </div>
-    <div class="group-split-card-balance">
-      <p><i class="fas fa-comment-dollar"></i><%= get_user_split_balance(split) %></p>
-    </div>
-    <!-- Ratio display is commented out until after Friday -->
-    <!-- <div class="group-split-card-ratio">
-      <p><i class="fas fa-percentage"></i> <%#= split.split_ratio %></p>
-    </div> -->
-  </div>
-  <!-- Bottom half of the card (flex) -->
-  <div class="group-split-card-right-half">
-    <!-- Two divs to hold attributes, for alignment -->
-    <div class="group-split-card-scan">
-      <%= link_to new_split_bill_path(split), class: 'button button-round' do %>
-        <i class="fas fa-camera"></i>
+    <!--  CALCULATE THE TOTAL -->
+    <div class="d-flex align-items-center flex-nowrap">
+      <% if  balance_positive?(split) %>
+        <h5 class="positive-balance" ><i class="fas fa-divide"></i> $<%= @balance %> </h5>
+      <% elsif @balance == 0 %>
+        <h5 class="neutral-balance"><i class="fas fa-divide"></i> $<%= @balance %> </h5>
+      <% else %>
+        <h5 class="negative-balance"><i class="fas fa-divide"></i> $<%= @balance %> </h5>
       <% end %>
     </div>
-    <div class="group-split-card-total">
-      <p><i class="fas fa-comments-dollar"></i> <%= get_split_total(split) %></p>
-    </div>
+    <!--     LINKS TO THE IMG SCAN -->
+    <%= link_to new_split_bill_path(split), class: 'split-card-button' do %>
+      <i class="fas fa-money-bill-wave"></i>
+    <% end %>
   </div>
-  <%= link_to '', split_path(split), class: 'card-link' %>
-</div>
