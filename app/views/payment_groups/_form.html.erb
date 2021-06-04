@@ -7,16 +7,15 @@
            <%= f.input :name %>
            <%= f.input :description %>
            <%= f.input :photo, as: :file, class: "button" %>
-           <%= f.button :submit, 'Create', class: "button button-big mb-4 form-button"  %>
+           <div class="d-flex justify-content-between align-items-center">
+              <%= f.button :submit, 'Create', class: "button form-button"  %>
+              <%= link_to 'Cancel', root_path %>
+           </div>
          <% end %>
-
-         <%= link_to 'Back', payment_groups_path, class: 'ml-2'%>
-        <!--    <div class="button">
-             <h5>Back</h5>
-           </div> -->
       </div>
     </div>
   </div>
 
 
 
+<!-- fas fa-arrow-circle-left -->
