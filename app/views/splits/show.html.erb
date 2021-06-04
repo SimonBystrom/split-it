@@ -4,5 +4,6 @@
     <% @bills.each do |bill| %>
       <%= render 'splits/bills', bill: bill %>
     <% end %>
+     <%= link_to '', payment_group_path(@split.payment_group), class: 'ml-2 fas fa-arrow-circle-left'%>
   </div>
 </div>

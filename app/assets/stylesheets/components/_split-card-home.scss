@@ -48,3 +48,11 @@
 .archived {
   opacity: 0.6;
 }
+
+.split-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+}
