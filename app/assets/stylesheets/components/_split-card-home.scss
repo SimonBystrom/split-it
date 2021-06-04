@@ -3,10 +3,11 @@
   justify-content: space-between;
   background-color: $light-gray;
   border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin-bottom: 16px;
-  // Makes the flex-grow on the title take up the space it needs and makes the split-card take up the right amount of space
-  min-width: 100%;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+
+    margin-bottom: 16px;
+    margin-left: 8px;
+    max-width: 96%;
   min-height: 72px;
   h5{
     margin: 0 16px;

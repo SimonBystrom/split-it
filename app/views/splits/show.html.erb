@@ -1,9 +1,17 @@
 <div class="main-wrapper">
   <div class="main-container">
-    <h1> <%= @split.name %> </h1>
-    <% @bills.each do |bill| %>
-      <%= render 'splits/bills', bill: bill %>
-    <% end %>
-     <%= link_to '', payment_group_path(@split.payment_group), class: 'ml-2 fas fa-arrow-circle-left'%>
+    <h1 class="border-bottom"> <%= @split.name %> </h1>
+    <div class="split-show-subtitle">
+      <h3> $ <%= get_split_total(@split)%> </h3>
+      <% if  balance_positive?(@split) %>
+        <h3 class="positive-balance" > $<%= @balance %> </h3>
+      <% elsif @balance == 0 %>
+        <h3 class="neutral-balance">$<%= @balance %> </h3>
+      <% else %>
+        <h3 class="negative-balance"> $<%= @balance %> </h3>
+      <% end %>
+    </div>
+    <%= render 'splits/tabs', bills: @bills %>
   </div>
+     <%= link_to '', payment_group_path(@split.payment_group), class: 'ml-2 fas fa-arrow-circle-left'%>
 </div>
