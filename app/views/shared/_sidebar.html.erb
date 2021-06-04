@@ -14,17 +14,17 @@
       <% end %>
     <% end %>
     <!--     Links to creating a new group -->
-    <%= link_to new_payment_group_path do %>
-      <div class='button button-round add-group'>
-        <i class="fas fa-plus"></i>
-      </div>
-    <% end %>
-    <!--     Links to sign-out -->
     <% if signed_in? %>
+      <%= link_to new_payment_group_path do %>
+        <div class='button button-round add-group'>
+          <i class="fas fa-plus"></i>
+        </div>
+      <% end %>
+    <!--     Links to sign-out -->
      <%= link_to destroy_user_session_path, :method => :delete do %>
-      <div class='button button-round add-group'>
-        <i class="fas fa-sign-out-alt"></i>
-      </div>
-    <% end %>
+        <div class='button button-round add-group sign-out'>
+          <i class="fas fa-sign-out-alt"></i>
+        </div>
+      <% end %>
     <% end %>
 </div>

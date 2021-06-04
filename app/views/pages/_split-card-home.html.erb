@@ -1,4 +1,4 @@
-<div class="split-card-home">
+<div class="split-card-home home">
   <div class="split-card-title">
     <h3> <%= split.name %> </h3>
     <p> <%= split.payment_group.name %> </p>
@@ -17,4 +17,5 @@
   <%= link_to new_split_bill_path(split), class: 'split-card-button' do %>
     <i class="fas fa-money-bill-wave"></i>
   <% end %>
+   <%= link_to '', split_path(split), class: "split-link"  %>
 </div>

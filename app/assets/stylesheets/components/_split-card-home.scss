@@ -5,15 +5,21 @@
   border-radius: 8px;
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
 
-    margin-bottom: 16px;
-    margin-left: 8px;
-    max-width: 96%;
+  margin-bottom: 16px;
+  margin-left: 8px;
+  max-width: 96%;
   min-height: 72px;
   h5{
     margin: 0 16px;
     font-size: 18px;
   }
   position: relative;
+}
+
+.home {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 16px;
+  min-width: 100%;
 }
 
 .split-card-title{

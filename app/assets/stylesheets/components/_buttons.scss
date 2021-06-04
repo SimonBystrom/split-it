@@ -54,6 +54,16 @@
   }
 }
 
+// Might need tweaking for when we have a lot of groups
+.sign-out{
+  position: absolute;
+  bottom: 8px;
+}
+
+.back-button{
+  font-size: 40px;
+}
+
 .split-card-button{
   min-height: 100%;
   background-color: $green;
