@@ -15,6 +15,14 @@ each user creates 4 receipts in each split
 =end
 
 puts "You have requested seeds. Launching processes..."
+
+puts "Deleting previous seeds..."
+
+User.destroy_all ? (puts "All Users destroyed successfully") : (puts "Could not destroy Users...")
+PaymentGroup.destroy_all ? (puts "All PaymentGroups destroyed successfully") : (puts "Could not destroy PaymentGroups...")
+Split.destroy_all ? (puts "All Splits destroyed successfully") : (puts "Could not destroy Splits...")
+Bill.destroy_all ? (puts "All Bills destroyed successfully") : (puts "Could not destroy Bills...")
+
 puts "Generating group 1(couple)..."
 
 photo1 = URI.open ('https://source.unsplash.com/800x600/?couple')
@@ -51,7 +59,7 @@ user_count = 1
 6.times do 
   puts "Initializing a user..."
   user = User.new(
-    name: "user#{user_count}", 
+    name: FAKER::Name.first_name, 
     email: "user#{user_count}@user.com", 
     password: "password#{user_count}"
   )
@@ -69,17 +77,18 @@ end
 puts "Generating bills for Couple/June Split..."
 couple_users = User.where('id < 3')
 bill_counter = 1
+bill_titles = %w[Movie Groceries FamilyMart Fuel Diapers Activity Amazon Restaurant]
 couple_users.each do |user|
   5.times do
     bill = Bill.new(tag: "June",
-                   title: "Bill ##{bill_counter}",
+                   title: bill_titles.sample,
                    price: rand(100),
-                   paid_date: Time.at(rand * Time.now.to_i),
+                   paid_date: rand(1.month.ago..5.day.ago),
                    comment: "...",
                    user: user,
                    split: split1
                    )
-    bill.save ? (puts "#{user.name}'s bill ##{bill_counter} was created successfully.") : (puts "#{user.name}'s bill ##{bill_counter} could not save.")
+    bill.save ? (puts "#{user.name}'s bill (#{bill.title}) was created successfully.") : (puts "#{user.name}'s bill (#{bill.title}) could not save.")
     bill_counter += 1
   end
 end
@@ -88,18 +97,18 @@ puts "Generating bills for Friends/Bowling Split..."
 
 friends_users = User.where('id >= 3')
 bill_counter = 1
-
+bill_titles = %w[Shoes Rental Fuel Food Fee Pool Beer Drinks Snacks]
 friends_users.each do |user|
   4.times do
     bill = Bill.new(tag: "Bowling",
-                   title: "Bill ##{bill_counter}",
+                   title: bill_titles.sample,
                    price: rand(100),
-                   paid_date: Time.at(rand * Time.now.to_i),
+                   paid_date: 1.day.ago,
                    comment: "...",
                    user: user,
                    split: split2
                    )
-    bill.save ? (puts "#{user.name}'s bill ##{bill_counter} was created successfully.") : (puts "#{user.name}'s bill ##{bill_counter} could not save.")
+    bill.save ? (puts "#{user.name}'s bill (#{bill.title}) was created successfully.") : (puts "#{user.name}'s bill (#{bill.title}) could not save.")
     bill_counter += 1
   end
 end
@@ -107,18 +116,18 @@ end
 puts "Generating bills for Friends/Camping Split..."
 
 bill_counter = 1
-
+bill_titles = %w[Fuel Car Food Beer Chips Lures Rod Fee Fireworks]
 friends_users.each do |user|
   4.times do
     bill = Bill.new(tag: "Camping",
-                   title: "Bill ##{bill_counter}",
+                   title: bill_titles.sample,
                    price: rand(100),
-                   paid_date: Time.at(rand * Time.now.to_i),
+                   paid_date: rand(3.day.ago..1.day.ago),
                    comment: "...",
                    user: user,
                    split: split2
                    )
-    bill.save ? (puts "#{user.name}'s bill ##{bill_counter} was created successfully.") : (puts "#{user.name}'s bill ##{bill_counter} could not save.")
+    bill.save ? (puts "#{user.name}'s bill (#{bill.title}) was created successfully.") : (puts "#{user.name}'s bill (#{bill.title}) could not save.")
     bill_counter += 1
   end
 end
