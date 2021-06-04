@@ -2,7 +2,12 @@
   <div class="bill-card" id="bill<%= bill.id %>">
     <div class="bill-card-title main">
       <h5> <%= bill.title %> </h5>
-      <h5> $ <%= bill.price %> </h5>
+      <% if bill.user == current_user %>
+        <h5 class="current-user-payment"> $ <%= bill.price %> </h5>
+      <% else %>
+        <h5 class="other-user-payment"> $ <%= bill.price %> </h5>
+      <% end %>
+
 
     </div>
     <div class="bill-card-title">
