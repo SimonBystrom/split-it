@@ -9,7 +9,8 @@ module ApplicationHelper
   end
 
   def balance_positive?(split)
-    get_balance(split).positive?
+    @balance = get_balance(split)
+    @balance.positive?
   end
 
  private
