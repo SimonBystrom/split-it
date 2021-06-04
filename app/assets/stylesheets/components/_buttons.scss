@@ -37,6 +37,7 @@
 
 .form-button {
   border: none !important;
+  color:white;
 }
 
 .add-group {
@@ -66,6 +67,7 @@ background: linear-gradient(133deg, rgba(83,177,216,1) 24%, rgba(83,177,216,1) 4
   background-size: 250%;
   background-position: center;
   color: white;
+  z-index: 2;
   i{
     font-size: 28px;
     text-shadow: 0 0 6px rgba(0,0,0,0.2);

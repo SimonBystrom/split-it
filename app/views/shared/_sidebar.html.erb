@@ -3,7 +3,9 @@
 
   <div class="sidebar">
    <!--  LOGO -->
+   <%= link_to root_path do %>
    <i class="fas fa-surprise" style="font-size: 50px; margin-bottom: 8px; color: white;"></i>
+   <% end %>
     <% if current_user %>
       <% current_user.payment_groups.each do |payment_group| %>
         <!--   Links to the current paymentgroup when pressing the picture -->
@@ -20,5 +22,12 @@
         <i class="fas fa-plus"></i>
       </div>
     <% end %>
+    <!--     Links to sign-out -->
+    <% if signed_in? %>
+     <%= link_to destroy_user_session_path, :method => :delete do %>
+      <div class='button button-round add-group'>
+        <i class="fas fa-sign-out-alt"></i>
+      </div>
+    <% end %>
+    <% end %>
   </div>
-
