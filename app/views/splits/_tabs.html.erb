@@ -1,22 +1,33 @@
 <ul class="nav tabs-underlined" id="myTab" role="tablist">
   <li class="nav-item" role="presentation">
-    <a class="active tab-underlined" id="home-tab" data-toggle="tab" href="#bookings" role="tab" aria-controls="home" aria-selected="true">My Bills</a>
+    <a class="active tab-underlined" id="my-bills-tab" data-toggle="tab" href="#my-bills" role="tab" aria-controls="my-bills" aria-selected="true">My Bills</a>
   </li>
   <li class="nav-item" role="presentation">
-    <a class="tab-underlined" id="profile-tab" data-toggle="tab" href="#requests" role="tab" aria-controls="profile" aria-selected="false">Other's Bills</a>
+    <a class="tab-underlined" id="other-bills-tab" data-toggle="tab" href="#other-bills" role="tab" aria-controls="other-bills" aria-selected="false">Other's Bills</a>
   </li>
   <li class="nav-item" role="presentation">
-    <a class="tab-underlined" id="converstion-tab" data-toggle="tab" href="#converstions" role="tab" aria-controls="converstion" aria-selected="false">All Bills</a>
+    <a class="tab-underlined" id="all-bills-tab" data-toggle="tab" href="#all-bills" role="tab" aria-controls="all-bills" aria-selected="false">All Bills</a>
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade py-3 show active" id="bookings" role="tabpanel" aria-labelledby="home-tab">
-    This is the content for the Bookings tab. Notice in the tab HTML there is a href="#bookings". This is pointing to the id of this div.
+  <div class="tab-pane fade py-3 show active" id="my-bills" role="tabpanel" aria-labelledby="my-bills-tab">
+     <% @bills.each do |bill| %>
+       <% if bill.user == current_user %>
+          <%= render 'splits/bills', bill: bill %>
+       <% end %>
+    <% end %>
   </div>
-  <div class="tab-pane fade py-3" id="requests" role="tabpanel" aria-labelledby="profile-tab">
-    This is the content for the Requests tab. Notice in the tab HTML there is a href="#requests". This is pointing to the id of this div.
+  <div class="tab-pane fade py-3" id="other-bills" role="tabpanel" aria-labelledby="other-bills-tab">
+    <% @bills.each do |bill| %>
+     <% if bill.user != current_user %>
+        <%= render 'splits/bills', bill: bill %>
+     <% end %>
+    <% end %>
   </div>
-  <div class="tab-pane fade py-3" id="converstions" role="tabpanel" aria-labelledby="converstion-tab">
-    This is the content for the Conversations tab. Notice in the tab HTML there is a href="#converstations". This is pointing to the id of this div.
-  </div>
+  <div class="tab-pane fade py-3" id="all-bills" role="tabpanel" aria-labelledby="all-bills-tab">
+    <% @bills.each do |bill| %>
+      <%= render 'splits/bills', bill: bill %>
+    <% end %>
 </div>
+
+

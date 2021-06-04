@@ -1,9 +1,7 @@
 <div class="main-wrapper">
   <div class="main-container">
-    <h1> <%= @split.name %> </h1>
-    <%= render 'splits/tabs' %>
-    <% @bills.each do |bill| %>
-      <%= render 'splits/bills', bill: bill %>
-    <% end %>
+    <h1 class="border-bottom"> <%= @split.name %> </h1>
+    <h3> $ <%= get_split_total(@split)%> </h3>
+    <%= render 'splits/tabs', bills: @bills %>
   </div>
 </div>
