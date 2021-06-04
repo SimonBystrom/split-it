@@ -23,43 +23,52 @@ PaymentGroup.destroy_all ? (puts "All PaymentGroups destroyed successfully") : (
 Split.destroy_all ? (puts "All Splits destroyed successfully") : (puts "Could not destroy Splits...")
 Bill.destroy_all ? (puts "All Bills destroyed successfully") : (puts "Could not destroy Bills...")
 
-puts "Generating group 1(couple)..."
+puts "Generating Couple group..."
 
-photo1 = URI.open ('https://source.unsplash.com/800x600/?couple')
-group1 = PaymentGroup.new( name: "Couple", description: "A household group" )
-group1.photo.attach(io: photo1, filename: 'photo.png', content_type: 'image/png')
-group1.photo.attached? ? (puts "Group1 photo attached successfully") : (puts "Group1 failed to attach photo")
-group1.save ? (puts "Group1 saved successfully") : (puts "Group1 could not save")
+couple_photo = URI.open ('https://source.unsplash.com/800x600/?couple')
+couple_group = PaymentGroup.new( name: "Couple", description: "A household group" )
+couple_group.photo.attach(io: couple_photo, filename: 'photo.png', content_type: 'image/png')
+couple_group.photo.attached? ? (puts "couple_group photo attached successfully") : (puts "couple_group failed to attach photo")
+couple_group.save ? (puts "couple_group saved successfully") : (puts "couple_group could not save")
 
-puts "Generating 1 split for group 1..."
-split1 = Split.new(name: "June", payment_group: group1)
-split1.save ? (puts "Split created successfully") : (puts "Failed to create split")
+puts "Generating 1 active split for Couple group..."
+couple_june_split = Split.new(name: "June", payment_group: couple_group)
+couple_june_split.save ? (puts "Split created successfully") : (puts "Failed to create split")
 
-puts "Generating group 2(Friends)..."
+puts "Generating 1 archived split for Couple group..."
+archived_couple_split = Split.new(name: "May", payment_group: couple_group, active: false)
+archived_couple_split.save ? (puts "Split created successfully") : (puts "Failed to create split")
+
+puts "Generating Friends..."
 
 photo2 = URI.open ('https://source.unsplash.com/800x600/?friends')
-group2 = PaymentGroup.new( name: "Friends", description: "A group of friends")
-group2.photo.attach(io: photo2, filename: 'photo.png', content_type: 'image/png')
-group2.photo.attached? ? (puts "Group2 photo attached successfully") : (puts "Group2 failed to attach photo")
-group2.save ? (puts "Group2 saved successfully") : (puts "Group2 could not save")
+friends_group = PaymentGroup.new( name: "Friends", description: "A group of friends")
+friends_group.photo.attach(io: photo2, filename: 'photo.png', content_type: 'image/png')
+friends_group.photo.attached? ? (puts "friends_group photo attached successfully") : (puts "friends_group failed to attach photo")
+friends_group.save ? (puts "friends_group saved successfully") : (puts "friends_group could not save")
 
-puts "Generating 2 splits for group 2..."
+puts "Generating 2 active splits for Friends group..."
 
-split2 = Split.new(name: "Bowling", payment_group: group2)
-split2.save ? (puts "Split created successfully") : (puts "Failed to create split")
+bowling_split = Split.new(name: "Bowling", payment_group: friends_group)
+bowling_split.save ? (puts "Split created successfully") : (puts "Failed to create split")
 
-split3 = Split.new(name: "Camping", payment_group: group2)
-split3.save ? (puts "Split created successfully") : (puts "Failed to create split")
+camping_split = Split.new(name: "Camping", payment_group: friends_group)
+camping_split.save ? (puts "Split created successfully") : (puts "Failed to create split")
+
+puts "Generating 1 archived split for Friends group..."
+
+archived_pool_party_split = Split.new(name: "Pool Party", payment_group: friends_group, active: false)
+archived_pool_party_split.save ? (puts "Split created successfully") : (puts "Failed to create split")
 
 puts "Generating 6 users..."
-puts "Login Info Pattern -> Name: User1 | Email: User1@user.com | Password: User1 | -> Increment"
+puts "Login Info Pattern -> Name: Random | Email: User1@user.com | Password: User1 | -> Increment"
 
 user_count = 1
 
 6.times do 
   puts "Initializing a user..."
   user = User.new(
-    name: FAKER::Name.first_name, 
+    name: Faker::Name.first_name, 
     email: "user#{user_count}@user.com", 
     password: "password#{user_count}"
   )
@@ -70,7 +79,7 @@ user_count = 1
     puts "Could not save #{user.name}."
   end
   puts "Generating memberships..."
-  membership = Membership.new(user: user, payment_group: user_count < 4 ? group1 : group2 )
+  membership = Membership.new(user: user, payment_group: user_count < 4 ? couple_group : friends_group )
   membership.save ? (puts "Membership created succesfully") : (puts "Failed to created membership")
 end
 
@@ -86,7 +95,7 @@ couple_users.each do |user|
                    paid_date: rand(1.month.ago..5.day.ago),
                    comment: "...",
                    user: user,
-                   split: split1
+                   split: couple_june_split
                    )
     bill.save ? (puts "#{user.name}'s bill (#{bill.title}) was created successfully.") : (puts "#{user.name}'s bill (#{bill.title}) could not save.")
     bill_counter += 1
@@ -106,7 +115,7 @@ friends_users.each do |user|
                    paid_date: 1.day.ago,
                    comment: "...",
                    user: user,
-                   split: split2
+                   split: bowling_split
                    )
     bill.save ? (puts "#{user.name}'s bill (#{bill.title}) was created successfully.") : (puts "#{user.name}'s bill (#{bill.title}) could not save.")
     bill_counter += 1
@@ -125,7 +134,45 @@ friends_users.each do |user|
                    paid_date: rand(3.day.ago..1.day.ago),
                    comment: "...",
                    user: user,
-                   split: split2
+                   split: bowling_split
+                   )
+    bill.save ? (puts "#{user.name}'s bill (#{bill.title}) was created successfully.") : (puts "#{user.name}'s bill (#{bill.title}) could not save.")
+    bill_counter += 1
+  end
+end
+
+puts "Generating bills for Couple/Archived Split..."
+couple_users = User.where('id < 3')
+bill_counter = 1
+bill_titles = %w[Movie Groceries FamilyMart Fuel Diapers Activity Amazon Restaurant Subscription]
+couple_users.each do |user|
+  5.times do
+    bill = Bill.new(tag: "May",
+                   title: bill_titles.sample,
+                   price: rand(100),
+                   paid_date: rand(4.day.ago..Time.now),
+                   comment: "...",
+                   user: user,
+                   split: archived_couple_split
+                   )
+    bill.save ? (puts "#{user.name}'s bill (#{bill.title}) was created successfully.") : (puts "#{user.name}'s bill (#{bill.title}) could not save.")
+    bill_counter += 1
+  end
+end
+
+puts "Generating bills for Friends/Archived Split..."
+
+bill_counter = 1
+bill_titles = %w[Beer Drinks BBQ Snacks Chips Candies Salad Potatoes Corn Meat]
+friends_users.each do |user|
+  4.times do
+    bill = Bill.new(tag: "Pool Party",
+                   title: bill_titles.sample,
+                   price: rand(100),
+                   paid_date: rand(3.day.ago..1.day.ago),
+                   comment: "...",
+                   user: user,
+                   split: archived_pool_party_split
                    )
     bill.save ? (puts "#{user.name}'s bill (#{bill.title}) was created successfully.") : (puts "#{user.name}'s bill (#{bill.title}) could not save.")
     bill_counter += 1
