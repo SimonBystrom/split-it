@@ -16,7 +16,7 @@ module ApplicationHelper
 
   def get_balance(split)
     user_split_total = split.bills.where(user: current_user).sum(&:price)
-    even_split = split.bills.sum(&:price)/split.users.count
+    even_split = split.bills.sum(&:price)/split.payment_group.users.count
     user_split_total - even_split
   end
 end
