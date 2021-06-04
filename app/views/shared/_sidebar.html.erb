@@ -1,10 +1,7 @@
-<!-- Creates the Sidebar. -> Sidebar needs the payment_groups as an argument when used -->
-
-
-  <div class="sidebar">
+<div class="sidebar">
    <!--  LOGO -->
    <%= link_to root_path do %>
-   <i class="fas fa-surprise" style="font-size: 50px; margin-bottom: 8px; color: white;"></i>
+      <%= image_tag "logo.png", alt: "logo", class: 'sidebar-logo' %>
    <% end %>
     <% if current_user %>
       <% current_user.payment_groups.each do |payment_group| %>
@@ -30,4 +27,4 @@
       </div>
     <% end %>
     <% end %>
-  </div>
+</div>

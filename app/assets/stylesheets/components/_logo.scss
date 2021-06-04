@@ -1,0 +1,13 @@
+.logo-main {
+  height: 100px;
+}
+
+// I know it's a repeat class
+.sidebar-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.4);
+  border: 2px solid $light-gray;
+  margin-bottom: 8px;
+}
