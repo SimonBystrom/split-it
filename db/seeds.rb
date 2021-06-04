@@ -41,9 +41,9 @@ archived_couple_split.save ? (puts "Split created successfully") : (puts "Failed
 
 puts "Generating Friends..."
 
-photo2 = URI.open ('https://source.unsplash.com/800x600/?friends')
+firends_photo = URI.open ('https://source.unsplash.com/800x600/?friends')
 friends_group = PaymentGroup.new( name: "Friends", description: "A group of friends")
-friends_group.photo.attach(io: photo2, filename: 'photo.png', content_type: 'image/png')
+friends_group.photo.attach(io: firends_photo, filename: 'photo.png', content_type: 'image/png')
 friends_group.photo.attached? ? (puts "friends_group photo attached successfully") : (puts "friends_group failed to attach photo")
 friends_group.save ? (puts "friends_group saved successfully") : (puts "friends_group could not save")
 
@@ -59,9 +59,6 @@ puts "Generating 1 archived split for Friends group..."
 
 archived_pool_party_split = Split.new(name: "Pool Party", payment_group: friends_group, active: false)
 archived_pool_party_split.save ? (puts "Split created successfully") : (puts "Failed to create split")
-
-split4 = Split.new(name: "Old trip", payment_group: group2, active: false)
-split4.save ? (puts "Split created successfully") : (puts "Failed to create split")
 
 puts "Generating 6 users..."
 puts "Login Info Pattern -> Name: Random | Email: User1@user.com | Password: User1 | -> Increment"
@@ -95,7 +92,7 @@ couple_users.each do |user|
     bill = Bill.new(tag: "June",
                    title: bill_titles.sample,
                    price: rand(100),
-                   paid_date: rand(1.month.ago..5.day.ago),
+                   paid_date: rand(3.day.ago..Time.now), #ONLY APPLICABLE FOR JUNE 4 PRESENTATION
                    comment: "...",
                    user: user,
                    split: couple_june_split
@@ -105,19 +102,20 @@ couple_users.each do |user|
   end
 end
 
-puts "Generating bills for Couple/Previous Month Split..."
+puts "Generating bills for Couple/May Split..."
 
 couple_users = User.where('id < 3')
+bill_titles = %w[Movie Groceries FamilyMart Fuel Diapers Activity Amazon Restaurant]
 bill_counter = 1
 couple_users.each do |user|
   5.times do
-    bill = Bill.new(tag: "Previous Month",
-                   title: "Bill ##{bill_counter}",
+    bill = Bill.new(tag: "May",
+                   title: bill_titles.sample,
                    price: rand(100),
-                   paid_date: Time.at(rand * Time.now.to_i),
+                   paid_date: rand(1.month.ago..5.day.ago), #ONLY APPLICABLE FOR JUNE 4 PRESENTATION
                    comment: "...",
                    user: user,
-                   split: split4
+                   split: archived_couple_split
                    )
     bill.save ? (puts "#{user.name}'s bill ##{bill_counter} was created successfully.") : (puts "#{user.name}'s bill ##{bill_counter} could not save.")
     bill_counter += 1
@@ -155,26 +153,7 @@ friends_users.each do |user|
                    paid_date: rand(3.day.ago..1.day.ago),
                    comment: "...",
                    user: user,
-                   split: bowling_split
-                   )
-    bill.save ? (puts "#{user.name}'s bill (#{bill.title}) was created successfully.") : (puts "#{user.name}'s bill (#{bill.title}) could not save.")
-    bill_counter += 1
-  end
-end
-
-puts "Generating bills for Couple/Archived Split..."
-couple_users = User.where('id < 3')
-bill_counter = 1
-bill_titles = %w[Movie Groceries FamilyMart Fuel Diapers Activity Amazon Restaurant Subscription]
-couple_users.each do |user|
-  5.times do
-    bill = Bill.new(tag: "May",
-                   title: bill_titles.sample,
-                   price: rand(100),
-                   paid_date: rand(4.day.ago..Time.now),
-                   comment: "...",
-                   user: user,
-                   split: archived_couple_split
+                   split: camping_split
                    )
     bill.save ? (puts "#{user.name}'s bill (#{bill.title}) was created successfully.") : (puts "#{user.name}'s bill (#{bill.title}) could not save.")
     bill_counter += 1
@@ -196,24 +175,6 @@ friends_users.each do |user|
                    split: archived_pool_party_split
                    )
     bill.save ? (puts "#{user.name}'s bill (#{bill.title}) was created successfully.") : (puts "#{user.name}'s bill (#{bill.title}) could not save.")
-    bill_counter += 1
-  end
-end
-  puts "Generating bills for Friends/Camping Split..."
-
-bill_counter = 1
-
-friends_users.each do |user|
-  4.times do
-    bill = Bill.new(tag: "Old Trip",
-                   title: "Bill ##{bill_counter}",
-                   price: rand(100),
-                   paid_date: Time.at(rand * Time.now.to_i),
-                   comment: "...",
-                   user: user,
-                   split: split5
-                   )
-    bill.save ? (puts "#{user.name}'s bill ##{bill_counter} was created successfully.") : (puts "#{user.name}'s bill ##{bill_counter} could not save.")
     bill_counter += 1
   end
 end
