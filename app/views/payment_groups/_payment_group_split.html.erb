@@ -2,7 +2,7 @@
   <div class="<%= split.active? ? 'split-card-home' : 'split-card-home archived' %>">
     <div class="split-card-title">
       <h3> <%= split.name %> </h3>
-      <p> <i class="fas fa-equals"></i> <%= get_split_total(split)%> </p>
+      <p> <i class="fas fa-equals"></i> $<%= get_split_total(split)%> </p>
     </div>
     <!--  CALCULATE THE TOTAL -->
     <div class="d-flex align-items-center flex-nowrap">

@@ -5,10 +5,12 @@
       <h1>New Bill</h1>
       <%= simple_form_for [ @split, @bill ] do |f|%>
           <%= f.input :title, placeholder: 'FamilyMart', autofocus: true; %>
-          <%= f.input :price, placeholder: '2000' %>
-          <%= f.input :paid_date %>
-        <%= f.submit 'Add Bill', class: 'button button-big form-button' %>
-      <%= link_to '', root_path, class: 'ml-2 fas fa-arrow-circle-left'%>
+          <%= f.input :price, placeholder: '20' %>
+          <%= f.input :paid_date, html5: true %>
+          <div class="d-flex justify-content-between align-items-center">
+            <%= f.button :submit, 'Add Bill', class: "button form-button"  %>
+            <%= link_to 'Cancel', root_path %>
+          </div>
       <% end %>
     </div>
   </div>

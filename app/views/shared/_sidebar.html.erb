@@ -1,8 +1,8 @@
 <div class="sidebar">
    <!--  LOGO -->
-   <%= link_to root_path do %>
-      <%= image_tag "logo.png", alt: "logo", class: 'sidebar-logo' %>
-   <% end %>
+     <%= link_to root_path, class: 'logo-container' do %>
+        <%= image_tag "logo.png", alt: "logo", class: 'sidebar-logo' %>
+     <% end %>
     <% if current_user %>
       <% current_user.payment_groups.each do |payment_group| %>
         <!--   Links to the current paymentgroup when pressing the picture -->
