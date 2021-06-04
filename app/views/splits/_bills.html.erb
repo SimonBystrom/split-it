@@ -2,13 +2,7 @@
   <div class="bill-card" id="bill<%= bill.id %>">
     <div class="bill-card-title main">
       <h5> <%= bill.title %> </h5>
-      <% if bill.user == current_user %>
-        <h5 class="current-user-payment"> $ <%= bill.price %> </h5>
-      <% else %>
-        <h5 class="other-user-payment"> $ <%= bill.price %> </h5>
-      <% end %>
-
-
+      <h5> $ <%= bill.price %> </h5>
     </div>
     <div class="bill-card-title">
       <p> <i class="fas fa-user"></i> <%= bill.user.name %> </p>
@@ -20,5 +14,3 @@
     <%= render 'bills/edit-bill-form', bill: bill %>
   </div>
 </div>
-
-

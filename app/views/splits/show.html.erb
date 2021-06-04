@@ -1,6 +1,7 @@
 <div class="main-wrapper">
   <div class="main-container">
     <h1> <%= @split.name %> </h1>
+    <%= render 'splits/tabs' %>
     <% @bills.each do |bill| %>
       <%= render 'splits/bills', bill: bill %>
     <% end %>
