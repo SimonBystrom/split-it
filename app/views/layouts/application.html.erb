@@ -1,36 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SplitIt</title>
+    <title>Split|It</title>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <title><%= meta_title %></title>
     <meta name="description" content="<%= meta_description %>">
-
     <!-- Facebook Open Graph data -->
     <meta property="og:title" content="<%= meta_title %>" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="<%= request.original_url %>" />
-
     <meta property="og:description" content="<%= meta_description %>" />
     <meta property="og:site_name" content="<%= meta_title %>" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
-
   <body>
     <%= render 'shared/flashes' %>
     <div class="d-flex" style="position: relative;">
       <%= render 'shared/sidebar' %>
       <%= yield %>
     </div>
-
-
-
-
   </body>
 </html>
