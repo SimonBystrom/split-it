@@ -1,11 +1,11 @@
 
-<div class="row justify-content-center">
+<div class="row justify-content-center" id="new-split-form">
   <div class="col-12 col-sm-4">
-    <div class="form-container">
-      <h1>New Split</h1>
+    <div class="form-container new-split-form">
+      <h3>New Split</h3>
       <%= simple_form_for [@payment_group, @split] do |f| %>
         <%= f.input :name %>
-        <%= f.button :submit, 'Create', class: "button form-button"  %>
+        <%= f.button :submit, 'Create', class: "button form-button button-big"  %>
       <% end %>
     </div>
   </div>

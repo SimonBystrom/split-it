@@ -60,6 +60,9 @@ puts "Generating 1 archived split for Friends group..."
 archived_pool_party_split = Split.new(name: "Pool Party", payment_group: friends_group, active: false)
 archived_pool_party_split.save ? (puts "Split created successfully") : (puts "Failed to create split")
 
+split4 = Split.new(name: "Old trip", payment_group: group2, active: false)
+split4.save ? (puts "Split created successfully") : (puts "Failed to create split")
+
 puts "Generating 6 users..."
 puts "Login Info Pattern -> Name: Random | Email: User1@user.com | Password: User1 | -> Increment"
 
@@ -102,6 +105,24 @@ couple_users.each do |user|
   end
 end
 
+puts "Generating bills for Couple/Previous Month Split..."
+
+couple_users = User.where('id < 3')
+bill_counter = 1
+couple_users.each do |user|
+  5.times do
+    bill = Bill.new(tag: "Previous Month",
+                   title: "Bill ##{bill_counter}",
+                   price: rand(100),
+                   paid_date: Time.at(rand * Time.now.to_i),
+                   comment: "...",
+                   user: user,
+                   split: split4
+                   )
+    bill.save ? (puts "#{user.name}'s bill ##{bill_counter} was created successfully.") : (puts "#{user.name}'s bill ##{bill_counter} could not save.")
+    bill_counter += 1
+  end
+end
 puts "Generating bills for Friends/Bowling Split..."
 
 friends_users = User.where('id >= 3')
@@ -175,6 +196,24 @@ friends_users.each do |user|
                    split: archived_pool_party_split
                    )
     bill.save ? (puts "#{user.name}'s bill (#{bill.title}) was created successfully.") : (puts "#{user.name}'s bill (#{bill.title}) could not save.")
+    bill_counter += 1
+  end
+end
+  puts "Generating bills for Friends/Camping Split..."
+
+bill_counter = 1
+
+friends_users.each do |user|
+  4.times do
+    bill = Bill.new(tag: "Old Trip",
+                   title: "Bill ##{bill_counter}",
+                   price: rand(100),
+                   paid_date: Time.at(rand * Time.now.to_i),
+                   comment: "...",
+                   user: user,
+                   split: split5
+                   )
+    bill.save ? (puts "#{user.name}'s bill ##{bill_counter} was created successfully.") : (puts "#{user.name}'s bill ##{bill_counter} could not save.")
     bill_counter += 1
   end
 end

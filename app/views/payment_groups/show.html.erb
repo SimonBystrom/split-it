@@ -11,9 +11,16 @@
     </div>
     <div class="main-container">
       <%= render 'payment_groups/accordion', splits: @splits, users: @users, payment_group: @payment_group %>
+
+      <div class="d-flex  mt-5">
+        <div id="new-split-button" class="button button-big ">
+          <h5 id="new-split-button-text">New Split</h5>
+        </div>
+          <%= render 'splits/form', payment_group: @payment_group %>
+
+      </div>
+
+
     </div>
   </div>
 </div>
-<!-- <p class='group-show-accordion'>Active Splits</p>
-      <p class='group-show-accordion'>Archived Splits</p>
-      <p class='group-show-accordion'>Group Members</p> -->

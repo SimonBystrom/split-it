@@ -1,28 +1,50 @@
 .split-card-home{
   display: flex;
-  align-items: center;
   justify-content: space-between;
   background-color: $light-gray;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  padding: 8px 16px;
   margin-bottom: 16px;
   // Makes the flex-grow on the title take up the space it needs and makes the split-card take up the right amount of space
   min-width: 100%;
+  min-height: 72px;
   h5{
     margin: 0 16px;
+    font-size: 18px;
   }
+  position: relative;
 }
 
 .split-card-title{
-  flex-grow: 2;
+  margin: 8px 16px;
   display:flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: start;
+  justify-content: start;
+
   h3{
     margin: 0;
   }
   p{
-    margin: 0;
+    opacity: 0.7;
+    margin-bottom: 0;
+    font-size: 18px;
   }
+}
+
+
+.positive-balance{
+  color: green;
+}
+
+.negative-balance{
+  color: red;
+}
+
+.neutral-balance{
+  color: gray;
+}
+
+.archived {
+  opacity: 0.6;
 }
