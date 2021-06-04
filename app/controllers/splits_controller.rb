@@ -7,7 +7,7 @@ class SplitsController < ApplicationController
 
   def show
     @split = Split.find(params[:id])
-    @bills = @split.bills
+    @bills = @split.bills.order(created_at: :desc)
     authorize @split
   end
 
