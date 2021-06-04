@@ -4,9 +4,15 @@
     <p> <%= split.payment_group.name %> </p>
   </div>
   <!--  CALCULATE THE TOTAL -->
-  <h5><%= get_split_total(split) %></h5>
+  <% if  balance_positive?(split) %>
+    <h5 class="positive-balance" > $<%= @balance %> </h5>
+  <% elsif @balance == 0 %>
+    <h5 class="neutral-balance"> $<%= @balance %> </h5>
+  <% else %>
+    <h5 class="negative-balance"> $<%= @balance %> </h5>
+  <% end %>
   <!--     LINKS TO THE IMG SCAN -->
-  <%= link_to new_split_bill_path(split), class: 'button button-round' do %>
-    <i class="fas fa-camera"></i>
+  <%= link_to new_split_bill_path(split), class: 'split-card-button' do %>
+    <i class="fas fa-money-bill-wave"></i>
   <% end %>
 </div>
