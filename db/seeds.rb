@@ -17,11 +17,13 @@ each user creates 4 receipts in each split
 puts "You have requested seeds. Launching processes..."
 
 puts "Deleting previous seeds..."
-
-User.destroy_all ? (puts "All Users destroyed successfully") : (puts "Could not destroy Users...")
-PaymentGroup.destroy_all ? (puts "All PaymentGroups destroyed successfully") : (puts "Could not destroy PaymentGroups...")
-Split.destroy_all ? (puts "All Splits destroyed successfully") : (puts "Could not destroy Splits...")
+Membership.destroy_all ? (puts "All Memberships destroyed successfully") : (puts "Could not destroy Memberships...")
 Bill.destroy_all ? (puts "All Bills destroyed successfully") : (puts "Could not destroy Bills...")
+User.destroy_all ? (puts "All Users destroyed successfully") : (puts "Could not destroy Users...")
+Split.destroy_all ? (puts "All Splits destroyed successfully") : (puts "Could not destroy Splits...")
+PaymentGroup.destroy_all ? (puts "All PaymentGroups destroyed successfully") : (puts "Could not destroy PaymentGroups...")
+
+
 
 puts "Generating Couple group..."
 
@@ -65,11 +67,11 @@ puts "Login Info Pattern -> Name: Random | Email: User1@user.com | Password: Use
 
 user_count = 1
 
-6.times do 
+6.times do
   puts "Initializing a user..."
   user = User.new(
-    name: Faker::Name.first_name, 
-    email: "user#{user_count}@user.com", 
+    name: Faker::Name.first_name,
+    email: "user#{user_count}@user.com",
     password: "password#{user_count}"
   )
   if user.save
