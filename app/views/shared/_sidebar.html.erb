@@ -1,24 +1,21 @@
 <!-- Creates the Sidebar. -> Sidebar needs the payment_groups as an argument when used -->
-
-
-  <div class="sidebar">
-   <!--  LOGO -->
-   <i class="fas fa-surprise" style="font-size: 50px; margin-bottom: 8px; color: white;"></i>
-    <% if current_user %>
-      <% current_user.payment_groups.each do |payment_group| %>
-        <!--   Links to the current paymentgroup when pressing the picture -->
-        <%= link_to payment_group_path(payment_group) do %>
-          <div class="sidebar-group">
-            <%= cl_image_tag(payment_group.photo.key) %>
-          </div>
-        <% end %>
+<div class="sidebar">
+  <!--  LOGO -->
+  <%= image_tag "logo.png", alt: "logo", class: 'sidebar-logo' %>
+  <% if current_user %>
+    <% current_user.payment_groups.each do |payment_group| %>
+      <!--   Links to the current paymentgroup when pressing the picture -->
+      <%= link_to payment_group_path(payment_group) do %>
+        <div class="sidebar-group">
+          <%= cl_image_tag(payment_group.photo.key) %>
+        </div>
       <% end %>
     <% end %>
-    <!--     Links to creating a new group -->
-    <%= link_to new_payment_group_path do %>
-      <div class='button button-round add-group'>
-        <i class="fas fa-plus"></i>
-      </div>
-    <% end %>
-  </div>
-
+  <% end %>
+  <!--     Links to creating a new group -->
+  <%= link_to new_payment_group_path do %>
+    <div class='button button-round add-group'>
+      <i class="fas fa-plus"></i>
+    </div>
+  <% end %>
+</div>
