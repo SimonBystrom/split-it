@@ -1,6 +1,6 @@
 class PaymentGroupsController < ApplicationController
   include CloudinaryHelper
-  before_action :set_payment_group, only: [:show, :edit, :update, :join, :add_member]
+  before_action :set_payment_group, only: [:show, :edit, :update, :add_member]
   
   def show
     @splits = @payment_group.splits.order(created_at: :desc)
@@ -32,6 +32,7 @@ class PaymentGroupsController < ApplicationController
   end
   
   def join
+    @payment_group = PaymentGroup.find(params[:payment_group_id])
     membership = Membership.new(user: current_user, payment_group: @payment_group)
     authorize membership
     if membership.save
