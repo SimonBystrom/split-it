@@ -1,9 +1,11 @@
 .sidebar{
   display: flex;
   position: sticky;
+  top: 0;
+  z-index: 3;
   width: 100%;
   background-color: $blue;
-  padding: 16px 6px;
+
 .navbar-right {
     display: flex;
     justify-content: flex-end;
@@ -12,9 +14,15 @@
 .navi-logo {
   display: flex;
     justify-content: flex-end;
-    width: 50%;
+    width: 60%;
   }
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
+}
+
 
 
 // .sidebar-group{

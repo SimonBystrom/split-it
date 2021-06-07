@@ -6,8 +6,8 @@
      <% end %>
    </div>
 
-    <!--     Links to sign-out -->
     <% if signed_in? %>
+    <!--     Links to sign-out -->
     <div class="navbar-right">
      <%= link_to destroy_user_session_path, :method => :delete do %>
         <div class='button button-round add-group sign-out'>
