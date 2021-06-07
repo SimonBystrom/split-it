@@ -6,6 +6,8 @@ ruby '2.6.6'
 #added
 gem 'pundit'
 
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 # Use postgresql as the database for Active Record
@@ -44,6 +46,8 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 # Image scanning API
 gem 'google-cloud-vision', '~> 1.1'
+# QR Code Generation Gem
+gem 'rqrcode'
 
 group :development, :test do
   gem 'pry-byebug'

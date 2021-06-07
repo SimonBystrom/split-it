@@ -28,7 +28,7 @@ PaymentGroup.destroy_all ? (puts "All PaymentGroups destroyed successfully") : (
 puts "Generating Couple group..."
 
 couple_photo = URI.open ('https://source.unsplash.com/800x600/?couple')
-couple_group = PaymentGroup.new( name: "Couple", description: "A household group" )
+couple_group = PaymentGroup.new( name: "Couple", description: "A household group", token: PaymentGroup.generate_unique_secure_token )
 couple_group.photo.attach(io: couple_photo, filename: 'photo.png', content_type: 'image/png')
 couple_group.photo.attached? ? (puts "couple_group photo attached successfully") : (puts "couple_group failed to attach photo")
 couple_group.save ? (puts "couple_group saved successfully") : (puts "couple_group could not save")
@@ -44,7 +44,7 @@ archived_couple_split.save ? (puts "Split created successfully") : (puts "Failed
 puts "Generating Friends..."
 
 firends_photo = URI.open ('https://source.unsplash.com/800x600/?friends')
-friends_group = PaymentGroup.new( name: "Friends", description: "A group of friends")
+friends_group = PaymentGroup.new( name: "Friends", description: "A group of friends", token: PaymentGroup.generate_unique_secure_token)
 friends_group.photo.attach(io: firends_photo, filename: 'photo.png', content_type: 'image/png')
 friends_group.photo.attached? ? (puts "friends_group photo attached successfully") : (puts "friends_group failed to attach photo")
 friends_group.save ? (puts "friends_group saved successfully") : (puts "friends_group could not save")

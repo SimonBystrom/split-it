@@ -9,4 +9,8 @@ class MembershipPolicy < ApplicationPolicy
     user
   end
 
+  def join?
+    user
+  end
+
 end
