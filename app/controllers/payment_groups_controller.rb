@@ -32,7 +32,7 @@ class PaymentGroupsController < ApplicationController
   end
   
   def join
-    @payment_group = PaymentGroup.find(params[:payment_group_id])
+    @payment_group = PaymentGroup.where(token: "#{params[:payment_group_id]}").first
     membership = Membership.new(user: current_user, payment_group: @payment_group)
     authorize membership
     if membership.save
@@ -47,7 +47,7 @@ class PaymentGroupsController < ApplicationController
   private
   
   def generate_qr_code(group)
-    url = "#{ENV['BASE_URL']}/payment_groups/#{group.id}/join"
+    url = "#{ENV['BASE_URL']}/payment_groups/#{group.token}/join"
     qrcode = RQRCode::QRCode.new(url)
     @svg_code = qrcode.as_svg
   end
