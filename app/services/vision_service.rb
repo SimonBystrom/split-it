@@ -1,9 +1,9 @@
 class VisionService
-  def scan
+  def scan(file_path)
     require "google/cloud/vision"
     image_annotator = Google::Cloud::Vision.image_annotator
     # WORKS FOR BOTH TOTAL AND STORE NAME
-     file_path = "https://live.staticflickr.com/5063/5569368001_2d78ce99b6_b.jpg" #Placeholder image
+     # file_path = "https://live.staticflickr.com/5063/5569368001_2d78ce99b6_b.jpg" #Placeholder image
 
     # WORKS FOR STORE NAME
     # file_path = "http://mediaassets.thedenverchannel.com/photo/2015/11/06/7-11MassReceipt_1446816119821_26360098_ver1.0_640_480.jpg"
