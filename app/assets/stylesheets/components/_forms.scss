@@ -23,6 +23,11 @@
      color: black;
 }
 
+.edit-bill.expanded{
+  height: 320px;
+  transition: all .3s ease-in-out;
+}
+
 .edit-bill{
   box-shadow: none;
   overflow: hidden;
