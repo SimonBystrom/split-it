@@ -33,4 +33,6 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   billEditShow();
   newSplitFormShow();
+  initSlickCarousel();
+});
 
