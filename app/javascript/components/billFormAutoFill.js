@@ -2,6 +2,7 @@ const fillForms = (data) => {
   let store = document.getElementById('bill_title')
   let total = document.getElementById('bill_price')
   let priceSuggestions = document.getElementById('price-suggestions')
+  let priceSuggestionText = document.getElementById('price-suggestions-text')
 
   if(data.store) {
     store.value = data.store
@@ -9,6 +10,7 @@ const fillForms = (data) => {
   if(data.total) {
     total.value = data.total
   } else if (data.prices){
+    priceSuggestionText.innerText = 'Price suggestions'
     data.prices.forEach((price) => {
       priceSuggestions.insertAdjacentHTML('afterbegin', `
           <div class="price-option">
@@ -17,13 +19,18 @@ const fillForms = (data) => {
         `)
 
     })
-    priceSuggestionElements = document.getElementsByClassName('price-option')
-    priceSuggestionElements.forEach((item) => {
-      item.addEventListener('click', (e) => {
-        total.value = parseInt(e.currentTarget.innerHtml, 10)
+    let priceSuggestionElements = document.getElementsByClassName('price-option')
+    for (let suggestionElement of priceSuggestionElements) {
+      suggestionElement.addEventListener('click', (e) => {
+        total.value = parseInt(e.currentTarget.innerText, 10)
+        console.log(e.currentTarget.innerText)
       })
-    })
+    }
+    // priceSuggestionElements.forEach((item) => {
+
+    // })
   }
+
 }
 
 // FINDS THE UPLOADED PHOTO
