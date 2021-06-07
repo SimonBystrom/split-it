@@ -38,6 +38,14 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   billEditShow();
   newSplitFormShow();
-  new Glide('.glide').mount();
+  new Glide('.glide', {
+    type: 'carousel',
+    startAt: 0,
+    perView: 7,
+    peek: 0,
+    gap: 5,
+    // width: 95,
+    bound: true,
+  }).mount();
 });
 
