@@ -10,7 +10,6 @@ class PaymentGroupsController < ApplicationController
     @svg_code = generate_qr_code(@payment_group)
   end
   
-  
   def new
     @payment_group = PaymentGroup.new
     authorize @payment_group
@@ -21,7 +20,6 @@ class PaymentGroupsController < ApplicationController
     authorize @payment_group
     membership = Membership.new(user: current_user, payment_group: @payment_group)
     authorize membership
-    
     if @payment_group.save && membership.save
       flash[:success] = "Payment Group successfully created"
       redirect_to payment_group_path(@payment_group)
@@ -40,7 +38,7 @@ class PaymentGroupsController < ApplicationController
       redirect_to @payment_group
     else
       flash[:error] = "Something went wrong"
-      redirect_to payment_groups_path
+      redirect_to root_path
     end
   end
   
