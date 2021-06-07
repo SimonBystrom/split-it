@@ -1,6 +1,5 @@
 <div class="main-wrapper">
   <!--   Renders the sidebar (needs the payment_groups as an parameter) -->
-
   <!--   Group-show class sets the padding to 0 for the image -->
   <div class="main-container group-show">
     <div class="group-name-banner" style= "background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.25)), url(<%= @image %>)">
@@ -10,17 +9,17 @@
       </div>
     </div>
     <div class="main-container">
+      <%= button_tag 'QR Code', id: 'qr-code', class: 'button mb-2', style: "border: none;" %>
+      <div id="svg-code" style="height: 0px;">
+        <%= render 'qrcode', qr_code: @svg_code %>
+      </div>
       <%= render 'payment_groups/accordion', splits: @splits, users: @users, payment_group: @payment_group %>
-
       <div class="d-flex  mt-5">
         <div id="new-split-button" class="button button-big ">
           <h5 id="new-split-button-text">New Split</h5>
         </div>
-          <%= render 'splits/form', payment_group: @payment_group %>
-
+        <%= render 'splits/form', payment_group: @payment_group %>
       </div>
-
-
     </div>
   </div>
 </div>

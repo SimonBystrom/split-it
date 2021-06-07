@@ -16,4 +16,8 @@ class PaymentGroupPolicy < ApplicationPolicy
   def update?
     record.users.include?(user)
   end
+
+  def add_member?
+    record.users.include?(user)
+  end
 end
