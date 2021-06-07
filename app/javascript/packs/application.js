@@ -32,4 +32,6 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   billEditShow();
   newSplitFormShow();
+  // scroller is the class of the div that holds the carousel
+  ('.carousel-scroller').slick()
 });

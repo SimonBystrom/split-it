@@ -1,0 +1,23 @@
+<div class="carousel-wrapper"></div>
+<div class="carousel-new-group">
+  <!--     Links to creating a new group -->
+  <% if signed_in? %>
+    <%= link_to new_payment_group_path do %>
+      <div class='button button-round add-group'>
+        <i class="fas fa-plus"></i>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<div class="carousel-scroller">
+  <% if current_user %>
+    <% current_user.payment_groups.each do |payment_group| %>
+      <!--   Links to the current paymentgroup when pressing the picture -->
+      <%= link_to payment_group_path(payment_group) do %>
+        <div class="sidebar-group">
+          <%= cl_image_tag(payment_group.photo.key) %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
