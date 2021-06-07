@@ -12,36 +12,32 @@
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade py-3 show active" id="my-bills" role="tabpanel" aria-labelledby="my-bills-tab">
     <% if @bills.any? %>
-     <% @bills.each do |bill| %>
-       <% if bill.user == current_user %>
+      <% @bills.each do |bill| %>
+        <% if bill.user == current_user %>
           <%= render 'splits/bills', bill: bill %>
+        <% end %>
       <% end %>
-     <% end %>
     <% else %>
-     <p><em>No bills yet... </em></p>
-     <% end %>
+      <p><em>No bills yet... </em></p>
+    <% end %>
   </div>
-
   <div class="tab-pane fade py-3" id="other-bills" role="tabpanel" aria-labelledby="other-bills-tab">
     <% if @bills.any? %>
-    <% @bills.each do |bill| %>
-     <% if bill.user != current_user %>
-        <%= render 'splits/bills', bill: bill %>
-     <% end %>
-    <% end %>
+      <% @bills.each do |bill| %>
+        <% if bill.user != current_user %>
+          <%= render 'splits/bills', bill: bill %>
+        <% end %>
+      <% end %>
     <% else %>
-    <p><em>No bills yet... </em></p>
+      <p><em>No bills yet... </em></p>
     <% end -%>
   </div>
-
   <div class="tab-pane fade py-3" id="all-bills" role="tabpanel" aria-labelledby="all-bills-tab">
     <% if @bills.any? %>
-    <% @bills.each do |bill| %>
-      <%= render 'splits/bills', bill: bill %>
-    <% end %>
+      <% @bills.each do |bill| %>
+        <%= render 'splits/bills', bill: bill %>
+      <% end %>
     <% else %>
-    <p><em>No bills yet... </em></p>
+      <p><em>No bills yet... </em></p>
     <% end -%>
-</div>
-
-
+  </div>

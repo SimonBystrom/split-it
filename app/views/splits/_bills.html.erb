@@ -8,7 +8,6 @@
       <p> <i class="fas fa-user"></i> <%= bill.user.name %> </p>
       <p> <i class="far fa-calendar-check"></i> <%= bill.paid_date %> </p>
     </div>
-
   </div>
   <div id="bill<%= bill.id %>" class="edit-bill">
     <%= render 'bills/edit-bill-form', bill: bill %>
