@@ -44,6 +44,8 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 # Image scanning API
 gem 'google-cloud-vision', '~> 1.1'
+# QR Code Generation Gem
+gem 'rqrcode'
 
 group :development, :test do
   gem 'pry-byebug'

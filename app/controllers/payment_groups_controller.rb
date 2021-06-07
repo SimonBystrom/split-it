@@ -1,15 +1,14 @@
 class PaymentGroupsController < ApplicationController
   include CloudinaryHelper
-  require 'rqrcode'
-  before_action :set_payment_group, only: [:show, :edit, :update, :join]
-
+  before_action :set_payment_group, only: [:show, :edit, :update, :join, :add_member]
+  
   def show
     @splits = @payment_group.splits.order(created_at: :desc)
     @users = @payment_group.users
     @image = set_banner_image
     @split = Split.new
   end
-
+  
   
   def new
     @payment_group = PaymentGroup.new
@@ -30,7 +29,11 @@ class PaymentGroupsController < ApplicationController
       render 'new'
     end
   end
-
+  
+  def add_member
+    generate_qr_code(@payment_group)
+  end
+  
   def join
     membership = Membership.new(user: current_user, payment_group: @payment_group)
     authorize membership
@@ -39,12 +42,12 @@ class PaymentGroupsController < ApplicationController
       redirect_to @payment_group
     else
       flash[:error] = "Something went wrong"
-      redirect_to 'pages#home'
+      redirect_to payment_groups_path
     end
   end
-
+  
   private
-
+  
   def generate_qr_code(group)
     qrcode = RQRCode::QRCode.new("#{ENV['BASE_URL']}/payment_groups/#{group}/join")
     @svg_code = qrcode.as_svg
