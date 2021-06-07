@@ -22,6 +22,7 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
+require jquery.slick;
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
