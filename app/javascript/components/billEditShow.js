@@ -1,20 +1,24 @@
 
 const billEditShow = () => {
-  let bills = document.querySelectorAll('.bill-card')
-  bills.forEach( (bill) => {
-    bill.addEventListener('click', (e) => {
+  if(document.querySelectorAll('.bill-card-container')) {
+    let bills = document.querySelectorAll('.bill-card')
+    bills.forEach( (bill) => {
+      bill.addEventListener('click', (e) => {
+        console.log(e.currentTarget)
+        console.log(e.currentTarget.nextElementSibling)
+        let expanded = document.querySelectorAll('.expanded')
 
-      let expanded = document.querySelectorAll('.expanded')
+        expanded.forEach((item) => {
+          if (item.id !== e.currentTarget.nextElementSibling.id) {
+            item.classList.remove('expanded')
+          }
+        })
+        e.currentTarget.nextElementSibling.classList.toggle('expanded')
 
-      expanded.forEach((item) => {
-        if (item.id !== e.currentTarget.nextElementSibling.id) {
-          item.classList.remove('expanded')
-        }
       })
-      e.currentTarget.nextElementSibling.classList.toggle('expanded')
-
     })
-  })
+  }
 }
+
 
 export { billEditShow }
