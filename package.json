@@ -2,6 +2,7 @@
   "name": "split-it",
   "private": true,
   "dependencies": {
+    "@glidejs/glide": "^3.4.1",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",

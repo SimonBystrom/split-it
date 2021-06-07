@@ -1,16 +1,16 @@
 <!-- wrapper div to contain the carousel and new group button -->
 <div class="carousel-wrapper">
   <!-- contains the new group button to keep it visible -->
-  <div class="carousel-new-group">
-    <!--     Links to creating a new group -->
-    <% if signed_in? %>
-      <%= link_to new_payment_group_path do %>
-        <div class='button button-round add-group'>
-          <i class="fas fa-plus"></i>
-        </div>
-      <% end %>
+  <!-- <div class="carousel-new-group"> -->
+  <!--     Links to creating a new group -->
+  <% if signed_in? %>
+    <%= link_to new_payment_group_path do %>
+      <div class='button button-round add-group'>
+        <i class="fas fa-plus"></i>
+      </div>
     <% end %>
-  </div>
+  <% end %>
+  <!-- </div> -->
   <!-- contains the carousel -->
   <div class="carousel-scroller">
     <% if current_user %>

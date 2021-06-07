@@ -1,17 +1,34 @@
 // holds the carousel and new group divs
 .carousel-wrapper {
-
+  width: 100%;
+  background-color: $blue;
+  display: flex;
+  height: 8vh;
+  align-items: center;
+// moving the arrow out from behind the new group button
+  a {
+    margin-right: 32px;
+    margin-left: 8px;
+  }
 }
 // holds the new group icon
 .carousel-new-group {
-
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.4);
+    border: 2px solid $light-gray;
+  }
 }
 // holds the carousel itself
 .carousel-scroller {
-
 }
 // holds the individual group icons
 .carousel-group {
+  width: 50px;
+  margin-left: 8px;
+  margin-right: 8px;
   // positions the "picture/links"
   // Sets the images to be round with a small border
   img{
@@ -21,6 +38,25 @@
     box-shadow: 2px 0 8px rgba(0,0,0,0.4);
     border: 2px solid $light-gray;
   }
-  margin-bottom: 8px;
 }
+
+// centering the group icons (won't respond to align 😞)
+.slick-track {
+  padding-top: 8px;
+}
+
+// making the width of the slides work for mobile
+.slick-slide {
+  width: 50px;
+
+  a {
+    margin-right: 8px;
+  }
+}
+// fix for width
+@media all and (max-width: 800px) { .slick-list { max-width: 90vw;  } }
+
+
+
+
 
