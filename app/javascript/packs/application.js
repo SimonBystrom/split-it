@@ -7,8 +7,6 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-import {billEditShow} from "../components/billEditShow"
-import {newSplitFormShow} from "../components/newSplitFormShow"
 
 Rails.start()
 Turbolinks.start()
@@ -25,10 +23,14 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { qrCode } from "../components/qrCode"
+import {billEditShow} from "../components/billEditShow"
+import {newSplitFormShow} from "../components/newSplitFormShow"
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   billEditShow();
   newSplitFormShow();
+  qrCode();
 });

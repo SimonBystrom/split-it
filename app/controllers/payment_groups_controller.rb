@@ -7,6 +7,7 @@ class PaymentGroupsController < ApplicationController
     @users = @payment_group.users
     @image = set_banner_image
     @split = Split.new
+    @svg_code = generate_qr_code(@payment_group)
   end
   
   
@@ -28,11 +29,6 @@ class PaymentGroupsController < ApplicationController
       flash[:error] = "Something went wrong"
       render 'new'
     end
-  end
-  
-  def add_member
-    generate_qr_code(@payment_group)
-    redirect_to @payment_group
   end
   
   def join
