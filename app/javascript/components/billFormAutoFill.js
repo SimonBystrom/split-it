@@ -18,13 +18,15 @@ const fillForms = (data) => {
 
     })
     priceSuggestionElements = document.getElementsByClassName('price-option')
-    priceSuggestionElements.addEventListener('click' => (e) => {
-      total.value = parseInt(e.currentTarget.innerHtml, 10)
+    priceSuggestionElements.forEach((item) => {
+      item.addEventListener('click', (e) => {
+        total.value = parseInt(e.currentTarget.innerHtml, 10)
+      })
     })
   }
 }
 
-FINDS THE UPLOADED PHOTO
+// FINDS THE UPLOADED PHOTO
 const billFormAutoFill = () => {
   if (document.getElementById('bill_photo')){
     let input = document.getElementById('bill_photo')
