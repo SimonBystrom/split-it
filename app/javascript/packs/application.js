@@ -7,9 +7,8 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-import {billEditShow} from "../components/billEditShow"
-import {newSplitFormShow} from "../components/newSplitFormShow"
-import {Glide} from "../../../src/plugins/init_glide"
+
+
 
 Rails.start()
 Turbolinks.start()
@@ -35,10 +34,15 @@ import "@glidejs/glide/src/assets/sass/glide.theme";
 import { qrCode } from "../components/qrCode"
 import {billEditShow} from "../components/billEditShow"
 import {newSplitFormShow} from "../components/newSplitFormShow"
+import {billEditShow} from "../components/billEditShow"
+import {newSplitFormShow} from "../components/newSplitFormShow"
+import {billFormAutoFill} from '../components/billFormAutoFill'
+import {Glide} from "../../../src/plugins/init_glide"
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  billFormAutoFill();
   billEditShow();
   newSplitFormShow();
   new Glide('.glide', {

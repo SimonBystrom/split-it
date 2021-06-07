@@ -10,4 +10,10 @@ Rails.application.routes.draw do
   end
 
   resources :bills, only: :update
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      post '/scan', to: 'vision#scan'
+    end
+  end
 end
