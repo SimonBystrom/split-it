@@ -4,8 +4,7 @@ const billEditShow = () => {
     let bills = document.querySelectorAll('.bill-card')
     bills.forEach( (bill) => {
       bill.addEventListener('click', (e) => {
-        console.log(e.currentTarget)
-        console.log(e.currentTarget.nextElementSibling)
+
         let expanded = document.querySelectorAll('.expanded')
 
         expanded.forEach((item) => {
