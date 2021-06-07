@@ -1,4 +1,9 @@
 <div class="main-container">
-  <input class="form-control-file file optional" type="file" name="bill[photo]" id="bill_photo">
-  <%= render 'bills/new-bill-form' %>
+  <div class="new-bill-form-container">
+    <label class="custom-file-upload button button-round">
+      <i class="fas fa-camera"></i>
+      <input class="form-control-file file optional" type="file" name="bill[photo]" id="bill_photo">
+    </label>
+    <%= render 'bills/new-bill-form' %>
+  </div>
 </div>
