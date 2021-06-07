@@ -2,6 +2,7 @@
   background-color: $green;
   border-radius: 30px;
   padding: 8px 16px;
+  color: white;
   // Centers the items in the button
   display: flex;
   justify-content: center;
@@ -56,8 +57,12 @@
 
 // Might need tweaking for when we have a lot of groups
 .sign-out{
-  position: absolute;
-  bottom: 8px;
+  // position: absolute;
+  font-size: 26px;
+  margin: 14px;
+  width: 25px;
+  height: 25px;
+
 }
 
 .back-button{

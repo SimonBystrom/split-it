@@ -1,30 +1,25 @@
 <div class="sidebar">
-   <!--  LOGO -->
-     <%= link_to root_path, class: 'logo-container' do %>
+  <% if signed_in? %>
+    <!--  LOGO -->
+    <div class="navi-logo justify-content-start">
+      <%= link_to root_path, class: 'logo-container' do %>
         <%= image_tag "logo.png", alt: "logo", class: 'sidebar-logo' %>
-     <% end %>
-    <% if current_user %>
-      <% current_user.payment_groups.each do |payment_group| %>
-        <!--   Links to the current paymentgroup when pressing the picture -->
-        <%= link_to payment_group_path(payment_group) do %>
-          <div class="sidebar-group">
-            <%= cl_image_tag(payment_group.photo.key) %>
-          </div>
-        <% end %>
       <% end %>
-    <% end %>
-    <!--     Links to creating a new group -->
-    <% if signed_in? %>
-      <%= link_to new_payment_group_path do %>
-        <div class='button button-round add-group'>
-          <i class="fas fa-plus"></i>
-        </div>
-      <% end %>
+    </div>
     <!--     Links to sign-out -->
-     <%= link_to destroy_user_session_path, :method => :delete do %>
+    <div class="navbar-right">
+      <%= link_to destroy_user_session_path, :method => :delete do %>
         <div class='button button-round add-group sign-out'>
           <i class="fas fa-sign-out-alt"></i>
         </div>
       <% end %>
+    <% else %>
+      <!--  LOGO -->
+      <div class="navi-logo">
+        <%= link_to root_path, class: 'logo-container' do %>
+          <%= image_tag "logo.png", alt: "logo", class: 'sidebar-logo' %>
+        <% end %>
+      </div>
     <% end %>
+  </div>
 </div>

@@ -32,6 +32,9 @@ import "@glidejs/glide/src/assets/sass/glide.theme";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { qrCode } from "../components/qrCode"
+import {billEditShow} from "../components/billEditShow"
+import {newSplitFormShow} from "../components/newSplitFormShow"
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -47,5 +50,6 @@ document.addEventListener('turbolinks:load', () => {
     // width: 95,
     bound: true,
   }).mount();
+  qrCode();
 });
 
