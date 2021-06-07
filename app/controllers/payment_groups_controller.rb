@@ -47,7 +47,7 @@ class PaymentGroupsController < ApplicationController
   def generate_qr_code(group)
     url = "#{ENV['BASE_URL']}/payment_groups/#{group.token}/join"
     qrcode = RQRCode::QRCode.new(url)
-    @svg_code = qrcode.as_svg
+    @svg_code = qrcode.as_svg(module_size: 4)
   end
 
   def set_banner_image
