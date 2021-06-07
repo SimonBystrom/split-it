@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import {billEditShow} from "../components/billEditShow"
 import {newSplitFormShow} from "../components/newSplitFormShow"
+import {initSlickCarousel} from "../../../src/plugins/init_slickCarousel"
 
 Rails.start()
 Turbolinks.start()
