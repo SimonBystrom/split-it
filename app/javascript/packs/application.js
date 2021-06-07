@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import {billEditShow} from "../components/billEditShow"
 import {newSplitFormShow} from "../components/newSplitFormShow"
+import {billFormAutoFill} from '../components/billFormAutoFill'
 
 Rails.start()
 Turbolinks.start()
@@ -29,6 +30,7 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  billFormAutoFill();
   billEditShow();
   newSplitFormShow();
 });
