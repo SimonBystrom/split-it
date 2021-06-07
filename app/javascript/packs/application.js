@@ -9,7 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import {billEditShow} from "../components/billEditShow"
 import {newSplitFormShow} from "../components/newSplitFormShow"
-import {initSlickCarousel} from "../../../src/plugins/init_slickCarousel"
+import {Glide} from "../../../src/plugins/init_glide"
 
 Rails.start()
 Turbolinks.start()
@@ -23,7 +23,11 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
+// Required Core Stylesheet
+import "@glidejs/glide/src/assets/sass/glide.core";
 
+// Optional Theme Stylesheet
+import "@glidejs/glide/src/assets/sass/glide.theme";
 
 
 // Internal imports, e.g:
@@ -34,6 +38,6 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   billEditShow();
   newSplitFormShow();
-  initSlickCarousel();
+  new Glide('.glide').mount();
 });
 
