@@ -32,6 +32,7 @@ class PaymentGroupsController < ApplicationController
   
   def add_member
     generate_qr_code(@payment_group)
+    redirect_to @payment_group
   end
   
   def join
@@ -49,7 +50,8 @@ class PaymentGroupsController < ApplicationController
   private
   
   def generate_qr_code(group)
-    qrcode = RQRCode::QRCode.new("#{ENV['BASE_URL']}/payment_groups/#{group}/join")
+    url = "#{ENV['BASE_URL']}/payment_groups/#{group.id}/join"
+    qrcode = RQRCode::QRCode.new(url)
     @svg_code = qrcode.as_svg
   end
 

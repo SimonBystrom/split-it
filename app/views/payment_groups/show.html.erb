@@ -10,7 +10,7 @@
     </div>
     <div class="main-container">
       <%= link_to 'Generate QR Code', add_member_payment_group_path(@payment_group), method: :post  %>
-      <% render @svg_code if @svg_code%>
+      <%= @svg_code.html_safe %>
       <%= render 'payment_groups/accordion', splits: @splits, users: @users, payment_group: @payment_group %>
       <div class="d-flex  mt-5">
         <div id="new-split-button" class="button button-big ">
