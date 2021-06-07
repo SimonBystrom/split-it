@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "split-it-316101",
+  "private_key_id": "619e783403229ba18185a2d2eeb6f116c843d4fc",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCKV9CtZ1YrBLea\nw7OfoUFmuqQo1z7QYmrDmAI+5QzIKoSKn2FjjIr/jLILBzIkvwKAIk8HVFk7Fe+i\no+REbiLElIGoiYd1017+StTLqNcd3ePutGyJQClmxMF+FxzIienDIQk3LvuH+o92\nLqNILzwmyN1q6O5LyefS3XHE2wZYMXkqbDuBUSMsKVnQAfuzmPHo9wLN7uNvS22d\n7VU6M/A/UMhPQCtU8C7T+mHnKaFaJUIN2sfuGUk3yaP/UF/A7QCJPLv7QZ8NLpS2\niC0w8HZf+ZXrCWmewZpOqjW+PXuY5srgTKYvIKnQ8eqCHxyNxpxKg5GxAE2VC5tA\ngBnLJHdTAgMBAAECggEAF5xPKBkX0rW2ZDp8QIUz9UVrWPELbmMtl34s+/D5knv3\nLPVwmJ3W5zBq/ojW3QCge5/fXv/dTsE6qcZQ4gDt/CDgVBRMwyY08y9wS+Xf+N/y\n072FPJNvvXNdFpj5N5yaAcx0ly90jEuOCnyBL4OoP3JOn71rVhH6d7mFfjRnS8u9\ne2BWxlbtZRn4qXas1K7wy7/0o0MW1wHsP8Y80tgCox5r1ZjropvMF3B7GgMD5bgY\n7KCmMJP1j3541BZGN/pCQE4uGreekdP9vCdu+mPziaIoMU1vd0iK1QW3cPEYGsp9\nGKxKjDtxDB5DoxmndYRQbtvbaR0otEkkv5GR7AaPcQKBgQDDPpjwuFbWxuxQZlyV\nRywVjITEDvIGwPkNOV00vFjfeqaZtm4DlJINQrW6NOjzAPEYmFm8WZlfv7dgCDlQ\nr/rfuRvheqH6m9qH7/vK0S83UC/3fhoWCURRq9B0csO748weDsy1Qta+c0go3JdJ\n21HJAQulqY7sNZTf5NmEAsUd2QKBgQC1ZGElsPmp5DYnKCgJcfJJIYns0103ooRh\naCUuc4mBWa+VqQf1i+BHKqwG4BggPoRHA3Dp3HSaLOJanH9xbqM0sIiGnvqpGf+g\nd5rBOaAbQHQ6fKT4J1SKctHHjQ9L8Y9nyPoFAaqLlyxKh7lW5KGvwtvSMH2VbrXm\nwoYqLG1HCwKBgBwzXG/YkGJxVQy/3DuLjiiGpV6UMg0brl1knbvSQJv24T1uhjFq\nMjZMHmeI4OTIjApbZwq3flnAHUJ3rZ+j636JBCfrSJ4kCMp9tUa0NDevE16SDj6E\nlCOfx3oqYW8wFfl5dcPwpYfYquGMCyYV0ZhQ2FfTR9uCWcCFE43nwITxAoGAeQvR\nYGunT95A3QSJIzRs8Kx29BlgfX3wRWhQV502R6Fn8MFp1ExRkGxDfBsTPoE5mIIN\nWaKKFVCahMkmqrWgJ8secGeq8imtUpI+LW+dDlKGvXjsRcVJP1K79ySE7rL2ddXC\nMpEYFCr/nYTRA9FyrG2mb694Pr4wmRt6mK4pBl0CgYBrW1YhM8D4IpdT9KkISvVB\nXG0R5GvpMBHccWMjMB1a6sF2mkXYDzBkNUo2oDRfMnwLXJoTSiFJdCbfnqSarZtc\n1NYOa3L/Iawzd4f4LFh8YDi2ZkwL8f8P6CMD5vIxuypZqnq+dA/a2GYcnIliqwfO\n2l2a1CYAPj3GpVZljApMEA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "simon-bystrom@split-it-316101.iam.gserviceaccount.com",
+  "client_id": "100751347766038050743",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/simon-bystrom%40split-it-316101.iam.gserviceaccount.com"
+}
