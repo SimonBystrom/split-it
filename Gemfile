@@ -5,6 +5,9 @@ ruby '2.6.6'
 
 #added
 gem 'pundit'
+# slick carousel for groups page
+gem 'jquery-slick-rails'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
