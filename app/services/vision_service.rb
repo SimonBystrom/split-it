@@ -3,13 +3,13 @@ class VisionService
     require "google/cloud/vision"
     image_annotator = Google::Cloud::Vision.image_annotator
     # WORKS FOR BOTH TOTAL AND STORE NAME
-    # file_path = "https://live.staticflickr.com/5063/5569368001_2d78ce99b6_b.jpg" #Placeholder image
+     file_path = "https://live.staticflickr.com/5063/5569368001_2d78ce99b6_b.jpg" #Placeholder image
 
     # WORKS FOR STORE NAME
     # file_path = "http://mediaassets.thedenverchannel.com/photo/2015/11/06/7-11MassReceipt_1446816119821_26360098_ver1.0_640_480.jpg"
 
     # WORKS FOR STORE NAME
-    file_path = 'https://expensefast.com/wp-content/uploads/2020/05/costco-wholesale-receipt-template-301x1024.jpg'
+    # file_path = 'https://expensefast.com/wp-content/uploads/2020/05/costco-wholesale-receipt-template-301x1024.jpg'
     lines = []
     response = image_annotator.document_text_detection(image: file_path)
     response.responses.each do |res|
@@ -45,5 +45,6 @@ class VisionService
     end
 
     # Find a smart way to return the total / prices / store
+    { prices: prices, total: total, store: store }
   end
 end
