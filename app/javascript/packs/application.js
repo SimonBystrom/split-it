@@ -22,7 +22,8 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
-require jquery.slick;
+
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -32,6 +33,4 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   billEditShow();
   newSplitFormShow();
-  // scroller is the class of the div that holds the carousel
-  ('.carousel-scroller').slick()
-});
+
