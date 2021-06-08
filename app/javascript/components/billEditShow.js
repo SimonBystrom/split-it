@@ -1,6 +1,6 @@
 
 const billEditShow = () => {
-  if(document.querySelectorAll('.bill-card-container')) {
+  if(document.querySelectorAll('.bill-card-container').length) {
     let bills = document.querySelectorAll('.bill-card')
     bills.forEach( (bill) => {
       bill.addEventListener('click', (e) => {
