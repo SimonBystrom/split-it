@@ -14,6 +14,13 @@ Group 2:
 each user creates 4 receipts in each split
 =end
 
+=begin 
+***NOTE**
+The current seeds are based on a local environment or a fresh database in production.
+In the case where seeds would be required on a database that already holds data,
+  the logic using ids and counters would need to be refactored.
+=end
+
 puts "You have requested seeds. Launching processes..."
 
 puts "Deleting previous seeds..."
