@@ -34,8 +34,8 @@ import "@glidejs/glide/src/assets/sass/glide.theme";
 import { qrCode } from "../components/qrCode"
 import {billEditShow} from "../components/billEditShow"
 import {newSplitFormShow} from "../components/newSplitFormShow"
-import {billEditShow} from "../components/billEditShow"
-import {newSplitFormShow} from "../components/newSplitFormShow"
+// import {billEditShow} from "../components/billEditShow"
+// import {newSplitFormShow} from "../components/newSplitFormShow"
 import {billFormAutoFill} from '../components/billFormAutoFill'
 import {Glide} from "../../../src/plugins/init_glide"
 
