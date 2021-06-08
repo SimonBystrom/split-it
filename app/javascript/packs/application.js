@@ -25,8 +25,7 @@ import "bootstrap";
 // Required Core Stylesheet
 import "@glidejs/glide/src/assets/sass/glide.core";
 
-// Optional Theme Stylesheet
-//import "@glidejs/glide/src/assets/sass/glide.theme";
+
 
 
 // Internal imports, e.g:

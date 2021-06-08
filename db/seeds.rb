@@ -14,6 +14,13 @@ Group 2:
 each user creates 4 receipts in each split
 =end
 
+=begin 
+***NOTE**
+The current seeds are based on a local environment or a fresh database in production.
+In the case where seeds would be required on a database that already holds data,
+  the logic using ids and counters would need to be refactored.
+=end
+
 puts "You have requested seeds. Launching processes..."
 
 puts "Deleting previous seeds..."
@@ -37,9 +44,18 @@ puts "Generating 1 active split for Couple group..."
 couple_june_split = Split.new(name: "June", payment_group: couple_group)
 couple_june_split.save ? (puts "Split created successfully") : (puts "Failed to create split")
 
-puts "Generating 1 archived split for Couple group..."
-archived_couple_split = Split.new(name: "May", payment_group: couple_group, active: false)
-archived_couple_split.save ? (puts "Split created successfully") : (puts "Failed to create split")
+puts "Generating 4 archived split for Couple group..."
+archived_couple_split_may = Split.new(name: "May", payment_group: couple_group, active: false)
+archived_couple_split_may.save ? (puts "Split created successfully") : (puts "Failed to create split")
+
+archived_couple_split_april = Split.new(name: "April", payment_group: couple_group, active: false)
+archived_couple_split_april.save ? (puts "Split created successfully") : (puts "Failed to create split")
+
+archived_couple_split_march = Split.new(name: "March", payment_group: couple_group, active: false)
+archived_couple_split_march.save ? (puts "Split created successfully") : (puts "Failed to create split")
+
+archived_couple_split_february = Split.new(name: "February", payment_group: couple_group, active: false)
+archived_couple_split_february.save ? (puts "Split created successfully") : (puts "Failed to create split")
 
 puts "Generating Friends..."
 
@@ -94,7 +110,7 @@ couple_users.each do |user|
     bill = Bill.new(tag: "June",
                    title: bill_titles.sample,
                    price: rand(100),
-                   paid_date: rand(3.day.ago..Time.now), #ONLY APPLICABLE FOR JUNE 4 PRESENTATION
+                   paid_date: rand(6.day.ago..Time.now), #ONLY APPLICABLE FOR JUNE 8 PRESENTATION
                    comment: "...",
                    user: user,
                    split: couple_june_split
@@ -114,15 +130,76 @@ couple_users.each do |user|
     bill = Bill.new(tag: "May",
                    title: bill_titles.sample,
                    price: rand(100),
-                   paid_date: rand(1.month.ago..5.day.ago), #ONLY APPLICABLE FOR JUNE 4 PRESENTATION
+                   paid_date: rand(1.month.ago..9.day.ago), #ONLY APPLICABLE FOR JUNE 8 PRESENTATION
                    comment: "...",
                    user: user,
-                   split: archived_couple_split
+                   split: archived_couple_split_may
                    )
     bill.save ? (puts "#{user.name}'s bill ##{bill_counter} was created successfully.") : (puts "#{user.name}'s bill ##{bill_counter} could not save.")
     bill_counter += 1
   end
 end
+
+puts "Generating bills for Couple/April Split..."
+
+couple_users = User.where('id < 3')
+bill_titles = %w[Movie Groceries FamilyMart Fuel Diapers Activity Amazon Restaurant]
+bill_counter = 1
+couple_users.each do |user|
+  5.times do
+    bill = Bill.new(tag: "April",
+                   title: bill_titles.sample,
+                   price: rand(100),
+                   paid_date: rand(2.month.ago..1.month.ago), #ONLY APPLICABLE FOR JUNE 8 PRESENTATION
+                   comment: "...",
+                   user: user,
+                   split: archived_couple_split_april
+                   )
+    bill.save ? (puts "#{user.name}'s bill ##{bill_counter} was created successfully.") : (puts "#{user.name}'s bill ##{bill_counter} could not save.")
+    bill_counter += 1
+  end
+end
+
+puts "Generating bills for Couple/March Split..."
+
+couple_users = User.where('id < 3')
+bill_titles = %w[Movie Groceries FamilyMart Fuel Diapers Activity Amazon Restaurant]
+bill_counter = 1
+couple_users.each do |user|
+  5.times do
+    bill = Bill.new(tag: "March",
+                   title: bill_titles.sample,
+                   price: rand(100),
+                   paid_date: rand(3.month.ago..2.month.ago), #ONLY APPLICABLE FOR JUNE 8 PRESENTATION
+                   comment: "...",
+                   user: user,
+                   split: archived_couple_split_march
+                   )
+    bill.save ? (puts "#{user.name}'s bill ##{bill_counter} was created successfully.") : (puts "#{user.name}'s bill ##{bill_counter} could not save.")
+    bill_counter += 1
+  end
+end
+
+puts "Generating bills for Couple/February Split..."
+
+couple_users = User.where('id < 3')
+bill_titles = %w[Movie Groceries FamilyMart Fuel Diapers Activity Amazon Restaurant]
+bill_counter = 1
+couple_users.each do |user|
+  5.times do
+    bill = Bill.new(tag: "February",
+                   title: bill_titles.sample,
+                   price: rand(100),
+                   paid_date: rand(4.month.ago..3.month.ago), #ONLY APPLICABLE FOR JUNE 8 PRESENTATION
+                   comment: "...",
+                   user: user,
+                   split: archived_couple_split_february
+                   )
+    bill.save ? (puts "#{user.name}'s bill ##{bill_counter} was created successfully.") : (puts "#{user.name}'s bill ##{bill_counter} could not save.")
+    bill_counter += 1
+  end
+end
+
 puts "Generating bills for Friends/Bowling Split..."
 
 friends_users = User.where('id >= 3')
