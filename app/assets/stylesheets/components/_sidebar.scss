@@ -9,12 +9,12 @@
 .navbar-right {
     display: flex;
     justify-content: flex-end;
-    width: 50%;
+    width: 33%;
   }
 .navi-logo {
   display: flex;
     justify-content: flex-end;
-    width: 60%;
+    width: 33%;
   }
 .sticky {
   position: fixed;
@@ -24,6 +24,15 @@
 }
 
 
+.logo-title {
+  color: white;
+  display: flex;
+  width: 33%;
+  letter-spacing: 1px;
+  .pipes {
+    color: red;
+  }
+}
 
 // .sidebar-group{
 //   // positions the sidebar-group "picture/links" on top of the sidebar-group-index-link
