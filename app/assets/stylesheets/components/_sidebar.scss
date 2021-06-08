@@ -24,6 +24,14 @@
 }
 
 
+.logo-title {
+  display: flex;
+  width: 50%;
+  letter-spacing: 1px;
+  .pipes {
+    color: red;
+  }
+}
 
 // .sidebar-group{
 //   // positions the sidebar-group "picture/links" on top of the sidebar-group-index-link
