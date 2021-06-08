@@ -1,36 +1,41 @@
 // new group icon
 #new_group {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
   box-shadow: 2px 0 8px rgba(0,0,0,0.4);
-  border: 2px solid $light-gray;
-  margin-right: 8px;
+  margin-left: 8px;
 }
 
-.glide-wrapper {
+
+.glide{
   width: 100vw;
   display: flex;
-  background-color: $blue;
-  align-items: center;
-  padding: 8px;
+  background-color: $light-gray;
   overflow: hidden;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
 .group-img {
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  box-shadow: 2px 0 8px rgba(0,0,0,0.4);
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
   border: 2px solid $light-gray;
   object-fit: cover;
 }
 
+
 .glide__slides {
   margin-bottom: 0;
+  margin-right: 0;
 }
 
-
+.glide__slide{
+  padding: 6px;
+  &:last-child{
+    margin-right: 4px;
+  }
+}
 
 
 

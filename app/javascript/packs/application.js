@@ -26,7 +26,7 @@ import "bootstrap";
 import "@glidejs/glide/src/assets/sass/glide.core";
 
 // Optional Theme Stylesheet
-import "@glidejs/glide/src/assets/sass/glide.theme";
+//import "@glidejs/glide/src/assets/sass/glide.theme";
 
 
 // Internal imports, e.g:
@@ -35,7 +35,7 @@ import { qrCode } from "../components/qrCode"
 import {newSplitFormShow} from "../components/newSplitFormShow"
 import {billEditShow} from "../components/billEditShow"
 import {billFormAutoFill} from '../components/billFormAutoFill'
-// import {Glide} from "../../../src/plugins/init_glide"
+import {initGlide} from "../../../src/plugins/init_glide"
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -44,14 +44,6 @@ document.addEventListener('turbolinks:load', () => {
   billEditShow();
   newSplitFormShow();
   qrCode();
-  // new Glide('.glide', {
-  //   type: 'slider',
-  //   startAt: 0,
-  //   perView: 7,
-  //   peek: 0,
-  //   gap: 5,
-  //   // width: 95,
-  //   bound: true,
-  // }).mount();
+  initGlide();
 });
 
