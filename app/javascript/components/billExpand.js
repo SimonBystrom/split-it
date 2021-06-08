@@ -36,7 +36,13 @@ const billExpand = () => {
             element.classList.add('expandedForm')
             console.log(element.id)
           }
+          let cancelButton = element.querySelector('.cancel-button-bill-form')
+          cancelButton.addEventListener('click', (e) => {
+            element.classList.remove('expandedForm')
+          })
         })
+
+
       })
     })
   }

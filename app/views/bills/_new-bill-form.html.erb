@@ -10,7 +10,7 @@
         <%= f.input :paid_date, html5: true %>
         <div class="d-flex justify-content-between align-items-center">
           <%= f.button :submit, 'Add Bill', class: "button form-button"  %>
-          <%= link_to 'Cancel', root_path %>
+          <div class="cancel-button-bill-form"> <p>Cancel</p> </div>
         </div>
       <% end %>
     </div>
