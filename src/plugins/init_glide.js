@@ -1,5 +1,16 @@
 import Glide from '@glidejs/glide'
 
-new Glide('.glide').mount();
+const initGlide = () => {
+  if(document.querySelector('.glide')){
+    return new Glide('.glide', {
+      type: 'slider',
+      startAt: 0,
+      perView: 7,
+      peek: 0,
+      gap: 8,
+    }).mount();
+  }
+}
 
-export {Glide};
+
+export {initGlide};
