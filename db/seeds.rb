@@ -37,8 +37,17 @@ puts "Generating 1 active split for Couple group..."
 couple_june_split = Split.new(name: "June", payment_group: couple_group)
 couple_june_split.save ? (puts "Split created successfully") : (puts "Failed to create split")
 
-puts "Generating 1 archived split for Couple group..."
+puts "Generating 4 archived split for Couple group..."
 archived_couple_split = Split.new(name: "May", payment_group: couple_group, active: false)
+archived_couple_split.save ? (puts "Split created successfully") : (puts "Failed to create split")
+
+archived_couple_split2 = Split.new(name: "April", payment_group: couple_group, active: false)
+archived_couple_split.save ? (puts "Split created successfully") : (puts "Failed to create split")
+
+archived_couple_split3 = Split.new(name: "March", payment_group: couple_group, active: false)
+archived_couple_split.save ? (puts "Split created successfully") : (puts "Failed to create split")
+
+archived_couple_split4 = Split.new(name: "February", payment_group: couple_group, active: false)
 archived_couple_split.save ? (puts "Split created successfully") : (puts "Failed to create split")
 
 puts "Generating Friends..."
