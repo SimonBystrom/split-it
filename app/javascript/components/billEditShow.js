@@ -17,6 +17,29 @@ const billEditShow = () => {
       })
     })
   }
+
+  if(document.querySelectorAll('.bill-form').length) {
+    let billPhotoButtons = document.querySelectorAll('.split-card-button')
+    billPhotoButtons.forEach((button) => {
+      button.addEventListener('click', (e) => {
+        let expandedFormElement = document.querySelectorAll('.expandedForm')
+        let formElements = document.querySelectorAll('.bill-form')
+
+        expandedFormElement.forEach((item) => {
+          if(item.id !== e.currentTarget.id){
+            item.classList.remove('expandedForm')
+          }
+        })
+
+        formElements.forEach((element) => {
+          if(element.id === e.currentTarget.id){
+            console.log(element.style.height)
+            element.style.color = 'blue'
+          }
+        })
+      })
+    })
+  }
 }
 
 

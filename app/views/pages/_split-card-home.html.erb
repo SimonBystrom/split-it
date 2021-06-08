@@ -20,8 +20,15 @@
     <p> <i class="fas fa-file-invoice-dollar"></i> <%= split.bills.count %> </p>
   </div>
   <!--     LINKS TO THE IMG SCAN -->
-  <%= link_to new_split_bill_path(split), class: 'split-card-button' do %>
+<!--   <%#= link_to new_split_bill_path(split), class: 'split-card-button' do %>
     <i class="fas fa-money-bill-wave"></i>
-  <% end %>
+  <#% end %> -->
+
+  <label class="split-card-button" id=<%= split.id %>>
+      <i class="fas fa-camera"></i>
+      <input class="form-control-file file optional" type="file" name="bill[photo]" id="bill_photo">
+  </label>
+
   <%= link_to '', split_path(split), class: "split-link"  %>
 </div>
+<%= render 'bills/new-bill-form', split: split %>
