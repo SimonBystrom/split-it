@@ -24,7 +24,7 @@ ActiveStorage.start()
 import "bootstrap";
 // Required Core Stylesheet
 import "@glidejs/glide/src/assets/sass/glide.core";
- 
+
 
 
 
@@ -32,7 +32,7 @@ import "@glidejs/glide/src/assets/sass/glide.core";
 // import { initSelect2 } from '../components/init_select2';
 import { qrCode } from "../components/qrCode"
 import {newSplitFormShow} from "../components/newSplitFormShow"
-import {billEditShow} from "../components/billEditShow"
+import {billExpand} from "../components/billExpand"
 import {billFormAutoFill} from '../components/billFormAutoFill'
 import {initGlide} from "../../../src/plugins/init_glide"
 
@@ -40,7 +40,7 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   billFormAutoFill();
-  billEditShow();
+  billExpand();
   newSplitFormShow();
   qrCode();
   initGlide();

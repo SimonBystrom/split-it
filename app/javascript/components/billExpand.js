@@ -1,5 +1,5 @@
 
-const billEditShow = () => {
+const billExpand = () => {
   if(document.querySelectorAll('.bill-card-container').length) {
     let bills = document.querySelectorAll('.bill-card')
     bills.forEach( (bill) => {
@@ -34,6 +34,7 @@ const billEditShow = () => {
         formElements.forEach((element) => {
           if(element.id === e.currentTarget.id){
             element.classList.add('expandedForm')
+            console.log(element.id)
           }
         })
       })
@@ -42,4 +43,4 @@ const billEditShow = () => {
 }
 
 
-export { billEditShow }
+export { billExpand }

@@ -3,10 +3,10 @@
   <div class="col-12 col-md-6">
     <div class="new-bill-form">
       <%= simple_form_for [ split, @bill ] do |f|%>
-        <%= f.input :title, placeholder: 'FamilyMart', autofocus: true;  %>
-        <%= f.input :price, placeholder: '20' %>
-        <div id="price-suggestions-text"></div>
-        <div id="price-suggestions", class="d-flex justify-content-between"></div>
+        <%= f.input :title, input_html: {class: 'bill_title'}, placeholder: 'FamilyMart', autofocus: true;  %>
+        <%= f.input :price, input_html: {class: 'bill_price'}, placeholder: '20' %>
+        <div class="price-suggestions-text"></div>
+        <div class="d-flex justify-content-between price-suggestions"></div>
         <%= f.input :paid_date, html5: true %>
         <div class="d-flex justify-content-between align-items-center">
           <%= f.button :submit, 'Add Bill', class: "button form-button"  %>

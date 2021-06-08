@@ -1,9 +1,9 @@
-const fillForms = (data) => {
-  let store = document.getElementById('bill_title')
-  let total = document.getElementById('bill_price')
-  let priceSuggestions = document.getElementById('price-suggestions')
-  let priceSuggestionText = document.getElementById('price-suggestions-text')
-
+const fillForms = (data, container) => {
+  let store = container.querySelector('input.bill_title')
+  let total = container.querySelector('input.bill_price')
+  let priceSuggestions = container.querySelector('.price-suggestions')
+  let priceSuggestionText = container.querySelector('.price-suggestions-text')
+  console.log(container.querySelector('.bill_title'), data)
   if(data.store) {
     store.value = data.store
   }
@@ -19,7 +19,7 @@ const fillForms = (data) => {
         `)
 
     })
-    let priceSuggestionElements = document.getElementsByClassName('price-option')
+    let priceSuggestionElements = container.getElementsByClassName('price-option')
     for (let suggestionElement of priceSuggestionElements) {
       suggestionElement.addEventListener('click', (e) => {
         total.value = parseInt(e.currentTarget.innerText, 10)
@@ -33,17 +33,24 @@ const fillForms = (data) => {
 
 }
 
+// Loop over all the documents with the ID (change from ID to something else)
+// -> only select the one with the correct ID
+// upload the picture to that ID>???
+
 // FINDS THE UPLOADED PHOTO
 const billFormAutoFill = () => {
-  if (document.getElementById('bill_photo')){
-    let input = document.getElementById('bill_photo')
-    input.addEventListener('change', (e) => {
-      let data = new FormData()
-      data.append('photo', input.files[0])
-      fetch('/api/v1/scan', {method: 'POST', body: data})
-      .then(res => res.json())
-      .then((data) => {
-        fillForms(data)
+  let containers = document.querySelectorAll('.split-form-container')
+  if (containers.length){
+    containers.forEach((container) => {
+      let input = container.querySelector('.bill_photo')
+      input.addEventListener('change', (e) => {
+        let data = new FormData()
+        data.append('photo', input.files[0])
+        fetch('/api/v1/scan', {method: 'POST', body: data})
+        .then(res => res.json())
+        .then((data) => {
+          fillForms(data, container)
+        })
       })
     })
   }
