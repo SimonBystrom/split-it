@@ -24,7 +24,7 @@ ActiveStorage.start()
 import "bootstrap";
 // Required Core Stylesheet
 import "@glidejs/glide/src/assets/sass/glide.core";
-
+ 
 
 
 
