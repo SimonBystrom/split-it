@@ -53,10 +53,20 @@
 }
 
 .new-bill-form{
-  min-width: 90vw;
+
+  min-width: 85vw;
     h1{
     text-align: left;
   }
+}
+
+.bill-form{
+  height: 0px;
+  overflow: hidden;
+  transition: all .5s ease-in-out;
+}
+.expandedForm{
+  height: 450px;
 }
 
 .price-option {
@@ -66,9 +76,7 @@
   border: 1px solid rgba(0,0,0,0.4);
 
 }
-.new-bill-form-container{
-  position: relative;
-}
+
 
 #bill_photo{
   display: none;

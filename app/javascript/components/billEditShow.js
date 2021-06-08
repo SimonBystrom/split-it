@@ -33,8 +33,7 @@ const billEditShow = () => {
 
         formElements.forEach((element) => {
           if(element.id === e.currentTarget.id){
-            console.log(element.style.height)
-            element.style.color = 'blue'
+            element.classList.add('expandedForm')
           }
         })
       })

@@ -1,8 +1,7 @@
 <!-- RENDERS THE ADD BILL FORM -->
 <div class="row bill-form" id="<%= split.id %>">
   <div class="col-12 col-md-6">
-    <div class="form-container new-bill-form">
-      <h1>New Bill</h1>
+    <div class="new-bill-form">
       <%= simple_form_for [ split, @bill ] do |f|%>
         <%= f.input :title, placeholder: 'FamilyMart', autofocus: true;  %>
         <%= f.input :price, placeholder: '20' %>
