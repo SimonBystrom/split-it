@@ -8,6 +8,8 @@ class PaymentGroupsController < ApplicationController
     @image = set_banner_image
     @split = Split.new
     @svg_code = generate_qr_code(@payment_group)
+    @bill = Bill.new
+    authorize @bill
   end
   
   def new
