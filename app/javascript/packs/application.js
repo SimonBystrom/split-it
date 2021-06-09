@@ -35,6 +35,7 @@ import {newSplitFormShow} from "../components/newSplitFormShow"
 import {billExpand} from "../components/billExpand"
 import {billFormAutoFill} from '../components/billFormAutoFill'
 import {initGlide} from "../../../src/plugins/init_glide"
+import {splitShowTabs} from '../components/splitShowTabs'
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -44,5 +45,6 @@ document.addEventListener('turbolinks:load', () => {
   newSplitFormShow();
   qrCode();
   initGlide();
+  splitShowTabs();
 });
 

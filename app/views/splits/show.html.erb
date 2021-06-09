@@ -1,24 +1,22 @@
-<div class="main-wrapper">
-  <div class="main-container">
-    <div class="split-show-title d-flex justify-content-between align-items-center border-bottom">
-      <p> <i class="fas fa-users"></i> <%= @split.payment_group.users.count %> </p>
-      <h1> <%= @split.name %> </h1>
-      <p> <i class="fas fa-file-invoice-dollar"></i> <%= @split.bills.count %> </p>
-    </div>
-    <div class="split-show-subtitle">
-      <h3> $ <%= get_split_total(@split)%> </h3>
-      <% if  balance_positive?(@split) %>
-        <h3 class="positive-balance" > $<%= @balance %> </h3>
-      <% elsif @balance == 0 %>
-        <h3 class="neutral-balance">$<%= @balance %> </h3>
-      <% else %>
-        <h3 class="negative-balance"> $<%= @balance %> </h3>
-      <% end %>
-    </div>
+<div class="main-container">
+  <div class="split-show-title d-flex justify-content-between align-items-center border-bottom">
+    <p> <i class="fas fa-users"></i> <%= @split.payment_group.users.count %> </p>
+    <h1> <%= @split.name %> </h1>
+    <p> <i class="fas fa-file-invoice-dollar"></i> <%= @split.bills.count %> </p>
+  </div>
+  <div class="split-show-subtitle">
+    <h3 style="width: 100.39px;"  class="split-show-button" id='bills-button'>Bills</h3>
+    <h3 class="split-show-button" id='balance-button'>Balance</h3>
+  </div>
+  <div id="balance-tab">
+   <%= render 'splits/balance', split: @split %>
+  </div>
+  <div id="bills-tab">
     <%= render 'splits/tabs', bills: @bills %>
   </div>
-  <%= link_to payment_group_path(@split.payment_group), class: 'back-button' do %>
-    <i class='fas fa-arrow-circle-left'></i>
-  <% end %>
 </div>
+<%= link_to payment_group_path(@split.payment_group), class: 'back-button' do %>
+  <i class='fas fa-arrow-circle-left'></i>
+<% end %>
+
 

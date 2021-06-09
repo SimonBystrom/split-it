@@ -1,0 +1,32 @@
+<div class="border-bottom pb-3">
+  <% if balance_positive?(split) %>
+    <div>
+      <% non_current_user(split).each do |user| %>
+        <div class="balance-details-container">
+          <h4> <%= user.name %> </h4>
+          <h4 class="positive"> <i class="far fa-hand-point-right"></i> $<%=  other_user_balance(split, user) %></h4>
+          <h4>You</h4>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div>
+      <% non_current_user(split).each do |user| %>
+        <div class="balance-details-container ">
+          <h4>You</h4>
+          <h4 class="negative"> <i class="far fa-hand-point-right"></i> $<%=  other_user_balance(split, user).abs %></h4>
+          <h4> <%= user.name %> </h4>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+<div class="total-details-container p-3">
+  <div class="border-bottom">
+    <h5>You: $<%= user_payed(split, current_user) %> </h5>
+    <% non_current_user(split).each do |user| %>
+      <h5><%= user.name %>: $<%= user_payed(split, user) %> </h5>
+    <% end %>
+  </div>
+  <h4 class="mt-2">Total: $<%= get_split_total(split) %> </h4>
+</div>

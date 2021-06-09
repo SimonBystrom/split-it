@@ -1,12 +1,6 @@
-.split-show-subtitle {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-}
-
-
 .split-show-title{
-  width: 80%;
+  width: 100%;
+  padding: 0px 4px;
   p{
     font-size: 24px;
     margin: 0;
@@ -15,5 +9,53 @@
   i{
     font-size: 24px;
     opacity: 0.8;
+  }
+}
+
+
+.split-show-subtitle {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+#bills-tab{
+  display: none;
+  overflow: hidden;
+}
+#balance-tab{
+  margin-top: 24px;
+  width: 80%;
+  display: none;
+  overflow: hidden;
+}
+
+
+.balance-details-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.total-details-container{
+  h5{
+    opacity: 0.7;
+  }
+}
+
+.positive{
+  opacity: 0.8;
+  color: green;
+  i{
+    color: black;
+  }
+}
+
+.negative{
+  opacity: 0.8;
+  color: red;
+  i{
+    color:black;
   }
 }
