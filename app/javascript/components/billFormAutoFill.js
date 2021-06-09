@@ -22,7 +22,7 @@ const fillForms = (data, container) => {
     let priceSuggestionElements = container.getElementsByClassName('price-option')
     for (let suggestionElement of priceSuggestionElements) {
       suggestionElement.addEventListener('click', (e) => {
-        total.value = parseInt(e.currentTarget.innerText, 10)
+        total.value = parseFloat(e.currentTarget.innerText)
         console.log(e.currentTarget.innerText)
       })
     }
