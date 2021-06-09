@@ -1,12 +1,11 @@
 class SplitsController < ApplicationController
-  before_action :set_split, only: [:edit, :update, :destroy]
+  before_action :set_split, only: [:show, :edit, :update, :destroy]
 
   def new
     @split = Split.new
   end
 
   def show
-    @split = Split.find(params[:id])
     @bills = @split.bills.order(created_at: :desc)
     authorize @split
   end
@@ -38,11 +37,11 @@ class SplitsController < ApplicationController
   private
 
   def splits_params
-    params.require(:split).permit(:name)
+    params.require(:split).permit(:name, :active)
   end
 
   def set_split
-    @split.find(params[:id])
+    @split = Split.find(params[:id])
     authorize @split
   end
 end
