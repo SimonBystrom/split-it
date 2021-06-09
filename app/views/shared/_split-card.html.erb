@@ -1,0 +1,18 @@
+<div class="split-form-container">
+  <div class="split-card-home home <%='archived' unless split.active? %>">
+    <div class="split-card-title">
+      <p> <%= split.payment_group.name %> </p>
+      <h3> <%= split.name %> </h3>
+    </div>
+    <div class='split-card-info'>
+      <p> <i class="fas fa-users"></i> <%= split.payment_group.users.count %> </p>
+      <p> <i class="fas fa-file-invoice-dollar"></i> <%= split.bills.count %> </p>
+    </div>
+    <label class="split-card-button" id=<%= split.id %>>
+      <i class="fas fa-camera"></i>
+      <input class="form-control-file file optional bill_photo" type="file" name="bill[photo]">
+    </label>
+    <%= link_to '', split_path(split), class: "split-link"  %>
+  </div>
+  <%= render 'bills/new-bill-form', split: split %>
+</div>

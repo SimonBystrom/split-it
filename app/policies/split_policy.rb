@@ -13,7 +13,7 @@ class SplitPolicy < ApplicationPolicy
     user
   end
   def update?
-    user
+    record.users.include? user
   end
 
   def destroy?

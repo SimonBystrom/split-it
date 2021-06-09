@@ -109,7 +109,7 @@ couple_users.each do |user|
   5.times do
     bill = Bill.new(tag: "June",
                    title: bill_titles.sample,
-                   price: rand(100),
+                   price: rand(100) + rand(0.01..0.99),
                    paid_date: rand(6.day.ago..Time.now), #ONLY APPLICABLE FOR JUNE 8 PRESENTATION
                    comment: "...",
                    user: user,
@@ -129,7 +129,7 @@ couple_users.each do |user|
   5.times do
     bill = Bill.new(tag: "May",
                    title: bill_titles.sample,
-                   price: rand(100),
+                   price: rand(100) + rand(0.01..0.99),
                    paid_date: rand(1.month.ago..9.day.ago), #ONLY APPLICABLE FOR JUNE 8 PRESENTATION
                    comment: "...",
                    user: user,
@@ -149,7 +149,7 @@ couple_users.each do |user|
   5.times do
     bill = Bill.new(tag: "April",
                    title: bill_titles.sample,
-                   price: rand(100),
+                   price: rand(100) + rand(0.01..0.99),
                    paid_date: rand(2.month.ago..1.month.ago), #ONLY APPLICABLE FOR JUNE 8 PRESENTATION
                    comment: "...",
                    user: user,
@@ -169,7 +169,7 @@ couple_users.each do |user|
   5.times do
     bill = Bill.new(tag: "March",
                    title: bill_titles.sample,
-                   price: rand(100),
+                   price: rand(100) + rand(0.01..0.99),
                    paid_date: rand(3.month.ago..2.month.ago), #ONLY APPLICABLE FOR JUNE 8 PRESENTATION
                    comment: "...",
                    user: user,
@@ -189,7 +189,7 @@ couple_users.each do |user|
   5.times do
     bill = Bill.new(tag: "February",
                    title: bill_titles.sample,
-                   price: rand(100),
+                   price: rand(100) + rand(0.01..0.99),
                    paid_date: rand(4.month.ago..3.month.ago), #ONLY APPLICABLE FOR JUNE 8 PRESENTATION
                    comment: "...",
                    user: user,
@@ -209,7 +209,7 @@ friends_users.each do |user|
   4.times do
     bill = Bill.new(tag: "Bowling",
                    title: bill_titles.sample,
-                   price: rand(100),
+                   price: rand(100) + rand(0.01..0.99),
                    paid_date: 1.day.ago,
                    comment: "...",
                    user: user,
@@ -228,7 +228,7 @@ friends_users.each do |user|
   4.times do
     bill = Bill.new(tag: "Camping",
                    title: bill_titles.sample,
-                   price: rand(100),
+                   price: rand(100) + rand(0.01..0.99),
                    paid_date: rand(3.day.ago..1.day.ago),
                    comment: "...",
                    user: user,
@@ -247,7 +247,7 @@ friends_users.each do |user|
   4.times do
     bill = Bill.new(tag: "Pool Party",
                    title: bill_titles.sample,
-                   price: rand(100),
+                   price: rand(100) + rand(0.01..0.99),
                    paid_date: rand(3.day.ago..1.day.ago),
                    comment: "...",
                    user: user,

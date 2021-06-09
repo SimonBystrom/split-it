@@ -41,7 +41,7 @@ class VisionService
         price[0].to_f
       end
       # Gives an ordered list of the 5 highest prices on the receipt
-      prices = prices.sort.reverse[0..4]
+      prices = prices.uniq.sort.reverse[0..4]
     end
 
     # Find a smart way to return the total / prices / store

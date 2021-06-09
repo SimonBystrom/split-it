@@ -1,11 +1,10 @@
-
-  <%= render 'shared/carousel' %>
-  <!--   Renders the sidebar (needs the payment_groups as an parameter) -->
-  <div class="main-container">
-    <h4 class='mt-4 mb-4 border-bottom pb-2'>Active splits</h4>
-    <%#= image_tag "logo_lg.png", alt: "logo", class: 'logo-main' %>
-    <!--      Renders the split-cards-home -->
-    <% @splits.each do |split| %>
-      <%= render 'pages/split-card-home', split: split %>
-    <% end %>
-  </div>
+<%= render 'shared/carousel' %>
+<!--   Renders the sidebar (needs the payment_groups as an parameter) -->
+<div class="main-container">
+  <h4 class='mt-4 mb-4 border-bottom pb-2'>Active splits</h4>
+  <%#= image_tag "logo_lg.png", alt: "logo", class: 'logo-main' %>
+  <!--      Renders the split-card -->
+  <% @splits.each do |split| %>
+    <%= render 'shared/split-card', split: split %>
+  <% end %>
+</div>

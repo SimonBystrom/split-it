@@ -3,4 +3,8 @@ class Split < ApplicationRecord
   has_many :bills
 
   validates :name, presence: true
+
+  def users
+    payment_group.users
+  end
 end

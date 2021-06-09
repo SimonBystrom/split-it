@@ -3,7 +3,7 @@
 <div class="accordion" id="accordionExample">
   <!--   CARD DISPLAYING THE BOX AROUND THE BUTTON TO EXPAND THE ACCORDION -->
   <div class="card">
-    <div class="" id="headingOne">
+    <div id="headingOne">
       <h2 class="mb-0">
         <!-- TEXT OF BUTTON FOR THE ACCORDION MENU OPTION -->
         <button class="btn btn-link btn-block" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="buttonOne">
@@ -15,14 +15,14 @@
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body">
         <% splits.where(active: true).each do |split| %>
-          <%= render 'payment_group_split', split: split %>
+          <%= render 'shared/split-card', split: split %>
         <% end %>
       </div>
     </div>
   </div>
   <!--   CARD DISPLAYING THE BOX AROUND THE BUTTON TO EXPAND THE ACCORDION -->
   <div class="card">
-    <div class="" id="headingTwo">
+    <div id="headingTwo">
       <h2 class="mb-0">
         <!-- TEXT OF BUTTON FOR THE ACCORDION MENU OPTION -->
         <button class="btn btn-link btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id="buttonTwo">
@@ -34,7 +34,7 @@
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
       <div class="card-body">
         <% splits.where(active: false).each do |split| %>
-          <%= render 'payment_group_split', split: split %>
+          <%= render 'shared/split-card', split: split %>
         <% end %>
       </div>
     </div>
