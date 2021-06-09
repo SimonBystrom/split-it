@@ -1,5 +1,5 @@
-<div class="topnav-wrapper">
   <% if signed_in? %>
+    <div class="topnav-wrapper">
     <div class="topnav-logo signed-in">
       <%= link_to root_path, class: 'logo-container' do %>
         <%= image_tag "logo.png", alt: "logo", class: 'sidebar-logo' %>
@@ -10,7 +10,7 @@
     </div>
     <div class="topnav-right">
       <%= link_to destroy_user_session_path, :method => :delete do %>
-        <div class='button button-round add-group sign-out'>
+        <div class='button button-round add-group sign-out' id='topnav-sign-out'>
           <i class="fas fa-sign-out-alt"></i>
         </div>
       <% end %>

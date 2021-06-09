@@ -11,6 +11,8 @@
   display: flex;
   justify-content: flex-end;
   width: 33%;
+  align-items: center;
+  padding-right: 10px;
 }
 
 .topnav-logo {
@@ -25,6 +27,10 @@
 
 .signed-out {
   justify-content: center;
+}
+
+#topnav-sign-out {
+  margin: 0;
 }
 
 .sticky {
