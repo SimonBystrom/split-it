@@ -1,5 +1,5 @@
 <div class="split-form-container">
-  <div class="split-card-home home">
+  <div class="split-card-home home <%='archived' unless split.active? %>">
     <div class="split-card-title">
       <p> <%= split.payment_group.name %> </p>
       <h3> <%= split.name %> </h3>
