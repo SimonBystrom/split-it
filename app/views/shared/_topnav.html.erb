@@ -1,0 +1,30 @@
+
+<% if signed_in? %>
+  <div class="topnav-wrapper">
+    <div class="topnav-left signed-in">
+      <%= link_to root_path, class: 'logo-container' do %>
+        <%= image_tag "logo.png", alt: "logo", class: 'sidebar-logo' %>
+      <% end %>
+    </div>
+    <div class="topnav-middle">
+      <%= link_to root_path do %>
+        <h2>Split<span class="pipe">|</span>it</h2>
+      <% end %>
+    </div>
+    <div class="topnav-right">
+      <%= link_to destroy_user_session_path, :method => :delete do %>
+        <div class='button button-round add-group sign-out'>
+          <i class="fas fa-sign-out-alt"></i>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <div class="topnav-wrapper signed-out">
+    <div class="topnav-left signed-out">
+      <%= link_to root_path, class: 'logo-container' do %>
+        <%= image_tag "logo.png", alt: "logo", class: 'sidebar-logo' %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

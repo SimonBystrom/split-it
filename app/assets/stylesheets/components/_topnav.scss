@@ -1,0 +1,53 @@
+// holds the topnav
+.topnav-wrapper {
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  width: 100%;
+  background-color: $blue;
+}
+
+// holds the topnav round logo
+.topnav-left {
+  display: flex;
+  justify-content: flex-end;
+  width: 33%;
+  align-items: center;
+}
+
+// holds the name logo
+.topnav-middle {
+  display: flex;
+  width: 34%;
+  align-items: center;
+  justify-content: center;
+
+  h2 {
+    color: white;
+    letter-spacing: 1px;
+  }
+}
+
+// holds the topnav sign-out button
+.topnav-right {
+  display: flex;
+  justify-content: flex-end;
+  width: 33%;
+  align-items: center;
+}
+
+// changes the color of the pipe in the name logo
+.pipe {
+  color: #de0c05;
+}
+
+// positions the round logo when user is signed in
+.signed-in {
+  justify-content: flex-start;
+}
+
+// positions the round logo when user is signed out
+.signed-out {
+  justify-content: center;
+}
