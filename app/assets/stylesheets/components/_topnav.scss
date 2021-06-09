@@ -1,0 +1,49 @@
+.topnav-wrapper {
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  width: 100%;
+  background-color: $blue;
+}
+
+.topnav-right {
+  display: flex;
+  justify-content: flex-end;
+  width: 33%;
+}
+
+.topnav-logo {
+  display: flex;
+  justify-content: flex-end;
+  width: 33%;
+}
+
+.signed-in {
+  justify-content: flex-start;
+}
+
+.signed-out {
+  justify-content: center;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.logo-title {
+  color: white;
+  display: flex;
+  width: 33%;
+  letter-spacing: 1px;
+  align-items: center;
+  justify-content: center;
+
+  .pipes {
+    color: #DE0C05;
+  }
+}
+
+

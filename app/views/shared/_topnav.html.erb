@@ -1,29 +1,29 @@
-<div class="sidebar">
+<div class="topnav-wrapper">
   <% if signed_in? %>
-    <!--  LOGO -->
-    <div class="navi-logo justify-content-start">
+    <div class="topnav-logo signed-in">
       <%= link_to root_path, class: 'logo-container' do %>
         <%= image_tag "logo.png", alt: "logo", class: 'sidebar-logo' %>
       <% end %>
     </div>
-    <!--  LOGO TEXT -->
-    <div class="logo-title justify-content-center mt-3">
+    <div class="logo-title">
       <h2>Split<span class="pipes">|</span>it</h2>
     </div>
-    <!--     Links to sign-out -->
-    <div class="navbar-right">
+    <div class="topnav-right">
       <%= link_to destroy_user_session_path, :method => :delete do %>
         <div class='button button-round add-group sign-out'>
           <i class="fas fa-sign-out-alt"></i>
         </div>
       <% end %>
+</div>
     <% else %>
-      <!--  LOGO -->
-      <div class="navi-logo">
+      <div class="topnav-wrapper signed-out">
+      <div class="topnav-logo signed-out">
         <%= link_to root_path, class: 'logo-container' do %>
           <%= image_tag "logo.png", alt: "logo", class: 'sidebar-logo' %>
         <% end %>
       </div>
+      </div>
     <% end %>
   </div>
-</div>
+
+
