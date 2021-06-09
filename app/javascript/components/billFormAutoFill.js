@@ -26,32 +26,29 @@ const fillForms = (data, container) => {
         console.log(e.currentTarget.innerText)
       })
     }
-    // priceSuggestionElements.forEach((item) => {
-
-    // })
   }
 
 }
 
-// Loop over all the documents with the ID (change from ID to something else)
-// -> only select the one with the correct ID
-// upload the picture to that ID>???
+
 
 // FINDS THE UPLOADED PHOTO
 const billFormAutoFill = () => {
   let containers = document.querySelectorAll('.split-form-container')
   if (containers.length){
     containers.forEach((container) => {
-      let input = container.querySelector('.bill_photo')
-      input.addEventListener('change', (e) => {
-        let data = new FormData()
-        data.append('photo', input.files[0])
-        fetch('/api/v1/scan', {method: 'POST', body: data})
-        .then(res => res.json())
-        .then((data) => {
-          fillForms(data, container)
+      if(container.querySelector('.bill_photo')){
+        let input = container.querySelector('.bill_photo')
+        input.addEventListener('change', (e) => {
+          let data = new FormData()
+          data.append('photo', input.files[0])
+          fetch('/api/v1/scan', {method: 'POST', body: data})
+          .then(res => res.json())
+          .then((data) => {
+            fillForms(data, container)
+          })
         })
-      })
+      }
     })
   }
 }

@@ -3,8 +3,8 @@
   <div class="col-12 col-md-6">
     <div class="new-bill-form">
       <%= simple_form_for [ split, @bill ] do |f|%>
-        <%= f.input :title, input_html: {class: 'bill_title'}, placeholder: 'FamilyMart', autofocus: true;  %>
-        <%= f.input :price, input_html: {class: 'bill_price'}, placeholder: '20' %>
+        <%= f.input :title, input_html: {class: 'bill_title'}, placeholder: 'Store Name' %>
+        <%= f.input :price, input_html: {class: 'bill_price'}, placeholder: 'Price' %>
         <div class="price-suggestions-text"></div>
         <div class="d-flex price-suggestions"></div>
         <%= f.input :paid_date, html5: true %>

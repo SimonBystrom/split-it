@@ -8,10 +8,12 @@
       <p> <i class="fas fa-users"></i> <%= split.payment_group.users.count %> </p>
       <p> <i class="fas fa-file-invoice-dollar"></i> <%= split.bills.count %> </p>
     </div>
-    <label class="split-card-button" id=<%= split.id %>>
-      <i class="fas fa-camera"></i>
-      <input class="form-control-file file optional bill_photo" type="file" name="bill[photo]">
-    </label>
+    <% if split.active? %>
+      <label class="split-card-button" id=<%= split.id %>>
+        <i class="fas fa-camera"></i>
+        <input class="form-control-file file optional bill_photo" type="file" name="bill[photo]">
+      </label>
+    <% end %>
     <%= link_to '', split_path(split), class: "split-link"  %>
   </div>
   <%= render 'bills/new-bill-form', split: split %>
