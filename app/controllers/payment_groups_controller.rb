@@ -31,6 +31,11 @@ class PaymentGroupsController < ApplicationController
   
   def join
     @payment_group = PaymentGroup.where(token: "#{params[:payment_group_id]}").first
+    if current_user.memberships.where(payment_group_id: @payment_group.id).any?
+      skip_authorization
+      redirect_to @payment_group
+      return
+    end
     membership = Membership.new(user: current_user, payment_group: @payment_group)
     authorize membership
     if membership.save
