@@ -1,5 +1,5 @@
 <!-- Body of the card (flex column) -->
-<div class="<%= split.active? ? 'split-card-home' : 'split-card-home archived' %>">
+<div class="<%= split.active? ? 'split-card-home payment_group' : 'split-card-home payment_group archived' %>">
   <div class="split-card-title">
     <h3> <%= split.name %> </h3>
     <p> <i class="fas fa-equals"></i> $<%= get_split_total(split)%> </p>

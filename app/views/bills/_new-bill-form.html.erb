@@ -1,17 +1,16 @@
 <!-- RENDERS THE ADD BILL FORM -->
-<div class="row justify-content-center">
+<div class="row bill-form" id="<%= split.id %>">
   <div class="col-12 col-md-6">
-    <div class="form-container new-bill-form">
-      <h1>New Bill</h1>
-      <%= simple_form_for [ @split, @bill ] do |f|%>
-        <%= f.input :title, placeholder: 'FamilyMart', autofocus: true;  %>
-        <%= f.input :price, placeholder: '20' %>
-        <div id="price-suggestions-text"></div>
-        <div id="price-suggestions", class="d-flex justify-content-between"></div>
+    <div class="new-bill-form">
+      <%= simple_form_for [ split, @bill ] do |f|%>
+        <%= f.input :title, input_html: {class: 'bill_title'}, placeholder: 'FamilyMart', autofocus: true;  %>
+        <%= f.input :price, input_html: {class: 'bill_price'}, placeholder: '20' %>
+        <div class="price-suggestions-text"></div>
+        <div class="d-flex justify-content-between price-suggestions"></div>
         <%= f.input :paid_date, html5: true %>
         <div class="d-flex justify-content-between align-items-center">
           <%= f.button :submit, 'Add Bill', class: "button form-button"  %>
-          <%= link_to 'Cancel', root_path %>
+          <div class="cancel-button-bill-form button"> Cancel </div>
         </div>
       <% end %>
     </div>

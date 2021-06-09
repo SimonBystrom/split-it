@@ -3,6 +3,8 @@ class PagesController < ApplicationController
 
   def home
     @splits = current_user.splits.where(active: true)
+    @bill = Bill.new
+    authorize @bill
   end
 
   def splash

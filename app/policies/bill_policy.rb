@@ -16,4 +16,8 @@ class BillPolicy < ApplicationPolicy
   def destroy?
     user == record.user
   end
+
+  def home?
+    user
+  end
 end
