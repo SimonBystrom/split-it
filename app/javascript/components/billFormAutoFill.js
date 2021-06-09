@@ -26,9 +26,6 @@ const fillForms = (data, container) => {
         console.log(e.currentTarget.innerText)
       })
     }
-    // priceSuggestionElements.forEach((item) => {
-
-    // })
   }
 
 }
