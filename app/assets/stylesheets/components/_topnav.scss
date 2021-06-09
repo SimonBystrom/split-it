@@ -1,3 +1,4 @@
+// holds the topnav
 .topnav-wrapper {
   display: flex;
   position: sticky;
@@ -7,49 +8,51 @@
   background-color: $blue;
 }
 
+// holds the topnav round logo
+.topnav-left {
+  display: flex;
+  justify-content: flex-end;
+  width: 33%;
+  align-items: center;
+}
+
+
+// holds the name logo
+.topnav-middle {
+  display: flex;
+  width: 34%;
+  align-items: center;
+  justify-content: center;
+
+  h2 {
+    color: white;
+    letter-spacing: 1px;
+  }
+}
+
+// holds the topnav sign-out button
 .topnav-right {
   display: flex;
   justify-content: flex-end;
   width: 33%;
   align-items: center;
-  padding-right: 10px;
 }
 
-.topnav-logo {
-  display: flex;
-  justify-content: flex-end;
-  width: 33%;
+.pipe {
+  color: #de0c05;
 }
 
+// positions the round logo when user is signed in
 .signed-in {
   justify-content: flex-start;
 }
 
+// positions the round logo when user is signed out
 .signed-out {
   justify-content: center;
 }
 
-#topnav-sign-out {
+// additional formatting for sign-out button
+#topnav-sign-out-button {
   margin: 0;
 }
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-.logo-title {
-  color: white;
-  display: flex;
-  width: 33%;
-  letter-spacing: 1px;
-  align-items: center;
-  justify-content: center;
-
-  .pipes {
-    color: #DE0C05;
-  }
-}
-
-
