@@ -48,6 +48,8 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 gem 'google-cloud-vision', '~> 1.1'
 # QR Code Generation Gem
 gem 'rqrcode'
+# RubyMoney
+gem 'money-rails', '~>1.12'
 
 group :development, :test do
   gem 'pry-byebug'

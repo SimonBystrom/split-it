@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_07_051845) do
+ActiveRecord::Schema.define(version: 2021_06_09_030524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 2021_06_07_051845) do
     t.bigint "split_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "price_cents", default: 0, null: false
+    t.string "price_currency", default: "USD", null: false
     t.index ["split_id"], name: "index_bills_on_split_id"
     t.index ["user_id"], name: "index_bills_on_user_id"
   end
