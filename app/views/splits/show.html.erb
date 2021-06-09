@@ -6,8 +6,8 @@
     <p> <i class="fas fa-file-invoice-dollar"></i> <%= @split.bills.count %> </p>
   </div>
   <div class="split-show-subtitle">
-    <h3 style="width: 100.39px;"  class="split-show-button" id='bills-button'>Bills</h3>
-    <h3 class="split-show-button" id='balance-button'>Balance</h3>
+    <h3 class="split-show-button active-tab" id='balance-button'>Balance</h3>
+    <h3 class="split-show-button" id='bills-button'>Bills</h3>
   </div>
   <div id="balance-tab">
    <%= render 'splits/balance', split: @split %>

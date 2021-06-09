@@ -31,6 +31,10 @@
   overflow: hidden;
 }
 
+.active-tab{
+  border-bottom: 2px solid rgba(0,0,0,0.5);
+}
+
 
 .balance-details-container{
   display: flex;
