@@ -11,7 +11,8 @@
 </div>
 <% unless split.active? %>
   <div class="total-details-container p-3">
-    <div class="text-center">
+    <div class="text-center mb-3">
+      <%= image_tag ('banker.png'), size: '40x40',  alt: "banker image" %>
       <h5>The banker is</h5>
       <h4> <%= @banker.name %> </h4>
     </div>
