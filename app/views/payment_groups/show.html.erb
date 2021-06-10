@@ -7,19 +7,23 @@
       <div>
         <p><em> <%= @payment_group.description %></em> </p>
       </div>
+      <div id="qr-parent">
+        <div id='qr-code', class= "qr-button">
+          <i class="fas fa-user-plus"></i>
+        </div>
+      </div>
     </div>
     <div class="main-container">
-      <%= button_tag 'Invite', id: 'qr-code', class: 'button mb-2', style: "border: none;" %>
-      <div id="svg-code" style="height: 0px;">
+      <div id="svg-code" class="mb-2" style="height: 0px;">
         <%= render 'qrcode', qr_code: @svg_code %>
       </div>
-      <%= render 'payment_groups/accordion', splits: @splits, users: @users, payment_group: @payment_group %>
-      <div class="d-flex  mt-5">
+      <div class="d-flex justify-content-center mb-2">
         <div id="new-split-button" class="button button-big ">
           <h5 id="new-split-button-text">New Split</h5>
         </div>
         <%= render 'splits/form', payment_group: @payment_group %>
       </div>
+      <%= render 'payment_groups/accordion', splits: @splits, users: @users, payment_group: @payment_group %>
     </div>
   </div>
 </div>

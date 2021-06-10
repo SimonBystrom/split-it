@@ -2,3 +2,15 @@
   transition: all .4s ease-in-out;
   overflow: hidden;
 }
+
+#qr-parent {
+  position: relative;
+}
+
+#qr-code {
+  position: absolute;
+  top: 10px;
+  left: 175px;
+  color: #F5F5F6;
+  font-size: large;
+}
