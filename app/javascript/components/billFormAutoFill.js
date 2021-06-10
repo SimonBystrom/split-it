@@ -4,6 +4,7 @@ const fillForms = (data, container) => {
   let priceSuggestions = container.querySelector('.price-suggestions')
   let priceSuggestionText = container.querySelector('.price-suggestions-text')
   console.log(container.querySelector('.bill_title'), data)
+  console.log(data)
   if(data.store) {
     store.value = data.store
   }
@@ -27,10 +28,15 @@ const fillForms = (data, container) => {
       })
     }
   }
-
+  
+  let alertContainer = document.getElementById('alert-message')
+  alertContainer.innerHTML = `
+  <p class="text-center m-0">
+  <i class="fas fa-check-circle"></i>
+  Information loaded from scan.
+  </p>
+  `
 }
-
-
 
 // FINDS THE UPLOADED PHOTO
 const billFormAutoFill = () => {
