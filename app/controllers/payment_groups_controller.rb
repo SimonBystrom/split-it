@@ -45,7 +45,7 @@ class PaymentGroupsController < ApplicationController
       redirect_to @payment_group
     else
       flash[:error] = "Something went wrong"
-      redirect_to root_path
+      redirect_to home_path
     end
   end
   

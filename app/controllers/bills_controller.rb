@@ -18,7 +18,7 @@ class BillsController < ApplicationController
       flash[:success] = "Bill successfully created"
       redirect_to split_path(@split)
     else
-      redirect_to root_path
+      redirect_to home_path
       flash[:error] = "Something went wrong"
     end
   end
