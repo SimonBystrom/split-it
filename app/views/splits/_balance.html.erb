@@ -12,11 +12,10 @@
   </div>
 </div>
 <div class="total-details-container p-3">
-  <div class="border-bottom">
-    <h5>You: $<%= user_payed(split, current_user) %> </h5>
+  <div class='pl-5'>
+    <h5>You paid $<%= user_payed(split, current_user) %> </h5>
     <% non_current_user(split).each do |user| %>
-      <h5><%= user.name %>: $<%= user_payed(split, user) %> </h5>
+      <h5><%= user.name %> paid $<%= user_payed(split, user) %> </h5>
     <% end %>
   </div>
-  <h4 class="mt-2">Total: $<%= get_split_total(split) %> </h4>
 </div>

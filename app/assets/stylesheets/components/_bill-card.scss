@@ -1,16 +1,17 @@
 .bill-card-container{
  min-width:100%;
+ padding: 0px 4px;
 }
 .bill-card{
   min-width: 100%;
   border-radius: 8px;
-
+  background-color: white;
   // justify-content: space-between;
   padding: 8px 16px;
   margin-bottom: 16px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   i{
-    font-size: 24px;
+    font-size: 18px;
     opacity: 0.7;
   }
 }

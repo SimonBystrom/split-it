@@ -5,9 +5,11 @@
     <h1> <%= @split.name %> </h1>
     <p> <i class="fas fa-file-invoice-dollar"></i> <%= @split.bills.count %> </p>
   </div>
-  <div class="split-show-subtitle">
-    <h3 class="split-show-button active-tab" id='balance-button'>Balance</h3>
-    <h3 class="split-show-button" id='bills-button'>Bills</h3>
+  <div class="split-show-subtitle-wrapper">
+    <div class="split-show-subtitle">
+      <h3 class="split-show-button active-tab" id='balance-button'>Balance</h3>
+      <h3 class="split-show-button" id='bills-button'>Bills</h3>
+    </div>
   </div>
   <div id="balance-tab">
    <%= render 'splits/balance', split: @split %>
@@ -23,12 +25,12 @@
     <%= simple_form_for @split do |f| %>
       <% if @split.active%>
         <%= f.input :active, as: :hidden, input_html: { value: false }, wrapper_html:{class: 'm-0'}%>
-        <%= f.button :submit, 'Archive', class: "button archive-button" do %>
+        <%= f.button :submit, 'Settle', class: "button archive-button" do %>
           <i class="fas fa-archive"></i>
           <% end %>
       <% else %>
         <%= f.input :active, as: :hidden, input_html: { value: true }, wrapper_html:{class: 'm-0'}%>
-        <%= f.button :submit, 'Unarchive', class: "button archive-button" do %>
+        <%= f.button :submit, 'Re-open', class: "button archive-button" do %>
           <i class="fas fa-archive"></i>
           <% end -%>
       <% end %>
