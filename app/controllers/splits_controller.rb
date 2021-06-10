@@ -7,6 +7,7 @@ class SplitsController < ApplicationController
 
   def show
     @bills = @split.bills.order(created_at: :desc)
+    @banker = @split.users.first
     authorize @split
   end
 
