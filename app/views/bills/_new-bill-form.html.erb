@@ -2,6 +2,7 @@
 <div class="row bill-form" id="<%= split.id %>">
   <div class="col-12 col-md-6">
     <div class="new-bill-form">
+      <div id="alert-message"></div>
       <%= simple_form_for [ split, @bill ] do |f|%>
         <%= f.input :title, input_html: {class: 'bill_title'}, placeholder: 'Store Name' %>
         <%= f.input :price, input_html: {class: 'bill_price'}, placeholder: 'Price' %>

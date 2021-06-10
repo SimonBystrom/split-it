@@ -4,3 +4,12 @@
   right: 16px;
   z-index: 1000;
 }
+
+#alert-message {
+  position: absolute;
+  width: 100%;
+  top: -16px;
+  left: 0;
+  text-align: center;
+  color: #53B1D8;
+}
