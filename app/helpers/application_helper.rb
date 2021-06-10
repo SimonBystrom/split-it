@@ -8,8 +8,8 @@ module ApplicationHelper
     @balance.positive? ? "You claim $#{@balance}" : "You pay $#{@balance}"
   end
 
-  def balance_positive?(split)
-    @balance = get_balance(split)
+  def balance_positive?(split, user)
+    @balance = get_balance(split, user)
     @balance.positive?
   end
 
@@ -31,8 +31,8 @@ module ApplicationHelper
 
  private
 
-  def get_balance(split)
-    user_split_total = split.bills.where(user: current_user).sum(&:price)
+  def get_balance(split, user)
+    user_split_total = split.bills.where(user: user).sum(&:price)
     even_split = split.bills.sum(&:price)/split.payment_group.users.count
     user_split_total - even_split
   end

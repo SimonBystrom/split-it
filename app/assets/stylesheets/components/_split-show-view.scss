@@ -8,16 +8,25 @@
   }
   i{
     font-size: 24px;
-    opacity: 0.8;
+    opacity: 0.6;
   }
 }
 
-
+.split-show-subtitle-wrapper{
+  width: 100vw;
+  height: 80px;
+  background-color: #e8e8ea;
+}
 .split-show-subtitle {
-  width: 80%;
+  height: 100%;
   display: flex;
-  justify-content: space-between;
-  margin-top: 24px;
+  justify-content: space-around;
+  align-items: center;
+
+  h3{
+    font-weight: 100;
+  }
+
 }
 
 #bills-tab{
@@ -48,7 +57,7 @@
   }
 }
 
-.positive{
+#positive-balance{
   opacity: 0.8;
   color: green;
   i{
@@ -56,7 +65,7 @@
   }
 }
 
-.negative{
+#negative-balance{
   opacity: 0.8;
   color: red;
   i{
