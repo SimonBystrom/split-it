@@ -28,7 +28,7 @@ const fillForms = (data, container) => {
       })
     }
   }
-  
+
   let alertContainer = document.getElementById('alert-message')
   alertContainer.innerHTML = `
   <p class="text-center m-0">
@@ -36,6 +36,10 @@ const fillForms = (data, container) => {
   Information loaded from scan.
   </p>
   `
+  setTimeout(() => {
+
+    alertContainer.style.display = 'none'
+  }, 4000)
 }
 
 // FINDS THE UPLOADED PHOTO
