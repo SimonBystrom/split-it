@@ -3,14 +3,14 @@
   overflow: hidden;
 }
 
-#qr-parent {
-  position: relative;
-}
+// #qr-parent {
+//   position: relative;
+// }
 
 #qr-code {
   position: absolute;
-  top: 10px;
-  left: 175px;
+  bottom: 10px;
+  right: 10px;
   color: #F5F5F6;
   font-size: large;
 }
