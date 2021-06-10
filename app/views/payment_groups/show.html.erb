@@ -1,29 +1,27 @@
-<div class="main-wrapper">
+
   <!--   Renders the sidebar (needs the payment_groups as an parameter) -->
   <!--   Group-show class sets the padding to 0 for the image -->
-  <div class="main-container group-show">
-    <div class="group-name-banner" style= "background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.25)), url(<%= @image %>)">
-      <h1> <%= @payment_group.name %> </h1>
-      <div>
-        <p><em> <%= @payment_group.description %></em> </p>
-      </div>
-      <div id="qr-parent">
-        <div id='qr-code', class= "qr-button">
-          <i class="fas fa-user-plus"></i>
-        </div>
-      </div>
+<div class="main-container group-show">
+  <div class="group-name-banner" style= "background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.25)), url(<%= @image %>)">
+    <h1> <%= @payment_group.name %> </h1>
+    <div>
+      <p><em> <%= @payment_group.description %></em> </p>
     </div>
-    <div class="main-container">
-      <div id="svg-code" class="mb-2" style="height: 0px;">
-        <%= render 'qrcode', qr_code: @svg_code %>
-      </div>
-      <div class="d-flex justify-content-center mb-2">
-        <div id="new-split-button" class="button button-big ">
-          <h5 id="new-split-button-text">New Split</h5>
-        </div>
-        <%= render 'splits/form', payment_group: @payment_group %>
-      </div>
-      <%= render 'payment_groups/accordion', splits: @splits, users: @users, payment_group: @payment_group %>
+    <div id='qr-code', class= "qr-button">
+      <i class="fas fa-user-plus"></i>
     </div>
   </div>
 </div>
+<div class="main-container">
+  <div id="svg-code" class="mb-2" style="height: 0px;">
+    <%= render 'qrcode', qr_code: @svg_code %>
+  </div>
+  <div class="d-flex justify-content-center mb-2">
+    <div id="new-split-button" class="button button-big ">
+      <h5 id="new-split-button-text">New Split</h5>
+    </div>
+    <%= render 'splits/form', payment_group: @payment_group %>
+  </div>
+  <%= render 'payment_groups/accordion', splits: @splits, users: @users, payment_group: @payment_group %>
+</div>
+
