@@ -1,1 +1,5 @@
-Mobile first web application app that helps couples or groups of friends split costs of events like trips or monthly bills by scanning receipts and extracting the prices. 
+A mobile-first, progressive web app developed in 10 days designed to help households keep track of shared expenses and split them evenly.
+
+Ruby on Rails, OCR, QR Codes, Postgresql, Heroku.
+
+http://www.split-it.me/
