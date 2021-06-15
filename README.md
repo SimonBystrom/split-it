@@ -1,1 +1,1 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+Mobile first web application app that helps couples or groups of friends split costs of events like trips or monthly bills by scanning receipts and extracting the prices. 
